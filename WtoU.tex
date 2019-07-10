@@ -1,9 +1,9 @@
 \documentclass[a4paper, reqno, 12pt]{amsart}
-%testing credentials
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{amsthm,amsfonts,amssymb,amsmath,amsxtra}
-\usepackage[all]{xy}
-\SelectTips{cm}{}
+% alternative choice:
+%\documentclass[a4paper, reqno, 12pt]{article}
+%\usepackage{authblk}    %comment this out when using amsart
+
+\usepackage{amsthm,amsfonts,amssymb,amsmath,amsxtra,amsrefs}
 \usepackage{xr-hyper}
 \usepackage[colorlinks=
    citecolor=Black,
@@ -13,7 +13,6 @@
 \usepackage{tikz}
 \usepackage[margin=1.25in]{geometry}
 \usepackage{mathrsfs}
-
 \usepackage{showkeys}
 
 \newcommand{\remind}[1]{{\bf ** #1 **}}
@@ -298,7 +297,12 @@
 
 
 \DeclareMathOperator{\Gal}{Gal}
+\newcommand{\Ztwo}{\BZ/2\BZ}
+\newcommand{\Zg}{\BZ_{\ge 0}}
+
+\newcommand{\F}{\mathbb F}
 \newcommand{\GL}{\mathrm{GL}}
+\newcommand{\GLdagger}{\mathrm{GL}^\dagger}
 \newcommand{\gl}{\frak{gl}}
 \newcommand{\GO}{\mathrm{GO}}
 \newcommand{\GSpin}{\mathrm{GSpin}}
@@ -313,7 +317,7 @@
 \newcommand{\Ind}{{\mathrm{Ind}}}
 \newcommand{\inj}{\hookrightarrow}
 \newcommand{\Int}{\ensuremath{\mathrm{Int}}\xspace}
-\newcommand{\inv}{{\mathrm{inv}}}
+\newcommand{\inv}{^{-1}}
 \DeclareMathOperator{\Isom}{Isom}
 
 \DeclareMathOperator{\Jac}{Jac}
@@ -358,6 +362,7 @@
 \DeclareMathOperator{\Spec}{Spec}
 \DeclareMathOperator{\Spf}{Spf}
 \newcommand{\SO}{{\mathrm{SO}}}
+\renewcommand{\O}{{\mathrm{O}}}
 \newcommand{\Sp}{{\mathrm{Sp}}}
 \newcommand{\SU}{{\mathrm{SU}}}
 \DeclareMathOperator{\Sym}{Sym}
@@ -513,25 +518,45 @@
 
 \begin{document}
 
+\author{Jeffrey Adams}
+\author{Xuhua He}
+\author{Sian Nie}
 
-\title[]{}
+%use one or the other of these:
 
-\thanks{}
+% using \documentclass[a4paper, reqno, 10pt]{article}:
+%\affil{Department of Mathematics, University of Maryland, jda@math.umd.edu}
+%\affil{Department of Mathematics, University of Maryland, xuhuahe@math.umd.edu}
+%\affil{Institute of Mathematics, Academy of Mathematics and Systems Science, Chinese Academy of Sciences, 100190, Beijing, China
+%  , niesian@amss.ac.cn}
 
-\keywords{}
-\subjclass[2010]{}
+% %\documentclass[a4paper, reqno, 12pt]{amsart}
+\address{Department of Mathematics, University of Maryland, jda@math.umd.edu}
+\address{Department of Mathematics, University of Maryland, xuhuahe@math.umd.edu}
+\address{Institute of Mathematics, Academy of Mathematics and Systems Science, Chinese Academy of Sciences, 100190, Beijing, China
+  , niesian@amss.ac.cn}
+
+
+%\date{}                     %% if you don't need date to appear
+
+
+\title{Partial orders on conjugacy classes in the Weyl group and on unipotent conjugacy classes}
+
+
+%\thanks{}
+
+%\keywords{}
+%\subjclass[2010]{}
 
 \date{\today}
-
-\begin{abstract}
-
-\end{abstract}
 
 \maketitle
 
 \tableofcontents
 
 \section*{Introduction}
+
+This is the missing introduction.
 
 \subsection{Lusztig's map} Let $G$ be a connected reductive group over an algebraically closed field and $W$ be the Weyl group of $G$. Let $\uuG$ be the set of unipotent conjugacy classes in $G$ and $\uW$ be the set of conjugacy classes of $W$. In \cite{L1}, Lusztig introduced a surjective map $\Phi: \uW \to \uuG$ (see \cite[Theorem 0.4]{L1}).
 
@@ -575,29 +600,247 @@ First, in the affine case, we do not consider the conjugation action on the loop
 
 \subsection{The strategy} Now we discuss the strategy towards the proof of Theorem \ref{main}. For exceptional groups, we verify the statement by computer in \S?. For classical groups, the elliptic conjugacy classes are parametrized by certain partitions. We use the explicit description of the Bruhat order for the Weyl groups of classical type to relate the partial order $\preceq$ on $\uW_{el}$ to the natural partial order on the partitions. It is known that the unipotent conjugacy classes for classical groups are parametrized by some partitions. Note that in general, the partitions arising from Weyl group conjugacy classes and the unipotent conjugacy classes are very different. For example, in type $B_n$, the elliptic conjugacy classes correspond to partitions of $n$ while the unipotent conjugacy classes correspond to certain partitions of $2n+1$. Finally, we use geometry to prove that the partial orders on the two sets of partitions are compatible.
 
-\section{}
 
 \section{Unipotent conjugacy classes}
 
-In this section, we recollect some facts on the unipotent conjugacy classes of classical groups.
+In this section, we recollect some facts on the unipotent conjugacy
+classes of classical groups, over an
+algebraically closed field $\F$ of any characteristic. We follow \cite{Spa}*{Section I.2}.
 
-Let $\CP(n)$ be the set of partitions of $n$. For $\k=\pm 1$, let $$\CP_\k(n)=\{\a=(a_1, \ldots, a_l) \in \CP(n); \sharp\{j; a_j=i\} \text{ is even for all $i$ with } (-1)^i=\k\}.$$
+We consider the classical groups $\GL(n), \Sp(2n)$ and $\O(n)$. We
+define a disconnected group containing $\GL(n)$ $(n\ge 3)$ as follows.
+Fix a pinning for $\GL(n)$. Then there is a unique non-trivial
+automorphism $\delta$ of $\GL(n)$, of order $2$ preserving the pinning
+and acting by inverse on the center. Let
+$\GLdagger(n)=\GL(n)\rtimes\Ztwo$, where the non-trivial element of
+$\Ztwo$ acts by $\delta$.
 
-\subsection{Good prime case} We first recall the case where the characteristic is $0$ or a good prime.
+By a {\it classical group} we mean one of the groups $\GL(n), \Sp(2n),\O(n)$ or $\GLdagger(n)$.
 
-\begin{itemize}
-	\item Type $A_{n-1}$: Unipotent conjugacy classes are parametrized by the set $\CP(n)$.
-	
-	\item Type $B_n$: Unipotent conjugacy classes are parametrized by the set $\CP_1(2n+1)$.
-	
-	\item Type $C_n$: Unipotent conjugacy classes are parametrized by the set $\CP_{-1}(2n)$.
-	
-	\item Type $D_n$: Unipotent conjugacy classes are parametrized by the set of partitions in $\CP_1(2n)$ with even number parts, except that ``very even'' partition (i.e, the partitions with only even parts, each having even multiplicity) corresponds to two orbits.
-\end{itemize}
+The groups $\GL(n)$ and $\Sp(2n)$ are connected.
+The identity component of $\O(n)$ is $\SO(n)$, and $\O(n)/\SO(n)$ is trivial if $p=2$, and has order $2$ otherwise.
 
-Moreover, let $G$ be a classical group and let $\a, \b$ be the partitions of two unipotent conjugacy classes $\CU_{\a}$ and $\CU_{\b}$ of $G$. Then $\CU_{\a} \subset \overline{\CU_{\b}}$ if and only if $\a \le \b$.
+Let $\CP(n)$ be the set of partitions of $n$. We write a partition of $n$ as
+$\alpha=(\alpha_1,\dots, \alpha_\ell)$ with $\alpha_1\ge \dots\ge \alpha_\ell>0$ and $\sum\alpha_i=n$.
+We define the standard partial order on partitions of the same integer $n$: $\alpha\le\beta$ if for all $k$
+$\sum_{i=1}^k\alpha_i=\sum_{i=1}^k\beta_k$.
 
-\subsection{Bad prime case} Now we discuss the classical groups of type $B_n$, $C_n$ or $D_n$ in characterstic $2$. The unipotent classes in these groups were determined by G. E. Wall \cite{Wall}.
+We identity partitions with Young diagrams, and define the transpose
+partition as usual. If $\alpha=(\alpha_1,\dots,\alpha_\ell)$ is a
+partition we let $\alpha^*=(\alpha_1^*,\dots, \alpha_m^*)$ be the
+transpose partition. In particular $\alpha_1^*$ is the number of rows
+of $\alpha$.
+
+Given a partition $\alpha$ define the multiplicity function $c_\alpha:\Zg\rightarrow \Zg$:
+$c_\alpha(k)=|\{j\mid \alpha_j=k\}|$. In particular $c_\alpha(k)=0$ for $k=0$ or $k>\alpha_1$.
+For $\k=\pm 1$ let
+$$
+\CP_\k(n)=\{\alpha \in \CP(n)\mid c_\alpha(i)\text{ is even if }  (-1)^i=\kappa\}
+$$
+
+We define a partial order on unipotent classes by the closure relations as usual:
+$\CC\le \CC'$ if $\CC\subset \overline{\CC'}$.
+
+
+
+\subsection{Unipotent classes in good characteristic}
+\label{s:good}
+
+
+If $G=\GLdagger(n), \Sp(2n)$ or $\O(n)$ then the characteristic $p=2$ is said to be {\it bad} for $G$. 
+Otherwise, including all groups in characteristic $0$, the characteristic is said to be {\it good} for $G$.
+
+Suppose the characteristic of $\F$ is good. Then every unipotent
+element of $G$ is contained in $G^0$, and 
+the unipotent classes are parametrized as follows. 
+
+\begin{enumerate}
+\item $\GL(n)$ or $\GLdagger(n)$: $\CP(n)$
+\item $\O(2n+1)$: $\CP_1(2n+1)$
+\item $\Sp(2n)$: $\CP_{-1}(2n)$
+\item $\O(2n)$: $\CP_1(2n)$
+\end{enumerate}
+
+We also consider the unipotent conjugacy classes in $\SO(n)$.  If $n$
+is odd the unipotent conjugacy class of $\SO(n)$ and $O(n)$ are in
+bijection, and the same holds in for $\SO(2n)$ if $n$ is odd.
+If $n$ is even the unipotent conjugacy classes in
+$\SO(2n)$ are parametrized by $\CP_1(2n)$, except that every partition
+with only even parts corresponds to two classess (there are $p(n/2)$ of
+these classes where $p$ is the partition function).
+
+We write $\CC_{\alpha}$ for the unipotent class parametrized by a partition $\alpha$.
+Then the partial order on unipotent conjugacy classes is given by the partial order on partitions:
+$\CC_{\a} \subset \overline{\CC_{\b}}$ if and only if $\a \le \b$.
+
+\subsection{Unipotent conjugacy classes in bad characteristic}
+\label{s:bad}
+
+Suppose $G$ is a classical group and the characteristic $p$ of $\F$ is
+bad, i.e. $p=2$.
+We do not need to consider $\SO(2n+1)$ or $O(2n+1)$ since in this case 
+these groups are both isomorphic to $Sp(2n)$.
+
+We first treat the cases $G=Sp(2n)$ or $O(2n)$.
+
+Consider a set  $\{\omega,0,1\}$ where $\omega$ is a formal element, satisfying $\omega<0<1$.
+For $n\ge 1$ define $\CI(2n)$ to be the set of pairs $(\alpha,\epsilon)$ 
+where
+\begin{enumerate}
+\item $\alpha\in \CP_{-1}(2n)$ (i.e. odd rows have even multiplicity)
+\item $\epsilon:\Zg\rightarrow\{\omega,0,1\}$
+\end{enumerate}
+The function $\epsilon$ is required to satisfy, for all $i\ge 0$:
+$$
+\epsilon(i)=
+\begin{cases}
+1&i=0, G=Sp(2n)\\
+0&i=0, G=O(2n)\\
+\omega&i\text{ odd}\\
+\omega&i>0,\,c_\alpha(i)=0\\
+1&i>0\text{ even},\, c_\alpha(i)\text{ odd}\\
+0\text{ or }1&i>0\text{ even},\, c_\alpha(i)>0,\text{ even}
+\end{cases}
+$$
+
+Note that $\epsilon(i)$ is determined by $\alpha$ except for even rows of even multiplicity.
+
+\begin{proposition}
+  If $p=2$ the unipotent conjugacy classes in $Sp(2n)$ or $O(2n)$ are
+  in bijection with $\CI(2n)$.
+\end{proposition}
+
+The map from conjugacy classes to orbits is defined as follows.
+First assume $G=Sp(2n)$, and let $\langle\,,\,\rangle$ be the symplectic form defining $G$.
+If $g\in G$ is unipotent then $g$
+defines a unipotent conjugacy class in $\GL(2n)$, and hence a partition $\alpha$ which satisfies (1).
+Suppose $i>0$ is even and $c_\alpha(i)>0$. Set $\epsilon(i)=0$ if
+$\langle (g-1)^{i-1}v,v\rangle=0$ for all $v\in \text{ker}(g-1)^i$, and $\epsilon(i)=1$ otherwise.
+Together with the conditions above this defines $\epsilon$ uniquely.
+
+Next, if $G=O(2n)$ we note that every unipotent conjugacy class in
+$Sp(2n)$ intersects $O(2n)$ in a unique conjugacy class, and this
+defines a bijection between unipotent conjugacy classes in $Sp(2n)$ and $O(2n)$.
+
+
+Write $\CC_G(\alpha,\epsilon)$ for
+the unipotent conjugacy class associated to
+$(\alpha,\epsilon)\in \CI(2n)$.
+
+
+In the case of $G=O(2n)$ we want to distinguish between those
+$G$-conjugacy classes contained in $\SO(2n)$ and those which are not.
+
+Define $\CI(2n)_0\subset \CI(2n)$ to be the pairs $(\alpha,\epsilon)$ such that $\alpha_1^*$ is even, and
+set $\CI_1(2n)=\CI(2n)\backslash \CI_0(2n)$.
+
+\begin{lemma}
+Suppose $(\alpha,\epsilon)\in \CI(2n)$.
+Then $\CC_{\O(2n)}(\alpha,\epsilon)\subset \SO(2n)$ if and only if $(\alpha,\epsilon)\in\CI_0(2n)$.
+\end{lemma}
+
+Thus $\CI_0(2n)$ (respectively $\CI_1(2n)$) is in bijection with the unipotent  $\O(2n)$ conjugacy classes in $\SO(2n)$ (respectively 
+$\O(2n)\backslash\SO(2n)$).
+
+ We will not directly consider unipotent $\SO(2n)$-conjugacy classes, except to note that
+ if $(\alpha,\epsilon)\in \CI_0(2n)$ then 
+ $\CC_{O(2n)}(\alpha,\epsilon)\subset \SO(2n)$ is the union of two $\SO(2n)$-conjugacy classes if 
+ for all $i$, $\alpha_i$ and $c_\alpha(i)$ are even and $\epsilon(i)\ne 1$. Otherwise 
+ $\CC_{O(2n)}(\alpha,\epsilon)\subset\SO(2n)$ is a single $\SO(2n)$-conjugacy class.
+
+
+\begin{comment}
+\begin{enumerate}
+\item $\epsilon(i)=\omega$ if $i$ is odd or $i\ge 1$ and $c_\alpha(i)=0$.
+\item $\epsilon(i)=1$ if $i$ is even and $c_\alpha(i)$ is odd $(i\ne 0)$
+\item $\epsilon(i)\ne\omega$ if $i$ is even and $c_\alpha(i)\ne 0$ $(i\ne 0)$
+\item $\epsilon(0)=
+  \begin{cases}
+    1&G=Sp(2n)\\
+    0&G=O(2n)
+  \end{cases}
+  $
+\end{enumerate}
+\end{comment}
+
+Recall every characteristic for $\GL(n)$ is good, and the unipotent
+orbits for $\GL(n)$ are parametrized by partitions of $n$. Now we
+consider $\GLdagger(n)$ ($n\ge 3$), with identity component $\GL(n)$
+of index $2$.
+
+\begin{lemma}
+The unipotent conjugacy classes of $\GLdagger(n)$ which are contained in
+$\GL(n)$ are in bijection with the unipotent conjugacy classes of $\GL(n)$.
+\end{lemma}
+
+In other words if $\CC\subset \GL(n)$ is a unipotent conjugacy classes for $\GLdagger(n)$ 
+then it is a single $\GL(n)$-orbit.
+
+So consider the unipotent conjugacy classes of $\GLdagger(n)$ in $\GLdagger(n)\backslash \GL(n)$.
+
+Define $\CJ(n)$ to be the set of pairs $(\alpha,\epsilon)$ 
+where
+\begin{enumerate}
+\item $\alpha\in \CP_{1}(n)$ (i.e. even rows have even multiplicity)
+\item $\epsilon:\Zg\rightarrow\{\omega,0,1\}$
+\end{enumerate}
+The function $\epsilon$ is required to satisfy, for all $i\ge 0$:
+$$
+\epsilon(i)=
+\begin{cases}
+\omega&i\text{ even}\\
+\omega&c_\alpha(i)=0\\
+1&i\text{ odd}, c_\alpha(i)\text{ odd}\\
+0\text{ or }1&i\text{ odd},\, c_\alpha(i)>0\text{ even}
+\end{cases}
+$$
+
+\begin{proposition}
+If $p=2$ the unipotent conjugacy classes of $\GLdagger(n)$ in $\GLdagger(n)\backslash \GL(n)$ are parametrized by $\CJ(n)$.
+\end{proposition}
+ For the map from unipotent conjugacy classes to $\CJ(n)$ see
+\cite{Spa}*{Section I.2.7}.
+
+\subsection{Closure Relations}
+\label{s:closure}
+
+We now desribe the closure relations on nilpotent orbits. As discussed
+in Section \ref{s:good} if the characteristic is good then the closure
+relations on orbits are given by the order relation on partitions.
+So assume $p=2$ and $G=\GLdagger$, $Sp(2n)$ or $O(2n)$.
+
+We define a partial order on the sets
+$\CI(2n)$ and $\CJ(n)$ defined in the previous section.
+Suppose $(\alpha,\epsilon)$ and $(\beta,\delta)$ are elements of one of these sets.
+We say $(\alpha,\epsilon)\le (\beta,\delta)$ if
+
+\begin{enumerate}
+\item $\alpha\le \beta$ (standard ordering on partitions)
+\end{enumerate}
+and for all $k\ge 1$:
+\begin{enumerate}
+\item[(2)] $\left(\sum_{i=1}^{k}\alpha_i^*\right)-\text{max}(\epsilon_k,0)\ge \left(\sum_{i=1}^k\beta_i^*\right)-\text{max}(\delta_k,0)$
+\item[(3)] If $\sum_{i=1}^k\alpha_i^*=\sum_{i=1}^k\beta_i^*$ and $\alpha^*_{k+1}-\beta^*_{k+1}$ is odd then $\delta_k\ne 0$  
+\end{enumerate}
+
+
+
+\begin{proposition}
+  Suppose $p=2$ and $G=\GLdagger(n), Sp(2n)$ or $O(2n)$. 
+Suppose $(\alpha,\epsilon),(\beta,\delta)$ are in $\CJ(n)$,
+
+Then
+$\CC_G(\alpha,\epsilon)\le \CC_G(\beta,\delta)$ if and
+only if $(\alpha,\epsilon)\le (\beta,\delta)$.
+\end{proposition}
+
+
+
+
+
+\section{Old section on unipotent classes}
+
+Now we discuss the classical groups of type $B_n$, $C_n$ or $D_n$ in characterstic $2$. The unipotent classes in these groups were determined by G. E. Wall \cite{Wall}.
 
 In all these cases, the unipotent conjugacy classes have the following two invariants: $p$ and $\chi$. Here $p(g)$ is the partition corresponds to the Jordan canonical form of the unipotent element $g$ and $\chi$ is a function from the parts of this partition into the non-negative integers defined as follows: $$\chi(g)(m)=\begin{cases} \min\{k \ge 0; (g-1)^m v=0 \Rightarrow \<(g-1)^{k+1} v, (g-1)^k v\>=0\}, & \text{ if $G$ is of type $C$ }; \\ \min\{k \ge 0; (g-1)^m v=0 \Rightarrow Q(T^k v)=0\}, & \text{ if $G$ is of type $B$ or $D$ }. \end{cases}$$
 
@@ -621,7 +864,7 @@ In almost all the cases, the unipotent conjugacy classes are determined by the t
 
 \remind{Closure relation: In \cite{Spa} or not?}
 
-\subsection{Lusztig's map} We recall the function $\psi$ in \cite[\S 1.6]{L1}
+\section{Lusztig's map} We recall the function $\psi$ in \cite[\S 1.6]{L1}
 
 For any $\underline \a=(p_1, p_2, \ldots, ,p_\s)$ in $\CP(n)$ we define a function $\psi_{\underline \a}:[1,\s] \to \{-1,0,1\}$ as follows.
 
@@ -904,4 +1147,6 @@ E. Viehmann, \emph{Newton strata in the loop group of a reductive group}, Amer. 
 G. E. Wall, \emph{On the conjugacy classes in the unitary, symplectic and orthogonal groups},  J. Austral. Math. Soc., 3 (1963), 1--63.
 
 \end{thebibliography}
+
+
 \end{document}
