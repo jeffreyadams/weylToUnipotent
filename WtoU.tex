@@ -3,8 +3,10 @@
 %\documentclass[a4paper, reqno, 12pt]{article}
 %\usepackage{authblk}    %comment this out when using amsart
 
+
 \usepackage{amsthm,amsfonts,amssymb,amsmath,amsxtra,amsrefs}
 \usepackage{xr-hyper}
+\usepackage[matrix,tips,frame,color,line,poly]{xy}
 \usepackage[colorlinks=
    citecolor=Black,
    linkcolor=Red,
@@ -417,8 +419,9 @@
 % Equation  \AMSname
 % Theorem   \theoremname
 
-\def\uuG{\underline{\underline G}}
-\def\uW{\underline W}
+\def\Gu{[G_u]}  %unipotent classes in G
+\def\Wc{[W]}    %conjugacy classes in W
+\def\Wec{[W_e]} %elliptic conjugacy classes in W
 % Theorem environments.
 %
 \newtheorem{theorem}{Theorem}
@@ -515,8 +518,12 @@
 \newcommand{\isoarrow}{%
    \ifbool{@display}{\overset{\sim}{\longrightarrow}}{\xrightarrow\sim}%
    }
+\renewcommand{\rightmark}{Partial orders on conjugacy classes}
+
+
 
 \begin{document}
+\thispagestyle{plain}
 
 \author{Jeffrey Adams}
 \author{Xuhua He}
@@ -558,65 +565,226 @@
 
 This is the missing introduction.
 
-\subsection{Lusztig's map} Let $G$ be a connected reductive group over an algebraically closed field and $W$ be the Weyl group of $G$. Let $\uuG$ be the set of unipotent conjugacy classes in $G$ and $\uW$ be the set of conjugacy classes of $W$. In \cite{L1}, Lusztig introduced a surjective map $\Phi: \uW \to \uuG$ (see \cite[Theorem 0.4]{L1}).
+\subsection{Lusztig's map}
+Let $G$ be a connected reductive group over an algebraically closed
+field and let $W$ be the Weyl group of $G$. Let $\Gu$ be the set of
+unipotent conjugacy classes in $G$ and $\Wc$ be the set of conjugacy
+classes of $W$. Lusztig has defined a surjective map 
+$\Phi: \Wc \to \Gu$ (\cite[Theorem 0.4]{L1}).
+This construction is generalized to twisted conjugacy classes in \cite{L3}.
 
-Moreover, let $\uW_{el}$ be the set of elliptic conjugacy classes of $W$, i.e., the set of conjugacy classes of $W$ that do not intersect with any standard proper parabolic subgroup of $W$. The restriction of $\Phi$ to $\uW_{el}$ gives an injection $\uW_{el} \to \uuG$ and the image contains all distinguished unipotent conjugacy classes (see \cite[Proposition 0.6]{L1}).
+Roughly speaking, the map $\Phi$ is constructed as follows.Let
+$C \in \Wc$ and $w \in C_{\min}$ be a minimal length element of
+$C$. We look at the intersection of Bruhat double coset $B w B$ with
+various unipotent conjugacy classes and we select the minimal
+unipotent class which gives a nonempty intersection. It is pointed out
+in \cite[\S 0.1]{L1} that ``the fact that the procedure actually works
+is miraculous''.  We are interested in understanding the map $\Phi$ is
+a more conceptual way.
 
-Roughly speaking, the map $\Phi$ is constructed as follows.Let $C \in \uW$ and $w \in C_{\min}$ be a minimal length element of $C$. We look at the intersection of Bruhat double coset $B w B$ with various unipotent conjugacy classes and we select the minimal unipotent class which gives a nonempty intersection. It is pointed out in \cite[\S 0.1]{L1} that ``the fact that the procedure actually works is miraculous''.
+In this paper we are concerned with the elliptic conjugacy classes
+$\Wec$ of $W$.  The restriction of $\Phi$ to $\Wec$ is an injective, 
+and the image contains all distinguished unipotent
+conjugacy classes (\cite[Proposition 0.6]{L1}).
 
-Such construction is generalized to twisted conjugacy classes in \cite{L3}.
 
-\subsection{Partial orders} Our goal is to have a better understanding of the miraculous relation between the conjugacy classes of $W$ and the unipotent conjugacy classes of $G$. More specifically, in this paper, we consider the relationship between $\uW_{el}$ and $\uuG$ as partial order sets.
+The set $\Gu$ has the natural partial ordering by the closure
+relations. On the other hand the 
+second-named author \cite{He07} (see also \cite[\S
+1.10.3]{He-CDM}) has introduced a partial order on $\Wec$, based
+induced from the Bruhat order on  minimal length elements of the
+elliptic conjugacy classes of $W$. 
 
-The partial order on $\uuG$ is given by the closure relation. The partial order $\preceq$ on $\uW_{el}$ is introduced by the second-named author \cite{He07} (see also \cite[\S 1.10.3]{He-CDM}). This is the partial order induced from the Bruhat order of $W$ (via the comparison of minimal length elements on the elliptic conjugacy classes of $W$).
-
-It is a natural question to consider the relationship between the partial order on $\uW_{el}$ arising from combinatorics and the partial order on $\uuG$ arising from geometry. In Dudas, Michel and the second-named author \cite{DHM} conjectured that $\Phi$ gives an order-reversing bijection from $\uW_{el}$ to $\Phi(\uW_{el}) \subset \uuG$.
+It is a natural question to consider how Lusztig's map 
+behaves with respect to these partial orders.
+Dudas, Michel and the second-named author
+\cite{DHM} conjectured that $\Phi$ gives an order-reversing bijection
+from $\Wec$ to $\Phi(\Wec) \subset \Gu$.
 
 In \cite[Conjecture 3.7]{DM}, Dudas and Malle conjectured that a similar result holds for twisted type $A$. In \cite[Proposition 3.11 \& 3.14]{DM} they verified the conjecture for some special family of twisted elliptic conjugacy classes of type $A$. It is also verified in \cite{DM} by computer that the conjecture holds for twisted $A_n$ with $n \le 10$. The compatibility of the partial orders is used in \cite[\S 5]{DM} to study the decomposition numbers of the unipotent $l$-blocks of finite unitary groups.
 
-The main purpose of this paper is to prove that the above conjecture holds. Namely,
+Our first main result is the $\Phi$ respects the partial orders in a strong sense.
 
 \begin{theorem}\label{main}
-	Let $C, C' \in \uW_{el}$. Then $C \preceq C'$ if and only if $\Phi(C') \subset \overline{\Phi(C)}$. In other words, $\Phi$ gives an order-reversing bijection from $\uW_{el}$ to $\Phi(\uW_{el}) \subset \uuG$.
+
+Let $\CC, \CC' \in \Wec$. Then $\CC \preceq\CC'$ if and only if
+$\Phi(\CC') \subset \overline{\Phi(\CC)}$. In particular $\Phi$ gives
+an order-reversing bijection from $\Wec$ to
+its image in $\Gu$.
 \end{theorem}
 
-In the main context, we also prove this for twisted conjugacy classes.
+This holds also in the twisted setting.
+
+Next we give a conceptual definition of Lusztig's map restricted to
+$\Wec$ for classical groups. For this introduction we consider
+$\GL(n), \SO(n), \O(n), \Sp(2n)$, see Section ? for the case of
+twisted type $A$.  Each group comes with its tautological embedding
+$\iota:G\rightarrow G^*$ where $G^*=GL(m)$ ($m=n$ or $2n$). 
+This induces
+a homomorphism $\iota:W\rightarrow W^*$ where $W^*$ is the Weyl group
+of $G^*$.
+
+Consider the following diagram:
+
+$$
+\xymatrix{
+[W^*]\ar[r]^{\Phi^*}&[G^*]\ar[d]^\Gamma\\
+\Wec\ar[r]^{\Phi}\ar[u]^{\iota}&\Gu\\
+}
+$$
+
+\medskip
+The left vertical arrow is induced by  the homomorphism $\iota:W\rightarrow W^*$.
+The top row is Lusztig's map for $G^*=GL(m)$, which is elementary:
+both $\Wc$ and $\Gu$ are paraemtrized by partitions of $m$, and $\Phi^*$ corresponds to the identity map on partitions.
+The bottom row is Lusztig's map for $G$.
+Suppose $\CC$ is a unipotent class in $G^*$.
+Then $\Gamma(\CC)$ is the unique open orbit in $\overline{\CC}\cap G$;
+according to our next main result $\Gamma$ is well-defined, and makes the diagram commute.
+
+\begin{theorem}
+\label{second}
+Suppose $G=GL(n), SO(n),O(n)$ or $Sp(2n)$.   If  $\CC\in\Wec$ then
+$\overline{\Phi^*(\iota(\CC))}\cap G$ has a  unique maximal orbit for $G_u$, and
+$$
+\Phi(\CC)=\Gamma(\Phi^*(\iota(|CC))).
+$$
+\end{theorem}
+
+\remind{Of course I'm not sure this is true, it requires careful checking.}
+
+A twisted version of this holds as well.
+
+Write $\CP(n)$ for the partitions of $n$.
+We  identify these with Young diagrams equipped with their natural
+partial order as usual (see Section ?)
+If $\alpha=(\alpha_1,\alpha_2,\dots)$ is a partition of $n$ write
+$2\alpha$ for the partition $(2\alpha_1,2\alpha_2,\dots)$ of $2n$.
+
+\begin{example}
+Let $G=Sp(2n)$ and $p\ne 2$. Then $\Wec$ is parametrized by $\CP(n)$,
+  and $\Gu$ is parametrized by partitions of $2n$ for which
+  each odd row has even multiplicity.
+  Suppose
+  $\CC\in \Wec$ corresponds to a partition $\alpha\in\CP(n)$. Then
+  $\iota(\CC)$ corresponds to $2\alpha\in\CP(2n)$,
+which is the partition for the   corresponding unipotent class $\CO^*$ in $GL(2n)$.
+Then $\CO^*\cap Sp(2n)$ is a single $Sp(2n)$-class, also given by $2\alpha$. This gives the bottom row $\Phi$: restricted
+  to elliptic conjugacy classes  is given on partitions by $\alpha\rightarrow 2\alpha$. 
+
+  Now consider the case $G=O(2n)$, $p\ne 2$. In this case $\Wec$ is of
+  type $C_n$ as before (since we're taking the disconnected orthogonal
+  group), and $\Gu$ is parametrized by partitions of $2n$ in which
+  every {\it even} row has even multiplicity.
+  The maps $\iota$ and
+  $\Phi^*$ are exactly the same as for $Sp(2n)$. However the unipotent
+  class $2\alpha$ does not intersect $O(2n)$, since $2\alpha$ is not a
+  valid partition of a unipotent class in $O(2n)$.
+  According to \cite{L1}  $\Phi(\CC)$ corresponds to a certain partition $\alpha'\le \alpha$. In fact this is the
+  largest such partition which corresponds to a class for $\O(2n)$, and 
+this is the largest orbit in $\overline{\CO^*}\cap O(2n)$.
+  
+\end{example}
 
 \subsection{A similiar phenomenon for affine Weyl groups}
-Before we discuss the strategy towards Theorem \ref{main}, we make a short digression and discuss a similar phenomenon.
 
-For simplicity, we only discuss the split groups here but the result holds in general.
+Before we discuss the strategy towards Theorem \ref{main}, we make a
+short digression and discuss a similar phenomenon.
 
-Let $G$ be a connected reductive group. The Frobenius morphism $\s$ of $\overline{\mathbb F_q}$ over $\mathbb F_q$ induces a Frobenius morphism $\s$ on $G(\overline{\mathbb F_q}((t)))$. Let $B(G)$ be the set of $\s$-twisted conjugacy classes on $G(\overline{\mathbb F_q}((t)))$. Let $\tW$ be the Iwahori-Weyl group and $\underline \tW$ be the set of conjugacy classes of $\tW$. Inside $\underline \tW$, there is a special subset, the set of straight conjugacy classes, which we denote by $\underline \tW_{str}$. It is proved in \cite{He-Ann} that there is a natural bijection $\tilde \Phi: \underline \tW_{str} \to B(G)$, which is induced from any lifting $\tW \to G(\overline{\mathbb F_q}((t)))$.
+For simplicity, we only discuss the split groups here but the result
+holds in general.
 
-The closure relation gives the partial order on $B(G)$. There is also a partial order on $\underline \tW_{str}$ induced from the Bruhat order on $\tW$, similar to the definition of the partial order $\preceq$ on $\uW_{el}$ we discussed earlier. It is proved in \cite[Theorem B]{He-KR} that these two partial orders coincide via the bijection $\tilde \Phi: \underline \tW_{str} \to B(G)$.
+Let $G$ be a connected reductive group. The Frobenius morphism $\s$ of
+$\overline{\mathbb F_q}$ over $\mathbb F_q$ induces a Frobenius
+morphism $\s$ on $G(\overline{\mathbb F_q}((t)))$. Let $B(G)$ be the
+set of $\s$-twisted conjugacy classes on
+$G(\overline{\mathbb F_q}((t)))$. Let $\tW$ be the Iwahori-Weyl group
+and $\underline \tW$ be the set of conjugacy classes of $\tW$. Inside
+$\underline \tW$, there is a special subset, the set of straight
+conjugacy classes, which we denote by $\underline \tW_{str}$. It is
+proved in \cite{He-Ann} that there is a natural bijection
+$\tilde \Phi: \underline \tW_{str} \to B(G)$, which is induced from
+any lifting $\tW \to G(\overline{\mathbb F_q}((t)))$.
 
-The proof uses the reduction method of Deligne and Lusztig \cite{DL}, some remarkable combinatorial properties on the straight conjugacy classes \cite{HN2} and a deep result in arithmetic geometry, the purity theorem for the Newton stratification associated with $F$-crystal obtained by de Jong-Oort \cite{JO}, Hartl-Viehmann \cite{HV}, Viehmann \cite{Vi} and Hamacher \cite{Ha}.
+The closure relation gives the partial order on $B(G)$. There is also
+a partial order on $\underline \tW_{str}$ induced from the Bruhat
+order on $\tW$, similar to the definition of the partial order
+$\preceq$ on $\Wec$ we discussed earlier. It is proved in
+\cite[Theorem B]{He-KR} that these two partial orders coincide via the
+bijection $\tilde \Phi: \underline \tW_{str} \to B(G)$.
+
+The proof uses the reduction method of Deligne and Lusztig \cite{DL},
+some remarkable combinatorial properties on the straight conjugacy
+classes \cite{HN2} and a deep result in arithmetic geometry, the
+purity theorem for the Newton stratification associated with
+$F$-crystal obtained by de Jong-Oort \cite{JO}, Hartl-Viehmann
+\cite{HV}, Viehmann \cite{Vi} and Hamacher \cite{Ha}.
 
 \subsection{Difference between finite and affine case}
-Although in both finite and affine cases, we compare the partial orders arising from combinatorics and from geometry, there are some essential differences between the two cases we discussed above.
 
-First, in the affine case, we do not consider the conjugation action on the loop groups, but the Frobenius-twisted conjugacy classes instead. Although the study of the Frobenius-twisted conjugacy classes are quite involved, it is, in some sense, simpler than the unipotent conjugacy classes. Second, the construction of the map from conjugacy classes of Weyl groups to the (twisted) conjugacy classes of reductive groups in the finite and affine case are quite different. In the affine case, the map is induced from any lifting $\tW \to G(\overline{\mathbb F_q}((t)))$, while in the finite case the construction is rather a miracle. Finally, in the affine case, the map preserves the partial orders, while in the finite case, as we show in this paper, the map reverses the partial orders.
+Although in both finite and affine cases, we compare the partial
+orders arising from combinatorics and from geometry, there are some
+essential differences between the two cases we discussed above.
 
-\subsection{The strategy} Now we discuss the strategy towards the proof of Theorem \ref{main}. For exceptional groups, we verify the statement by computer in \S?. For classical groups, the elliptic conjugacy classes are parametrized by certain partitions. We use the explicit description of the Bruhat order for the Weyl groups of classical type to relate the partial order $\preceq$ on $\uW_{el}$ to the natural partial order on the partitions. It is known that the unipotent conjugacy classes for classical groups are parametrized by some partitions. Note that in general, the partitions arising from Weyl group conjugacy classes and the unipotent conjugacy classes are very different. For example, in type $B_n$, the elliptic conjugacy classes correspond to partitions of $n$ while the unipotent conjugacy classes correspond to certain partitions of $2n+1$. Finally, we use geometry to prove that the partial orders on the two sets of partitions are compatible.
+First, in the affine case, we do not consider the conjugation action
+on the loop groups, but the Frobenius-twisted conjugacy classes
+instead. Although the study of the Frobenius-twisted conjugacy classes
+are quite involved, it is, in some sense, simpler than the unipotent
+conjugacy classes. Second, the construction of the map from conjugacy
+classes of Weyl groups to the (twisted) conjugacy classes of reductive
+groups in the finite and affine case are quite different. In the
+affine case, the map is induced from any lifting
+$\tW \to G(\overline{\mathbb F_q}((t)))$, while in the finite case the
+construction is rather a miracle. Finally, in the affine case, the map
+preserves the partial orders, while in the finite case, as we show in
+this paper, the map reverses the partial orders.
+
+\subsection{The strategy}
+
+Now we discuss the strategy towards the proof of Theorem
+\ref{main}. For exceptional groups, we verify the statement by
+computer in \S?. For classical groups, the elliptic conjugacy classes
+are parametrized by certain partitions. We use the explicit
+description of the Bruhat order for the Weyl groups of classical type
+to relate the partial order $\preceq$ on $\Wec$ to the natural partial
+order on the partitions. It is known that the unipotent conjugacy
+classes for classical groups are parametrized by some partitions. Note
+that in general, the partitions arising from Weyl group conjugacy
+classes and the unipotent conjugacy classes are very different. For
+example, in type $B_n$, the elliptic conjugacy classes correspond to
+partitions of $n$ while the unipotent conjugacy classes correspond to
+certain partitions of $2n+1$. Finally, we use geometry to prove that
+the partial orders on the two sets of partitions are compatible.
 
 
-\section{Unipotent conjugacy classes}
+\section{Unipotent conjugacy classes of classical groups}
+\label{s:classical}
 
 In this section, we recollect some facts on the unipotent conjugacy
 classes of classical groups, over an
 algebraically closed field $\F$ of any characteristic. We follow \cite{Spa}*{Section I.2}.
 
-We consider the classical groups $\GL(n), \Sp(2n)$ and $\O(n)$. We
-define a disconnected group containing $\GL(n)$ $(n\ge 3)$ as follows.
-Fix a pinning for $\GL(n)$. Then there is a unique non-trivial
-automorphism $\delta$ of $\GL(n)$, of order $2$ preserving the pinning
-and acting by inverse on the center. Let
-$\GLdagger(n)=\GL(n)\rtimes\Ztwo$, where the non-trivial element of
-$\Ztwo$ acts by $\delta$.
+We consider the groups $\GL(n), \Sp(2n), SO(n)$ and $\O(n)$.
 
-By a {\it classical group} we mean one of the groups $\GL(n), \Sp(2n),\O(n)$ or $\GLdagger(n)$.
+Suppose $V$ is a finite-dimensional vector
+space over $\F$.
+We define a disconnected group containing $\GL(V)$ $(\dim(V)\ge 3)$ as in
+\cite{Spa}*{Section I.2.7}.  
+Define $\GLdagger(V)=G_0\cup G_1$ where $G_0=GL(V)$ and $G_1$ is
+the set of non-singular bilinear forms $\phi:V\times V\rightarrow \F$.
+We define the product structure on $G$ as follows. The product on
+$G_0$ is the usual one. If $g\in G_0,\phi\in G_1$ then $(g\phi)(v,w)=\phi(g\inv v,w)$
+and $(\phi g)(v,w)=\phi(v,gw)$. If $\phi,\psi\in G_1$ then $\phi\psi$ is the unique element of $G_0$ satisfying
+$\phi((\phi\psi)v,w)=\psi(w,v)$.
 
+It is easy to see $\GLdagger(V)$ is a group and
+$\GLdagger(V)/\GL(V)\simeq\Ztwo$.  Also $\phi$ is symmetric if and
+only if $\phi^2=1$, so there is a unique $\GL(V)$-conjugacy class of
+such elements. Choose a basis of $V$ and identify $\GL(V)$ with
+$\GL(n)$, and set $\delta(v,w)=v\cdot w$. Then $\delta^2=1$ and
+$\delta g\delta=\,^tg\inv$ for $g\in \GL(V)$.
+
+By a {\it classical group} we mean one of the groups $\GL(n), \Sp(2n),\SO(n), \O(n)$ or $\GLdagger(n)$.
 The groups $\GL(n)$ and $\Sp(2n)$ are connected.
 The identity component of $\O(n)$ is $\SO(n)$, and $\O(n)/\SO(n)$ is trivial if $p=2$, and has order $2$ otherwise.
 
@@ -647,8 +815,8 @@ $\CC\le \CC'$ if $\CC\subset \overline{\CC'}$.
 \label{s:good}
 
 
-If $G=\GLdagger(n), \Sp(2n)$ or $\O(n)$ then the characteristic $p=2$ is said to be {\it bad} for $G$. 
-Otherwise, including all groups in characteristic $0$, the characteristic is said to be {\it good} for $G$.
+If $G=\GLdagger(n), \Sp(2n)$ or $\O(n)$ then the characteristic $p=2$ is said to be {\it bad} (for $G$). 
+Otherwise, including all groups in characteristic $0$, the characteristic is said to be {\it good}.
 
 Suppose the characteristic of $\F$ is good. Then every unipotent
 element of $G$ is contained in $G^0$, and 
@@ -663,11 +831,12 @@ the unipotent classes are parametrized as follows.
 
 We also consider the unipotent conjugacy classes in $\SO(n)$.  If $n$
 is odd the unipotent conjugacy class of $\SO(n)$ and $O(n)$ are in
-bijection, and the same holds in for $\SO(2n)$ if $n$ is odd.
-If $n$ is even the unipotent conjugacy classes in
-$\SO(2n)$ are parametrized by $\CP_1(2n)$, except that every partition
-with only even parts corresponds to two classess (there are $p(n/2)$ of
-these classes where $p$ is the partition function).
+bijection, and the same holds in for $\SO(2n)$ if $n$ is odd.  If $n$
+is even the unipotent conjugacy classes in $\SO(2n)$ are parametrized
+by $\CP_1(2n)$, except that every partition with only even parts
+corresponds to two classess; there are $p(n/2)$ of these classes where
+$p$ is the partition function. We will not need to distinguish between
+these two conjugacy classes.
 
 We write $\CC_{\alpha}$ for the unipotent class parametrized by a partition $\alpha$.
 Then the partial order on unipotent conjugacy classes is given by the partial order on partitions:
@@ -677,11 +846,12 @@ $\CC_{\a} \subset \overline{\CC_{\b}}$ if and only if $\a \le \b$.
 \label{s:bad}
 
 Suppose $G$ is a classical group and the characteristic $p$ of $\F$ is
-bad, i.e. $p=2$.
-We do not need to consider $\SO(2n+1)$ or $O(2n+1)$ since in this case 
-these groups are both isomorphic to $Sp(2n)$.
+bad, i.e. $p=2$.  There is a bijective algebraic group homomorphism
+from $\Sp(2n)$ to $SO(2n+1)$ (although the inverse is not algebraic),
+which induces a bijection of unipotent classes. Also
+$SO(2n+1)=O(2n+1)$ so we do not need to consider these groups.
 
-We first treat the cases $G=Sp(2n)$ or $O(2n)$.
+We first treat the cases $G=Sp(2n)$  and $O(2n)$.
 
 Consider a set  $\{\omega,0,1\}$ where $\omega$ is a formal element, satisfying $\omega<0<1$.
 For $n\ge 1$ define $\CI(2n)$ to be the set of pairs $(\alpha,\epsilon)$ 
@@ -710,10 +880,13 @@ Note that $\epsilon(i)$ is determined by $\alpha$ except for even rows of even m
   in bijection with $\CI(2n)$.
 \end{proposition}
 
-The map from conjugacy classes to unipotent classes is defined as follows.
-First assume $G=Sp(2n)$, and let $\langle\,,\,\rangle$ be the symplectic form defining $G$.
-If $g\in G$ is unipotent then $g$
-defines a unipotent conjugacy class in $\GL(2n)$, and hence a partition $\alpha$ which satisfies (1).
+The map from conjugacy classes to unipotent classes is defined as
+follows.  First assume $G=Sp(2n)$, and let $\langle\,,\,\rangle$ be
+the symplectic form defining $G$.  We embed
+$\phi:\Sp(2n)\rightarrow G^*=GL(2n)$ as usual.  If $g\in G$ is
+unipotent then $\phi(g)$ is a unipotent class in $G^*$, which
+corresponds to a partition  $\alpha$ of $2n$, and it is easy to see $\alpha\in\CP_{-1}(2n)$.
+
 Suppose $i>0$ is even and $c_\alpha(i)>0$. Set $\epsilon(i)=0$ if
 $\langle (g-1)^{i-1}v,v\rangle=0$ for all $v\in \text{ker}(g-1)^i$, and $\epsilon(i)=1$ otherwise.
 Together with the conditions above this defines $\epsilon$ uniquely.
@@ -728,7 +901,7 @@ the unipotent conjugacy class associated to
 $(\alpha,\epsilon)\in \CI(2n)$.
 
 
-In the case of $G=O(2n)$ we want to distinguish between those
+In the case of $G=O(2n)$ we need to distinguish between those
 $G$-conjugacy classes contained in $\SO(2n)$ and those which are not.
 
 Define $\CI(2n)_0\subset \CI(2n)$ to be the pairs $(\alpha,\epsilon)$ such that $\alpha_1^*$ is even, and
@@ -742,31 +915,19 @@ Then $\CC_{\O(2n)}(\alpha,\epsilon)\subset \SO(2n)$ if and only if $(\alpha,\eps
 Thus $\CI_0(2n)$ (respectively $\CI_1(2n)$) is in bijection with the unipotent  $\O(2n)$ conjugacy classes in $\SO(2n)$ (respectively 
 $\O(2n)\backslash\SO(2n)$).
 
- We will not directly consider unipotent $\SO(2n)$-conjugacy classes, except to note that
- if $(\alpha,\epsilon)\in \CI_0(2n)$ then 
+Finally we consider 
+unipotent $\SO(2n)$-conjugacy classes. 
+If $(\alpha,\epsilon)\in \CI_0(2n)$ then 
  $\CC_{O(2n)}(\alpha,\epsilon)\subset \SO(2n)$ is the union of two $\SO(2n)$-conjugacy classes if 
  for all $i$, $\alpha_i$ and $c_\alpha(i)$ are even and $\epsilon(i)\ne 1$. Otherwise 
  $\CC_{O(2n)}(\alpha,\epsilon)\subset\SO(2n)$ is a single $\SO(2n)$-conjugacy class.
-
-
-\begin{comment}
-\begin{enumerate}
-\item $\epsilon(i)=\omega$ if $i$ is odd or $i\ge 1$ and $c_\alpha(i)=0$.
-\item $\epsilon(i)=1$ if $i$ is even and $c_\alpha(i)$ is odd $(i\ne 0)$
-\item $\epsilon(i)\ne\omega$ if $i$ is even and $c_\alpha(i)\ne 0$ $(i\ne 0)$
-\item $\epsilon(0)=
-  \begin{cases}
-    1&G=Sp(2n)\\
-    0&G=O(2n)
-  \end{cases}
-  $
-\end{enumerate}
-\end{comment}
+ Again we will not need to specify one of these two orbits more precisely.
 
 Recall every characteristic for $\GL(n)$ is good, and the unipotent
 classes for $\GL(n)$ are parametrized by partitions of $n$. Now we
-consider $\GLdagger(n)$ ($n\ge 3$), with identity component $\GL(n)$
-of index $2$.
+consider $\GLdagger(n)$ ($n\ge 3$). Recall we write
+$\GLdagger(n)=G_0\cup G_1$ where $G_0=\GL(n)$ and $G_1$ is the set of
+non-singular bilinear forms.
 
 \begin{lemma}
 The unipotent conjugacy classes of $\GLdagger(n)$ which are contained in
@@ -798,8 +959,13 @@ $$
 \begin{proposition}
 If $p=2$ the unipotent conjugacy classes of $\GLdagger(n)$ in $\GLdagger(n)\backslash \GL(n)$ are parametrized by $\CJ(n)$.
 \end{proposition}
- For the map from unipotent conjugacy classes to $\CJ(n)$ see
-\cite{Spa}*{Section I.2.7}.
+
+The map from unipotent classes in $G_1$ to parameters is defined as
+follows.  Define the map $S:G_1\rightarrow G_0$ to be
+$S(\phi)=\phi^2$. If $\phi$ is unipotent then so is $S(\phi)$, and 
+therefore $S(\phi)$ defines a partition $\alpha$ of $n$, and it is easy to see $\alpha\in\CP_1(n)$.
+Suppose $i$ is odd and $c_\alpha(i)>0$ is even. Then define
+$\epsilon_i=0$ if $f(v,(g-1)^{i-1}v)=0$ for all $v\in \text{ker}(g-1)^i$, and $\epsilon_i=1$ otherwise.
 
 \subsection{Closure Relations}
 \label{s:closure}
@@ -815,11 +981,11 @@ Suppose $(\alpha,\epsilon)$ and $(\beta,\delta)$ are elements of one of these se
 We say $(\alpha,\epsilon)\le (\beta,\delta)$ if
 
 \begin{enumerate}
-\item $\alpha\le \beta$ (standard ordering on partitions)
+\item $\alpha\le \beta$ \quad $(\Leftrightarrow \alpha^*\ge \beta^*)$;
 \end{enumerate}
 and for all $k\ge 1$:
 \begin{enumerate}
-\item[(2)] $\left(\sum_{i=1}^{k}\alpha_i^*\right)-\text{max}(\epsilon_k,0)\ge \left(\sum_{i=1}^k\beta_i^*\right)-\text{max}(\delta_k,0)$
+\item[(2)] $\left(\sum_{i=1}^k\beta_i^*\right)-\text{max}(\delta_k,0)\le\left(\sum_{i=1}^{k}\alpha_i^*\right)-\text{max}(\epsilon_k,0)$
 \item[(3)] If $\sum_{i=1}^k\alpha_i^*=\sum_{i=1}^k\beta_i^*$ and $\alpha^*_{k+1}-\beta^*_{k+1}$ is odd then $\delta_k\ne 0$  
 \end{enumerate}
 
@@ -879,7 +1045,7 @@ For any $\underline \a=(p_1, p_2, \ldots, ,p_\s)$ in $\CP(n)$ we define a functi
 
 Write $\underline \a+\psi_{\underline \a}$ for $(p_1+\psi(1), \ldots, p_\s+\psi(\s))$. By \cite[\S 1.6 (b)]{L1}, this is a partition of $n$ if $\s$ is even and a partition of $n+1$ if $\s$ is odd.
 
-By \cite[\S 4.2]{L1} and \cite[\S 3.7 \& \S 5.5]{L3}, the map $\Phi: \uW_{el} \to \uuG$ for classical groups are described explicitly as follows.
+By \cite[\S 4.2]{L1} and \cite[\S 3.7 \& \S 5.5]{L3}, the map $\Phi: \Wec \to \Gu$ for classical groups are described explicitly as follows.
 
 \begin{itemize}
 \item Type $A_{n-1}$: there is only one elliptic conjugacy class of $W$, which is mapped to the regular unipotent class.
