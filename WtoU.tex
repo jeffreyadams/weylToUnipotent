@@ -7,15 +7,15 @@
 \usepackage{amsthm,amsfonts,amssymb,amsmath,amsxtra,amsrefs}
 \usepackage{xr-hyper}
 \usepackage[matrix,tips,frame,color,line,poly]{xy}
-\usepackage[colorlinks=
-   citecolor=Black,
-   linkcolor=Red,
-   urlcolor=Blue]{hyperref}
+%\usepackage[colorlinks=
+%   citecolor=Black,
+%   linkcolor=Red,
+%   urlcolor=Blue]{hyperref}
 \usepackage{verbatim}
 \usepackage{tikz}
 \usepackage[margin=1.25in]{geometry}
 \usepackage{mathrsfs}
-\usepackage{showkeys}
+%\usepackage{showkeys}
 
 \newcommand{\remind}[1]{{\bf ** #1 **}}
 
@@ -420,8 +420,10 @@
 % Theorem   \theoremname
 
 \def\Gu{[G_u]}  %unipotent classes in G
+\def\G0u{[G_{0,u}]}  %unipotent classes in G
 \def\Wc{[W]}    %conjugacy classes in W
 \def\Wec{[W_e]} %elliptic conjugacy classes in W
+\def\wtcpminus{\wt{\CP_{-1}}}
 % Theorem environments.
 %
 \newtheorem{theorem}{Theorem}
@@ -603,20 +605,30 @@ from $\Wec$ to $\Phi(\Wec) \subset \Gu$.
 
 In \cite[Conjecture 3.7]{DM}, Dudas and Malle conjectured that a similar result holds for twisted type $A$. In \cite[Proposition 3.11 \& 3.14]{DM} they verified the conjecture for some special family of twisted elliptic conjugacy classes of type $A$. It is also verified in \cite{DM} by computer that the conjecture holds for twisted $A_n$ with $n \le 10$. The compatibility of the partial orders is used in \cite[\S 5]{DM} to study the decomposition numbers of the unipotent $l$-blocks of finite unitary groups.
 
-Our first main result is the $\Phi$ respects the partial orders in a strong sense.
+Our first main result is  that $\Phi$ is order reversing in a strong sense.
 
 \begin{theorem}\label{main}
-
 Let $\CC, \CC' \in \Wec$. Then $\CC \preceq\CC'$ if and only if
-$\Phi(\CC') \subset \overline{\Phi(\CC)}$. In particular $\Phi$ gives
-an order-reversing bijection from $\Wec$ to
-its image in $\Gu$.
+$\Phi(\CC') \subset \overline{\Phi(\CC)}$.
 \end{theorem}
 
 This holds also in the twisted setting.
 
-Next we give a conceptual definition of Lusztig's map restricted to
-$\Wec$ for classical groups. For this introduction we consider
+We now consider the question of finding a simpler description of
+Lusztig's map $\Phi$ for classical groups. Note that $\Phi$
+takes $\Wc$ to $\Gu$, and although $\Wc$ is independent of the field
+$\Gu$ is not. For classical groups the interesting case is where $\F$
+has characteristic $2$.
+Let $G$ be a classical group  group over a field of characteristic $2$,
+and let $G_0$ be the group over $\BC$ with the same root datum as $G$.
+There is a natural
+injective map $\pi:[G_{0,u}]\hookrightarrow \Gu$ which is an
+isomorphism of partially ordered sers from $[G_{0,u}]$ to its image.
+Hence the case of charcteristic $2$ has the most information, and it
+turns out to be the simplest case as well.
+So we now restrict to the case $p=2$.
+
+For this introduction we consider
 $\GL(n), \SO(n), \O(n), \Sp(2n)$, see Section ? for the case of
 twisted type $A$.  Each group comes with its tautological embedding
 $\iota:G\rightarrow G^*$ where $G^*=GL(m)$ ($m=n$ or $2n$). 
@@ -628,7 +640,7 @@ Consider the following diagram:
 
 $$
 \xymatrix{
-[W^*]\ar[r]^{\Phi^*}&[G^*]\ar[d]^\Gamma\\
+[W^*]\ar[r]^{\Phi^*}&[G^*_u]\ar[d]^\Gamma\\
 \Wec\ar[r]^{\Phi}\ar[u]^{\iota}&\Gu\\
 }
 $$
@@ -636,55 +648,28 @@ $$
 \medskip
 The left vertical arrow is induced by  the homomorphism $\iota:W\rightarrow W^*$.
 The top row is Lusztig's map for $G^*=GL(m)$, which is elementary:
-both $\Wc$ and $\Gu$ are paraemtrized by partitions of $m$, and $\Phi^*$ corresponds to the identity map on partitions.
+both $\Wc$ and $\Gu$ are parametrized by partitions of $m$, and $\Phi^*$ corresponds to the identity map on partitions.
 The bottom row is Lusztig's map for $G$.
-Suppose $\CC$ is a unipotent class in $G^*$.
-Then $\Gamma(\CC)$ is the unique open orbit in $\overline{\CC}\cap G$;
-according to our next main result $\Gamma$ is well-defined, and makes the diagram commute.
+
+Suppose $\CU\in[G^*_u]$.
+Then (see Section ?)  $\overline{\CU}\cap G$
+is the closure of a single unipotent orbit for $G$. Hence
+there is a well defined map $\Gamma:[G^*_u]\rightarrow\Gu$ satisfying:
+$$
+\overline{\CU}\cap G=\overline{\Gamma(\CU)}\quad (\CU\in[G^*_u]).
+$$
 
 \begin{theorem}
 \label{second}
-Suppose $G=GL(n), SO(n),O(n)$ or $Sp(2n)$.   If  $\CC\in\Wec$ then
-$\overline{\Phi^*(\iota(\CC))}\cap G$ has a  unique maximal orbit for $G_u$, and
+Suppose $G=GL(n), SO(n),O(n)$ or $Sp(2n)$ and $p=2$.
+Then the preceding diagram commutes:
+
 $$
-\Phi(\CC)=\Gamma(\Phi^*(\iota(|CC))).
+\Phi(\CC)=\Gamma(\Phi^*(\iota(\CC))).
 $$
 \end{theorem}
 
-\remind{Of course I'm not sure this is true, it requires careful checking.}
-
 A twisted version of this holds as well.
-
-Write $\CP(n)$ for the partitions of $n$.
-We  identify these with Young diagrams equipped with their natural
-partial order as usual (see Section ?)
-If $\alpha=(\alpha_1,\alpha_2,\dots)$ is a partition of $n$ write
-$2\alpha$ for the partition $(2\alpha_1,2\alpha_2,\dots)$ of $2n$.
-
-\begin{example}
-Let $G=Sp(2n)$ and $p\ne 2$. Then $\Wec$ is parametrized by $\CP(n)$,
-  and $\Gu$ is parametrized by partitions of $2n$ for which
-  each odd row has even multiplicity.
-  Suppose
-  $\CC\in \Wec$ corresponds to a partition $\alpha\in\CP(n)$. Then
-  $\iota(\CC)$ corresponds to $2\alpha\in\CP(2n)$,
-which is the partition for the   corresponding unipotent class $\CO^*$ in $GL(2n)$.
-Then $\CO^*\cap Sp(2n)$ is a single $Sp(2n)$-class, also given by $2\alpha$. This gives the bottom row $\Phi$: restricted
-  to elliptic conjugacy classes  is given on partitions by $\alpha\rightarrow 2\alpha$. 
-
-  Now consider the case $G=O(2n)$, $p\ne 2$. In this case $\Wec$ is of
-  type $C_n$ as before (since we're taking the disconnected orthogonal
-  group), and $\Gu$ is parametrized by partitions of $2n$ in which
-  every {\it even} row has even multiplicity.
-  The maps $\iota$ and
-  $\Phi^*$ are exactly the same as for $Sp(2n)$. However the unipotent
-  class $2\alpha$ does not intersect $O(2n)$, since $2\alpha$ is not a
-  valid partition of a unipotent class in $O(2n)$.
-  According to \cite{L1}  $\Phi(\CC)$ corresponds to a certain partition $\alpha'\le \alpha$. In fact this is the
-  largest such partition which corresponds to a class for $\O(2n)$, and 
-this is the largest orbit in $\overline{\CO^*}\cap O(2n)$.
-  
-\end{example}
 
 \subsection{A similiar phenomenon for affine Weyl groups}
 
@@ -720,7 +705,7 @@ purity theorem for the Newton stratification associated with
 $F$-crystal obtained by de Jong-Oort \cite{JO}, Hartl-Viehmann
 \cite{HV}, Viehmann \cite{Vi} and Hamacher \cite{Ha}.
 
-\subsection{Difference between finite and affine case}
+\subsection{Difference between the  finite and affine cases}
 
 Although in both finite and affine cases, we compare the partial
 orders arising from combinatorics and from geometry, there are some
@@ -790,6 +775,7 @@ The identity component of $\O(n)$ is $\SO(n)$, and $\O(n)/\SO(n)$ is trivial if 
 
 Let $\CP(n)$ be the set of partitions of $n$. We write a partition of $n$ as
 $\alpha=(\alpha_1,\dots, \alpha_\ell)$ with $\alpha_1\ge \dots\ge \alpha_\ell>0$ and $\sum\alpha_i=n$.
+On occasion we will allow $\alpha_{\ell-1}>\alpha_\ell=0$. 
 We define the standard partial order on partitions of the same integer $n$: $\alpha\le\beta$ if for all $k$
 $\sum_{i=1}^k\alpha_i=\sum_{i=1}^k\beta_k$.
 
@@ -838,9 +824,9 @@ corresponds to two classess; there are $p(n/2)$ of these classes where
 $p$ is the partition function. We will not need to distinguish between
 these two conjugacy classes.
 
-We write $\CC_{\alpha}$ for the unipotent class parametrized by a partition $\alpha$.
+We write $\CU_{\alpha}$ for the unipotent class parametrized by a partition $\alpha$.
 Then the partial order on unipotent conjugacy classes is given by the partial order on partitions:
-$\CC_{\a} \subset \overline{\CC_{\b}}$ if and only if $\a \le \b$.
+$\CU_{\a} \subset \overline{\CU_{\b}}$ if and only if $\a \le \b$.
 
 \subsection{Unipotent conjugacy classes in bad characteristic}
 \label{s:bad}
@@ -854,7 +840,7 @@ $SO(2n+1)=O(2n+1)$ so we do not need to consider these groups.
 We first treat the cases $G=Sp(2n)$  and $O(2n)$.
 
 Consider a set  $\{\omega,0,1\}$ where $\omega$ is a formal element, satisfying $\omega<0<1$.
-For $n\ge 1$ define $\CI(2n)$ to be the set of pairs $(\alpha,\epsilon)$ 
+For $n\ge 1$ define $\wtcpminus(2n)$ to be the set of pairs $(\alpha,\epsilon)$ 
 where
 \begin{enumerate}
 \item $\alpha\in \CP_{-1}(2n)$ (i.e. odd rows have even multiplicity)
@@ -877,7 +863,7 @@ Note that $\epsilon(i)$ is determined by $\alpha$ except for even rows of even m
 
 \begin{proposition}
   If $p=2$ the unipotent conjugacy classes in $Sp(2n)$ or $O(2n)$ are
-  in bijection with $\CI(2n)$.
+  in bijection with $\wtcpminus(2n)$.
 \end{proposition}
 
 The map from conjugacy classes to unipotent classes is defined as
@@ -896,31 +882,31 @@ $Sp(2n)$ intersects $O(2n)$ in a unique conjugacy class, and this
 defines a bijection between unipotent conjugacy classes in $Sp(2n)$ and $O(2n)$.
 
 
-Write $\CC_G(\alpha,\epsilon)$ for
+Write $\CU_{\alpha,\epsilon}$ for
 the unipotent conjugacy class associated to
-$(\alpha,\epsilon)\in \CI(2n)$.
+$(\alpha,\epsilon)\in \wtcpminus(2n)$.
 
 
 In the case of $G=O(2n)$ we need to distinguish between those
 $G$-conjugacy classes contained in $\SO(2n)$ and those which are not.
 
-Define $\CI(2n)_0\subset \CI(2n)$ to be the pairs $(\alpha,\epsilon)$ such that $\alpha_1^*$ is even, and
-set $\CI_1(2n)=\CI(2n)\backslash \CI_0(2n)$.
+Define $\wtcpminus(2n)_0\subset \wtcpminus(2n)$ to be the pairs $(\alpha,\epsilon)$ such that $\alpha_1^*$ is even, and
+set $\wtcpminus(2n))1=\wtcpminus(2n)\backslash \wtcpminus(2n)_0$.
 
 \begin{lemma}
-Suppose $(\alpha,\epsilon)\in \CI(2n)$.
-Then $\CC_{\O(2n)}(\alpha,\epsilon)\subset \SO(2n)$ if and only if $(\alpha,\epsilon)\in\CI_0(2n)$.
+Suppose $(\alpha,\epsilon)\in \wtcpminus(2n)$.
+Then $\CU_{\alpha,\epsilon}\subset \SO(2n)$ if and only if $(\alpha,\epsilon)\in\wtcpminus(2n)_0$.
 \end{lemma}
 
-Thus $\CI_0(2n)$ (respectively $\CI_1(2n)$) is in bijection with the unipotent  $\O(2n)$ conjugacy classes in $\SO(2n)$ (respectively 
+Thus $\wtcpminus(2n)_0$ (respectively $\wtcpminus(2n)_1$) is in bijection with the unipotent  $\O(2n)$ conjugacy classes in $\SO(2n)$ (respectively 
 $\O(2n)\backslash\SO(2n)$).
 
 Finally we consider 
 unipotent $\SO(2n)$-conjugacy classes. 
-If $(\alpha,\epsilon)\in \CI_0(2n)$ then 
- $\CC_{O(2n)}(\alpha,\epsilon)\subset \SO(2n)$ is the union of two $\SO(2n)$-conjugacy classes if 
+If $(\alpha,\epsilon)\in \wtcpminus(2n)_0$ then 
+ $\CU_{\alpha,\epsilon}\subset \SO(2n)$ is the union of two $\SO(2n)$-conjugacy classes if 
  for all $i$, $\alpha_i$ and $c_\alpha(i)$ are even and $\epsilon(i)\ne 1$. Otherwise 
- $\CC_{O(2n)}(\alpha,\epsilon)\subset\SO(2n)$ is a single $\SO(2n)$-conjugacy class.
+ $\CU_{\alpha,\epsilon}\subset\SO(2n)$ is a single $\SO(2n)$-conjugacy class.
  Again we will not need to specify one of these two orbits more precisely.
 
 Recall every characteristic for $\GL(n)$ is good, and the unipotent
@@ -934,7 +920,7 @@ The unipotent conjugacy classes of $\GLdagger(n)$ which are contained in
 $\GL(n)$ are in bijection with the unipotent conjugacy classes of $\GL(n)$.
 \end{lemma}
 
-In other words if $\CC\subset \GL(n)$ is a unipotent conjugacy classes for $\GLdagger(n)$ 
+In other words if $\CU\subset \GL(n)$ is a unipotent conjugacy class for $\GLdagger(n)$ 
 then it is a single $\GL(n)$-orbit.
 
 So consider the unipotent conjugacy classes of $\GLdagger(n)$ in $\GLdagger(n)\backslash \GL(n)$.
@@ -976,7 +962,7 @@ relations on classes are given by the order relation on partitions.
 So assume $p=2$ and $G=\GLdagger$, $Sp(2n)$ or $O(2n)$.
 
 We define a partial order on the sets
-$\CI(2n)$ and $\CJ(n)$ defined in the previous section.
+$\wtcpminus(2n)$ and $\CJ(n)$ defined in the previous section.
 Suppose $(\alpha,\epsilon)$ and $(\beta,\delta)$ are elements of one of these sets.
 We say $(\alpha,\epsilon)\le (\beta,\delta)$ if
 
@@ -993,34 +979,19 @@ and for all $k\ge 1$:
 
 \begin{proposition}
 Suppose $p=2$ and $G=\GLdagger(n), Sp(2n)$ or $O(2n)$. 
-Suppose $(\alpha,\epsilon),(\beta,\delta)$ are  both in $\CJ(n)$
-or $\CI(2n)$. In the case of $O(2n)$ assume they are both in $\CI_0(2n)$ or $\CI_1(2n)$. 
+Suppose $(\alpha,\epsilon),(\beta,\delta)$ are  both in $\wtcpminus(n)$
+or $\wtcpminus(2n)$. In the case of $O(2n)$ assume they are both in $\wtcpminus(2n)_0$ or $\wtcpminus(2n)_1$. 
 
 Then
-$\CC_G(\alpha,\epsilon)\le \CC_G(\beta,\delta)$ if and
+$\CU_{\alpha,\epsilon}\le \CU_{\beta,\delta}$ if and
 only if $(\alpha,\epsilon)\le (\beta,\delta)$.
 \end{proposition}
 
 
+  
 
 
-
-\section{Old section on unipotent classes}
-
-Now we discuss the classical groups of type $B_n$, $C_n$ or $D_n$ in characterstic $2$. The unipotent classes in these groups were determined by G. E. Wall \cite{Wall}.
-
-In all these cases, the unipotent conjugacy classes have the following two invariants: $p$ and $\chi$. Here $p(g)$ is the partition corresponds to the Jordan canonical form of the unipotent element $g$ and $\chi$ is a function from the parts of this partition into the non-negative integers defined as follows: $$\chi(g)(m)=\begin{cases} \min\{k \ge 0; (g-1)^m v=0 \Rightarrow \<(g-1)^{k+1} v, (g-1)^k v\>=0\}, & \text{ if $G$ is of type $C$ }; \\ \min\{k \ge 0; (g-1)^m v=0 \Rightarrow Q(T^k v)=0\}, & \text{ if $G$ is of type $B$ or $D$ }. \end{cases}$$
-
-The possible partitions in each case are the same as in good characteristic. The possible values of $\chi(g)(m)$ are as follows.
-
-If $G$ is of type $C$, then $$\chi(m)=\begin{cases} \frac{m-1}{2}, & \text{ if $m$ is odd }; \\ \frac{m}{2}, & \text{ if $m$ is even and the multiplicity of $m$ is odd }; \\ \frac{m}{2}-1 \text{ or } \frac{m}{2}, & \text{ if $m$ is even and the multiplicity of $m$ is even}. \end{cases}$$
-
-If $G$ is of type $B$ or type $D$, then $$\chi(m)=\begin{cases} \frac{m+1}{2}, & \text{ if $m$ is odd }; \\ \frac{m}{2}+1, & \text{ if $m$ is even and the multiplicity of $m$ is odd }; \\ \frac{m}{2} \text{ or } \frac{m}{2}+1, & \text{ if $m$ is even and the multiplicity of $m$ is even}. \end{cases}$$
-
-In almost all the cases, the unipotent conjugacy classes are determined by the two invariants $p(g)$ and $\chi(g)$, except for the type $D$ case, $p$ is a very even partition and $\chi(m)=\frac{m}{2}$ for all parts of $p$. In the latter case, there are two unipotent conjugacy classes corresponds to the two invariants $p$ and $\chi$.
-
-\remind{Closure relation: \cite[p. 133]{Spa}. Jeff: would you please add the details here? It is in French and I am afraid to introduce mistakes if I do it myself}
-
+\begin{comment}
 \subsection{Disconnected groups} Now we discuss the unipotent conjugacy classes of disconnected groups. Let $G$ be a classical group in characteristic $p$ and $\t$ is a diagram automorphism of order $p$. Set $\tilde G=G \rtimes \<\t\>$. Following Spaltenstein \cite{Spa}, we describe the unipotent conjugacy classes of $\tilde G$ that are contained in $G \t$.
 
 \begin{itemize}
@@ -1029,61 +1000,58 @@ In almost all the cases, the unipotent conjugacy classes are determined by the t
 	\item Type ${}^2 D_n$ with $p=2$: unipotent conjugacy classes are determined by the two invariants: a partition in $\CP_1(2n)$ with odd number of parts and a function $\chi$ as in the Type $B/D$ case above.
 \end{itemize}
 
-\remind{Closure relation: In \cite{Spa} or not?}
+\end{comment}
 
-\section{Lusztig's map} We recall the function $\psi$ in \cite[\S 1.6]{L1}
 
-For any $\underline \a=(p_1, p_2, \ldots, ,p_\s)$ in $\CP(n)$ we define a function $\psi_{\underline \a}:[1,\s] \to \{-1,0,1\}$ as follows.
+\section{Some combinatorics}
+
+We recall a function defined in  \cite[\S 1.6]{L1}.
+
+Suppose $\alpha=(\alpha_1,\dots,\alpha_\ell)$ is a partition. Define a function
+$\psi_\alpha:\{i\mid 1\le i\le \ell\}\rightarrow\{-1,0,1\}$  as follows.
+Set $\alpha_0=\alpha_{\ell+1}=0$.
 
 \begin{enumerate}
-\item If $t\in[1,\s]$ is odd and $p_t<p_x$ for any $x\in[1,t-1]$ then $\psi_{\underline \a}(t)=1$;
 
-\item if $t\in[1,\s]$ is even and $p_x<p_t$ for any $x\in[t+1,\s]$, then $\psi_{\underline \a}(t)=-1$;
-
-\item for all other $t\in[1,\s]$ we have $\psi_{\underline \a}(t)=0$.
+\item If $i$ is  odd and $\alpha_{i-1}<\alpha_{i}$ then $\psi(i)=1$;
+\item If $i$ is even and $\alpha_i>\alpha_{i+1}$ then $\psi(i)=-1$;
+\item In all other cases $\psi(i)=0$.
 \end{enumerate}
 
-Write $\underline \a+\psi_{\underline \a}$ for $(p_1+\psi(1), \ldots, p_\s+\psi(\s))$. By \cite[\S 1.6 (b)]{L1}, this is a partition of $n$ if $\s$ is even and a partition of $n+1$ if $\s$ is odd.
+This satisfies some obvious properties. For $\ell\in\BZ$ define $\kappa_\ell\in\{0,1\}$ by: $(-1)^\ell=(-1)^{\kappa_\ell}$.
 
-By \cite[\S 4.2]{L1} and \cite[\S 3.7 \& \S 5.5]{L3}, the map $\Phi: \Wec \to \Gu$ for classical groups are described explicitly as follows.
+\begin{enumerate}
+\item $\psi_\alpha(1)=1$; $\psi_\alpha(\ell)=-1$ if $\ell$ is even
+\item If $k\le\ell$ is odd then $\sum_{i=1}^k\psi_\alpha(i)=1$
+\item If $k\le\ell$ is even then $\sum_{i=1}^k\psi_\alpha(i)=1+\psi_\alpha(k)$.
+\item $\sum_{i=1}^\ell\psi_\alpha(i)=\kappa_\ell$.
+\end{enumerate}
 
-\begin{itemize}
-\item Type $A_{n-1}$: there is only one elliptic conjugacy class of $W$, which is mapped to the regular unipotent class.
 
-\item Type ${}^2 A_{n-1}$ with $p=2$: the elliptic $\t$-twisted conjugacy classes of $W$ are parametrized by the set of partitions consisting of only odd parts. The unipotent class corresponds to $\CO_{\underline \a}$ has partition exactly $\underline \a$ for any $\underline \a$ consisting of odd parts.
+Suppose $\alpha$ is a partition of $n$, and all entries $\alpha_i$ of  $\alpha$ are even. Then let
+$$
+\alpha+\psi_\alpha=(\alpha_1+\psi_\alpha(1),\dots, \alpha_\ell+\psi_\alpha(\ell))
+$$
+This is a partition of of $n+\kappa_\ell$. Note that if we write $\alpha+\psi_\alpha=(\alpha_1',\dots,\alpha_\ell')$, and 
+if $2i+1\le\ell$ then
+$$
+(\alpha'_{2i},\alpha'_{2i+1})=
+\begin{cases}
+(\alpha_{2i},\alpha_{2i+1})& \alpha_{2i}=\alpha_{2i+1}\\
+(\alpha_{2i}-1,\alpha_{2i+1}+1)&\alpha_{2i}>\alpha_{2i+1}
+\end{cases}
+$$
+Also $\alpha'_1=\alpha_1+1$ and, if $\ell$ is even, $\alpha'_\ell=\alpha_\ell-1$.
 
-\item Type $B_n$: the elliptic conjugacy classes of $W$ are parametrized by $\CP(n)$.
+\begin{comment}
+  
+We will apply $\Psi$ in the following setting. Consider the sequence of maps
+$$
+\CP(n)\overset{2\times}\rightarrow\CP_-(2n)\overset{\Gamma}\rightarrow \CP_+(2n+1)
+$$
+The first map takes $(\alpha_1,\dots,\alpha_\ell)$ to $(2\alpha_1,\dots,2\alpha_\ell)$.
+The composition of maps is injective, and an isomorphism of ordered sets from $\CP(n)$ to its image.
 
-\begin{itemize}
-\item For $p \neq 2$, the map is given by $\CO_{\underline \a} \mapsto \CU_{\underline \a'}$, where $$\underline \a'=\begin{cases} 2\underline \a+\psi_{2 \underline \a}, & \text{ if $\underline \a$ has odd number of parts }; \\ (2\underline \a+\psi_{2 \underline \a}, 1), & \text{ if $\underline \a$ has even number of parts}. \end{cases}$$
-
-\item For $p=2$, the unipotent class corresponds to $\CO_{\underline \a}$ has partition $p=(2 \underline \a, 1)$ and $\chi(m) \ge \frac{m+1}{2}$ for all $m$.
-\end{itemize}
-
-\item Type $C_n$: the elliptic conjugacy classes of $W$ are parametrized by $\CP(n)$.
-\begin{itemize}
-\item For $p \neq 2$, the map is given by $\CO_{\underline \a} \mapsto \CU_{2 \underline \a}$.
-
-\item For $p=2$, the unipotent class corresponds to $\CO_{\underline \a}$ has partition $2 \underline \a$ and $\chi(m) \ge \frac{m-1}{2}$ for all $m$.
-\end{itemize}
-
-\item Type $D_n$: the elliptic conjugacy classes of $W$ are parametrized by partitions of $2n$ with even number of parts.
-\begin{itemize}
-\item For $p \neq 2$, the map is given by $\CO_{\underline \a} \mapsto \CU_{2 \underline \a+\psi_{2 \underline \a}}$.
-
-\item For $p=2$, the unipotent class corresponds to $\CO_{\underline \a}$ has partition $2 \underline \a$ and $\chi(m) \ge \frac{m+1}{2}$ for all $m$.
-\end{itemize}
-
-\item Type ${}^2 D_n$ with $p=2$: the elliptic $\t$-twisted conjugacy classes of $W$ are parametrized by partitions of $2n$ with odd number of parts. The unipotent class corresponds to $\CO_{\underline \a}$ has partition $2 \underline \a$ and $\chi(m) \ge \frac{m+1}{2}$ for all $m$.
-\end{itemize}
-
-\section{Comparision of two partitions}
-
-The main purpose of this section is to prove the following result.
-
-\begin{proposition} \label{compar}
-	Let $\underline \a, \underline \b \in \CP(n)$. Then $\underline \a \le \underline \b$ if and only if $2 \underline \a+\psi_{2 \underline \a} \le 2 \underline \b+\psi_{2 \underline \b}$.
-\end{proposition}
 
 \begin{proof}
 ($\Rightarrow$). Assume otherwise. Then there exists $t$ such that $$2\underline \a(1) + \cdots + 2\underline \a(t) + \psi_{\underline \a} (1) + \cdots + \psi_{\underline \a} (t) > 2\underline \b(1) + \cdots + 2\underline \b(t) + \psi_{\underline \b} (1) + \cdots + \psi_{\underline \b}(t).$$ By \cite[\S 1.6]{L1},  $0 \le \psi_{\underline \a} (1) + \cdots + \psi_{\underline \a} (t), \psi_{\underline \b} (1) + \cdots + \psi_{\underline \b} (t) \le 1$ for all $t$. Since $\underline \a \le \underline \b$, we deduce that 
@@ -1093,6 +1061,122 @@ The main purpose of this section is to prove the following result.
 ($\Leftarrow$). Assume otherwise. Then there exists $t$ such that $\underline \a(1) + \cdots + \underline \a(t) > \underline \b(1) + \cdots + \underline \b(t)$. Hence $2 \underline \a(1) + \cdots +2 \underline \a(t) \ge  2 \underline \b(1) + \cdots + 2 \underline \b(t)+2$. By \cite[\S 1.6]{L1}, we have $|\psi_{\underline \a} (1) + \cdots + \psi_{\underline \a} (t)-\psi_{\underline \b} (1) - \cdots - \psi_{\underline \b} (t)| \le 1.$ Hence $$2\underline \a(1) + \cdots + 2\underline \a(t) + \psi_{\underline \a} (1) + \cdots + \psi_{\underline \a} (t) > 2\underline \b(1) + \cdots + 2\underline \b(t) + \psi_{\underline \b} (1) + \cdots + \psi_{\underline \b}(t),$$ which is a contradiction.
 \end{proof}
 
+
+\end{comment}
+
+
+
+\section{Lusztig's map for classical groups}
+
+Suppose $G$ is a classical group. Lusztig's map is described explicitly in 
+\cite[\S 4.2]{L1} and \cite[\S 3.7 \& \S 5.5]{L3}.
+
+
+
+\begin{itemize}
+\item Type $A_{n-1}$.
+The only elliptic conjugacy class in $W$ is that of the Coxeter element.
+If $G=GL(n)$ this  maps to the principal unipotent class.
+The same holds for $G=\GLdagger(n)$ if $p\ne 2$.
+
+The twisted conjugacy classes in $W$ are parametrized by partitions of $n$ with only odd parts,
+and $\Phi:\CC_\alpha\mapsto \CU_\alpha$.
+
+\item Type $B_n$. The elliptic conjugacy classes of $W$ are parametrized by $\CP(n)$.
+
+\begin{itemize}
+\item[(i)] $p \neq 2$: $\Phi:\CO_{\alpha} \mapsto \CU_{\alpha'}$, where
+  $$
+  \alpha'=\begin{cases}
+2\alpha+\psi_{2\alpha},    & \text{ if $\alpha$ has an odd number of parts };
+\\ (2\alpha+\psi_{2 \alpha}, 1), & \text{ if $\alpha$ has an even number of parts}.
+\end{cases}
+$$
+\item[(ii)] $p=2$: $\Phi:\CO_{\alpha}=\CU_{\alpha',\epsilon}$
+  where $\alpha'=(2\alpha,1)$ and $\epsilon(i)=1$ for all $i$ with $c_\alpha(i)\ne 0$.
+\end{itemize}
+
+\item Type $C_n$. The elliptic conjugacy classes of $W$ are parametrized by $\CP(n)$.
+\begin{itemize}
+\item[(i)]  $p \neq 2$: $\Phi:\CO_{\alpha} \mapsto \CU_{2 \alpha}$.
+\item[(ii)]  $p=2$: $\Phi:\CO_{\alpha} \mapsto \CU_{(2 \alpha,\epsilon)}$ where $\epsilon(i)=1$ for all $i$ with $c_\alpha(i)\ne 0$.
+\end{itemize}
+
+\item Type $D_n$: the elliptic conjugacy classes of $W$ are parametrized by partitions of $2n$ with even number of parts.
+The map from $\Wec$ to   unipotent $O(2n)$ conjugacy classes in $SO(2n)$ is given by:
+\begin{itemize}
+\item[(i)]$p \neq 2$: $\Phi:\CO_{\alpha} \mapsto \CU_{2 \alpha+\psi_{2 \alpha}}$.
+\item[(ii)]  $p=2$: $\Phi:\CO_{\alpha}\mapsto\CU_{(2\alpha,\epsilon)}$ where $\epsilon(i)=1$ for all $i$ with $c_\alpha(i)\ne 0$.
+\end{itemize}
+
+Consider the case $p=2$, and the unipotent $\O(2n)$ conjugacy classes in $\O(2n)\backslash \SO(2n)$.
+This is the twisted case with an outer automorphism of order $2$. The twisted conjugacy classes of $W$ are parametrized
+by partitions of $2n$ with an odd number of parts.
+Then $\Phi:\CO_{\alpha}\mapsto \CU_{2\alpha,\epsilon}$ where $\epsilon(i)=1$ for all $i$ with $c_\alpha(i)\ne 0$.
+\end{itemize}
+
+\subsection{Reduction to characteristic 2}
+\label{s:p=2}
+
+In this section $G$ is a connected reductive group, defined over $\F$ of characteristic $p>0$.
+Let $G_0$ be the complex  group with the same root datum as $G$.
+Consider the sets $\Gu$ (respectively $\G0u$) of unipotent conjugacy classes of $G$ and $G_0$, respectively.
+
+\begin{proposition}{\cite{Spa}*{Theorem III.5.2}}
+\label{p:p=2}
+  There is an injective map $\pi:\G0u\rightarrow \Gu$, such that $\pi$ is a isomorphism of partially ordered
+  sets from $\G0u$ to its image.
+\end{proposition}
+
+$$
+\xymatrix{
+[W_e]\ar@{=}[d]\ar@{->}[r]_\Phi&[G_u]\ar@/_/[l]_\Psi\ar@{->>}[d]_\rho\\
+[W_e]\ar@{->}[r]_{\Phi_0}&[G_{0,u}]\ar@/_/[l]_{\Psi_0}\ar@{^{(}->}@/_/[u]_\pi
+}
+$$
+
+
+Some properties are:
+
+\begin{itemize}
+\item $\rho$ is surjective and $\pi$ is injective
+\item $\Phi_0=\rho\Phi$
+\item $\Psi_0=\Psi\pi$
+\item $\Phi\Psi=\text{id}$
+\item $\Phi_0\Psi_0=\text{id}$
+\item $\Phi_0=\Phi_0\Psi\Phi$
+  \item $\Psi_0=\Psi\Phi\Psi_0$
+\item $\CC\le\CC'\Rightarrow \pi(\CC)\le\pi(\CC')$
+  \item $\text{codim}(\pi({\CC)})=\text{codim}(\CC)$
+\end{itemize}
+
+We want to know, for all $\CC,\CC'\in[W_e]$:
+
+$$
+\CC\le\CC'\Leftrightarrow\Phi_0(\CC)\le \Phi_0(\CC')\text{ implies }
+\CC\le\CC'\Leftrightarrow\Phi(\CC)\le \Phi_0(\CC')
+$$
+
+\begin{comment}
+
+  
+% \section{Old section on unipotent classes}
+
+% Now we discuss the classical groups of type $B_n$, $C_n$ or $D_n$ in characterstic $2$. The unipotent classes in these groups were determined by G. E. Wall \cite{Wall}.
+
+% In all these cases, the unipotent conjugacy classes have the following two invariants: $p$ and $\chi$. Here $p(g)$ is the partition corresponds to the Jordan canonical form of the unipotent element $g$ and $\chi$ is a function from the parts of this partition into the non-negative integers defined as follows: $$\chi(g)(m)=\begin{cases} \min\{k \ge 0; (g-1)^m v=0 \Rightarrow \<(g-1)^{k+1} v, (g-1)^k v\>=0\}, & \text{ if $G$ is of type $C$ }; \\ \min\{k \ge 0; (g-1)^m v=0 \Rightarrow Q(T^k v)=0\}, & \text{ if $G$ is of type $B$ or $D$ }. \end{cases}$$
+
+% The possible partitions in each case are the same as in good characteristic. The possible values of $\chi(g)(m)$ are as follows.
+
+% If $G$ is of type $C$, then $$\chi(m)=\begin{cases} \frac{m-1}{2}, & \text{ if $m$ is odd }; \\ \frac{m}{2}, & \text{ if $m$ is even and the multiplicity of $m$ is odd }; \\ \frac{m}{2}-1 \text{ or } \frac{m}{2}, & \text{ if $m$ is even and the multiplicity of $m$ is even}. \end{cases}$$
+
+% If $G$ is of type $B$ or type $D$, then $$\chi(m)=\begin{cases} \frac{m+1}{2}, & \text{ if $m$ is odd }; \\ \frac{m}{2}+1, & \text{ if $m$ is even and the multiplicity of $m$ is odd }; \\ \frac{m}{2} \text{ or } \frac{m}{2}+1, & \text{ if $m$ is even and the multiplicity of $m$ is even}. \end{cases}$$
+
+% In almost all the cases, the unipotent conjugacy classes are determined by the two invariants $p(g)$ and $\chi(g)$, except for the type $D$ case, $p$ is a very even partition and $\chi(m)=\frac{m}{2}$ for all parts of $p$. In the latter case, there are two unipotent conjugacy classes corresponds to the two invariants $p$ and $\chi$.
+
+  \remind{Closure relation: \cite[p. 133]{Spa}. Jeff: would you please add the details here? It is in French and I am afraid to introduce mistakes if I do it myself}
+
+  \end{comment}
 
 
 
