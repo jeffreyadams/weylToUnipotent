@@ -4,7 +4,7 @@
 %\usepackage{authblk}    %comment this out when using amsart
 
 
-\usepackage{amsthm,amsfonts,amssymb,amsmath,amsxtra,amsrefs}
+\usepackage{amsthm,amsfonts,amssymb,amsmath,amsxtra,amsrefs,array}
 \usepackage{xr-hyper}
 \usepackage[matrix,tips,frame,color,line,poly]{xy}
 %\usepackage[colorlinks=
@@ -16,7 +16,7 @@
 \usepackage[margin=1.25in]{geometry}
 \usepackage{mathrsfs}
 %\usepackage{showkeys}
-
+\setlength\extrarowheight{6pt}  %extra height in tables, using array package
 \newcommand{\remind}[1]{{\bf ** #1 **}}
 
 \RequirePackage{xspace}
@@ -420,7 +420,9 @@
 % Theorem   \theoremname
 
 \def\Gu{[G_u]}  %unipotent classes in G
-\def\G0u{[G_{0,u}]}  %unipotent classes in G
+\def\Gue{[G_u]_e}  %unipotent classes in G, in the image W_e
+\def\Gou{[G_{0,u}]}  %unipotent classes in G_0  (can't use 0 nicely in command name, use o instead)
+\def\Goue{[G_{0,u}]_e}  %unipotent classes in G_0, in the image of W_e
 \def\Wc{[W]}    %conjugacy classes in W
 \def\Wec{[W_e]} %elliptic conjugacy classes in W
 \def\wtcpminus{\wt{\CP_{-1}}}
@@ -607,7 +609,8 @@ In \cite[Conjecture 3.7]{DM}, Dudas and Malle conjectured that a similar result 
 
 Our first main result is  that $\Phi$ is order reversing in a strong sense.
 
-\begin{theorem}\label{main}
+\begin{theorem}
+\label{t:main}
 Let $\CC, \CC' \in \Wec$. Then $\CC \preceq\CC'$ if and only if
 $\Phi(\CC') \subset \overline{\Phi(\CC)}$.
 \end{theorem}
@@ -660,7 +663,7 @@ $$
 $$
 
 \begin{theorem}
-\label{second}
+\label{t:second}
 Suppose $G=GL(n), SO(n),O(n)$ or $Sp(2n)$ and $p=2$.
 Then the preceding diagram commutes:
 
@@ -673,7 +676,7 @@ A twisted version of this holds as well.
 
 \subsection{A similiar phenomenon for affine Weyl groups}
 
-Before we discuss the strategy towards Theorem \ref{main}, we make a
+Before we discuss the strategy towards Theorem \ref{t:main}, we make a
 short digression and discuss a similar phenomenon.
 
 For simplicity, we only discuss the split groups here but the result
@@ -727,7 +730,7 @@ this paper, the map reverses the partial orders.
 \subsection{The strategy}
 
 Now we discuss the strategy towards the proof of Theorem
-\ref{main}. For exceptional groups, we verify the statement by
+\ref{t:main}. For exceptional groups, we verify the statement by
 computer in \S?. For classical groups, the elliptic conjugacy classes
 are parametrized by certain partitions. We use the explicit
 description of the Bruhat order for the Weyl groups of classical type
@@ -855,7 +858,7 @@ $$
 \omega&i\text{ odd}\\
 \omega&i>0,\,c_\alpha(i)=0\\
 1&i>0\text{ even},\, c_\alpha(i)\text{ odd}\\
-0\text{ or }1&i>0\text{ even},\, c_\alpha(i)>0,\text{ even}
+0\text{ or }1&i>0\text{ even},\, c_\alpha(i)>0 \text{ even}
 \end{cases}
 $$
 
@@ -1002,6 +1005,62 @@ only if $(\alpha,\epsilon)\le (\beta,\delta)$.
 
 \end{comment}
 
+\section{Reduction to characteristic 2}
+\label{s:p=2}
+
+In this section $G$ is a connected reductive group, defined over $\F$ of characteristic $p>0$.
+Let $G_0$ be the complex  group with the same root datum as $G$.
+Consider the sets $\Gu$ (respectively $\Gou$) of unipotent conjugacy classes of $G$ and $G_0$, respectively.
+
+\begin{proposition}{\cite{Spa}*{Theorem III.5.2}}
+\label{p:p=2}
+  There is an injective map $\pi:\Gou\rightarrow \Gu$, such that $\pi$ is a isomorphism of partially ordered
+  sets from $\Gou$ to its image.
+\end{proposition}
+
+\begin{corollary}
+  \label{c:reductionmain}
+  It is enough to prove Theorem \ref{t:main} in characteristic $0$.
+\end{corollary}
+
+We now suppose $G$ is a classical group and address the question of
+reducing Theorem \ref{t:second} to characteristic $0$.  The sets $\Gu$
+and $\Gou$ were described explicitly in Section \ref{s:classical}. The
+map $\pi$ is given explicitly in these terms in \cite{Spa}*{Section
+  III.6--8}. In each case there is a description of the image of
+$\pi$, and an explicit inverse $\rho$ defined on this image.
+
+\begin{equation}
+\label{e:bijection}
+\xymatrix{
+\Gou \ar@/^/[rr]|\pi&&\text{Im}(\pi)\ar@/^/[ll]|\rho\ar@{^{(}->}[r]&\Gu
+}
+\end{equation}
+
+
+
+Here are the sets parametrizing the objects in types $B,C,D$.
+
+\bigskip
+
+\begin{tabular}{lll}
+  $G$ & $\BC$ & $\F_2$\\\hline
+  $Sp(2n)$ & $\CP_{-1}(2n)$ & $\wtcpminus(2n)$ \\
+  $O(2n+1)$ & $\CP_{1}(2n+1)$ & $\wtcpminus(2n)$\\
+  $O(2n)$ & $\CP_{1}(2n)$ & $\wtcpminus(2n)$\\
+\end{tabular}
+
+\bigskip
+
+In the case $G=Sp(2n)$ the map $\pi$ is: $\pi(\alpha)=(\alpha,\epsilon)$ where $\epsilon(i)=1$;
+here and elsewhere $\epsilon(i)=1$ is shorthand for: $\epsilon(i)=1$ for all $i$ with $c_\alpha(i)>0$.
+
+When $G=O(2n)$ we have $\pi(\alpha)=(\alpha',\epsilon)$ where $\alpha'=\inf_{\CP_{-1}(2n)}(\alpha)$
+as in \cite{Spa}*{Lemma III.3.6}, or the ``C-collapse'' of $\alpha$
+in the terminology of [Collingwood McGovern].
+For a description of $\epsilon$, and the case of $O(2n+1)$ see \cite{Spa}*{III.7-8}.
+
+We will apply this in Section \ref{s:Lclassical}.
 
 \section{Some combinatorics}
 
@@ -1043,30 +1102,10 @@ $$
 $$
 Also $\alpha'_1=\alpha_1+1$ and, if $\ell$ is even, $\alpha'_\ell=\alpha_\ell-1$.
 
-\begin{comment}
-  
-We will apply $\Psi$ in the following setting. Consider the sequence of maps
-$$
-\CP(n)\overset{2\times}\rightarrow\CP_-(2n)\overset{\Gamma}\rightarrow \CP_+(2n+1)
-$$
-The first map takes $(\alpha_1,\dots,\alpha_\ell)$ to $(2\alpha_1,\dots,2\alpha_\ell)$.
-The composition of maps is injective, and an isomorphism of ordered sets from $\CP(n)$ to its image.
-
-
-\begin{proof}
-($\Rightarrow$). Assume otherwise. Then there exists $t$ such that $$2\underline \a(1) + \cdots + 2\underline \a(t) + \psi_{\underline \a} (1) + \cdots + \psi_{\underline \a} (t) > 2\underline \b(1) + \cdots + 2\underline \b(t) + \psi_{\underline \b} (1) + \cdots + \psi_{\underline \b}(t).$$ By \cite[\S 1.6]{L1},  $0 \le \psi_{\underline \a} (1) + \cdots + \psi_{\underline \a} (t), \psi_{\underline \b} (1) + \cdots + \psi_{\underline \b} (t) \le 1$ for all $t$. Since $\underline \a \le \underline \b$, we deduce that 
-\begin{gather*} \psi_{\underline \b} (1) + \cdots + \psi_{\underline \b} (t) = 0, \\ \psi_{\underline \a} (1) + \cdots + \psi_{\underline \a} (t) = 1, \\ \underline \a(1) + \cdots + \underline \a(t) = \underline \b(1) + \cdots + \underline \b(t).
-\end{gather*} In particular, $\underline \b(t) \le \underline \a(t)$. Moreover, by \cite[\S 1.6]{L1}, we have that $t$ is even, $\psi_{\underline \b} (t) = -1$ and $\psi_{\underline \a} (t) \neq -1$. This means that $\underline \b(t) > \underline \b(t+1)$ and $\underline \a(t) = \underline \a(t+1)$ by definition. Noticing that $\underline \b(t) \le \underline \a(t)$, we have $$\underline \a(1) + \cdots + \underline \a(t) + \underline \a(t+1) > \underline \b(1) + \cdots + \underline \b(t) + \underline \b(t+1).$$ This contradicts that $\underline \a \le \underline \b$.
-
-($\Leftarrow$). Assume otherwise. Then there exists $t$ such that $\underline \a(1) + \cdots + \underline \a(t) > \underline \b(1) + \cdots + \underline \b(t)$. Hence $2 \underline \a(1) + \cdots +2 \underline \a(t) \ge  2 \underline \b(1) + \cdots + 2 \underline \b(t)+2$. By \cite[\S 1.6]{L1}, we have $|\psi_{\underline \a} (1) + \cdots + \psi_{\underline \a} (t)-\psi_{\underline \b} (1) - \cdots - \psi_{\underline \b} (t)| \le 1.$ Hence $$2\underline \a(1) + \cdots + 2\underline \a(t) + \psi_{\underline \a} (1) + \cdots + \psi_{\underline \a} (t) > 2\underline \b(1) + \cdots + 2\underline \b(t) + \psi_{\underline \b} (1) + \cdots + \psi_{\underline \b}(t),$$ which is a contradiction.
-\end{proof}
-
-
-\end{comment}
-
-
+We give an interpretation of the map $\psi_\alpha$ in Proposition \ref{p:psi}.
 
 \section{Lusztig's map for classical groups}
+\label{s:Lclassical}
 
 Suppose $G$ is a classical group. Lusztig's map is described explicitly in 
 \cite[\S 4.2]{L1} and \cite[\S 3.7 \& \S 5.5]{L3}.
@@ -1115,69 +1154,50 @@ by partitions of $2n$ with an odd number of parts.
 Then $\Phi:\CO_{\alpha}\mapsto \CU_{2\alpha,\epsilon}$ where $\epsilon(i)=1$ for all $i$ with $c_\alpha(i)\ne 0$.
 \end{itemize}
 
-\subsection{Reduction to characteristic 2}
-\label{s:p=2}
 
-In this section $G$ is a connected reductive group, defined over $\F$ of characteristic $p>0$.
-Let $G_0$ be the complex  group with the same root datum as $G$.
-Consider the sets $\Gu$ (respectively $\G0u$) of unipotent conjugacy classes of $G$ and $G_0$, respectively.
+The function $\psi$ has an interpretation in terms of the map $\rho$ of the previous section.
 
-\begin{proposition}{\cite{Spa}*{Theorem III.5.2}}
-\label{p:p=2}
-  There is an injective map $\pi:\G0u\rightarrow \Gu$, such that $\pi$ is a isomorphism of partially ordered
-  sets from $\G0u$ to its image.
+\begin{proposition}
+\label{p:psi}
+Let $G=Sp(2n),O(2n+1)$ or $O(2n)$ over a field of characteristic $2$.
+Suppose $\CC\in\Wec$ and $\CU=\Phi(\CC)\in \Gu$.
+
+Write $\CU=\CU_{\alpha,\epsilon}$ for $(\alpha,\epsilon)\in\wtcpminus(2n)$.
+Let $\gamma:\Gu\rightarrow \Gou$ be the map of \eqref{e:bijection}.
+Then
+  $$
+  \gamma(\CU_{\alpha,\epsilon})=\CU_{\alpha+\psi_\alpha}\in \Gou
+  $$
 \end{proposition}
+
+\begin{proof}[Sketch of proof]
+  This amounts to the following. A key point is that $\CU=\Phi(\CC)$ is a strong condition
+  on $\CU$. In particular, writing $\CU=\CU_{\alpha,\epsilon}$, all parts of $\alpha$ are even
+  and $\epsilon(i)=1$ for all $i$ with $c_\alpha(i)\ne 0$.
+
+  Then this requires comparing the map $\theta$ of \cite{Spa}*{III.6-8} with $\psi$.
+\end{proof}
+
+Let $\Gue\subset \Gu$ be the image of $\Phi:\Wec\rightarrow\Gu$,
+and $\Goue$ similarly.  The preceding discussion can be summarized by the existence
+of the commutative diagram:
 
 $$
 \xymatrix{
-[W_e]\ar@{=}[d]\ar@{->}[r]_\Phi&[G_u]\ar@/_/[l]_\Psi\ar@{->>}[d]_\rho\\
-[W_e]\ar@{->}[r]_{\Phi_0}&[G_{0,u}]\ar@/_/[l]_{\Psi_0}\ar@{^{(}->}@/_/[u]_\pi
+[W_e]\ar@{=}[d]\ar@{->}@/_/[r]_\Phi&\Gue\ar@/_/[l]_\Psi\ar@{->}@/_/[d]_\rho\\
+[W_e]\ar@{->}@/_/[r]_{\Phi_0}&\Goue\ar@/_/[l]_{\Psi_0}\ar@{->}@/_/[u]_\pi
 }
 $$
+All of the arrows in the diagram are bijections.  The top row is
+Lusztig's map $\Phi$ for $\Gu$, restricted to the elliptic elements,
+on which it has an inverse $\Psi$. The bottom row is the same construction
+for $G_0$.  The maps $\pi,\rho$ are those of Section \ref{s:p=2},
+and these are isomorphisms of partially ordered sets.
 
 
-Some properties are:
-
-\begin{itemize}
-\item $\rho$ is surjective and $\pi$ is injective
-\item $\Phi_0=\rho\Phi$
-\item $\Psi_0=\Psi\pi$
-\item $\Phi\Psi=\text{id}$
-\item $\Phi_0\Psi_0=\text{id}$
-\item $\Phi_0=\Phi_0\Psi\Phi$
-  \item $\Psi_0=\Psi\Phi\Psi_0$
-\item $\CC\le\CC'\Rightarrow \pi(\CC)\le\pi(\CC')$
-  \item $\text{codim}(\pi({\CC)})=\text{codim}(\CC)$
-\end{itemize}
-
-We want to know, for all $\CC,\CC'\in[W_e]$:
-
-$$
-\CC\le\CC'\Leftrightarrow\Phi_0(\CC)\le \Phi_0(\CC')\text{ implies }
-\CC\le\CC'\Leftrightarrow\Phi(\CC)\le \Phi_0(\CC')
-$$
-
-\begin{comment}
-
-  
-% \section{Old section on unipotent classes}
-
-% Now we discuss the classical groups of type $B_n$, $C_n$ or $D_n$ in characterstic $2$. The unipotent classes in these groups were determined by G. E. Wall \cite{Wall}.
-
-% In all these cases, the unipotent conjugacy classes have the following two invariants: $p$ and $\chi$. Here $p(g)$ is the partition corresponds to the Jordan canonical form of the unipotent element $g$ and $\chi$ is a function from the parts of this partition into the non-negative integers defined as follows: $$\chi(g)(m)=\begin{cases} \min\{k \ge 0; (g-1)^m v=0 \Rightarrow \<(g-1)^{k+1} v, (g-1)^k v\>=0\}, & \text{ if $G$ is of type $C$ }; \\ \min\{k \ge 0; (g-1)^m v=0 \Rightarrow Q(T^k v)=0\}, & \text{ if $G$ is of type $B$ or $D$ }. \end{cases}$$
-
-% The possible partitions in each case are the same as in good characteristic. The possible values of $\chi(g)(m)$ are as follows.
-
-% If $G$ is of type $C$, then $$\chi(m)=\begin{cases} \frac{m-1}{2}, & \text{ if $m$ is odd }; \\ \frac{m}{2}, & \text{ if $m$ is even and the multiplicity of $m$ is odd }; \\ \frac{m}{2}-1 \text{ or } \frac{m}{2}, & \text{ if $m$ is even and the multiplicity of $m$ is even}. \end{cases}$$
-
-% If $G$ is of type $B$ or type $D$, then $$\chi(m)=\begin{cases} \frac{m+1}{2}, & \text{ if $m$ is odd }; \\ \frac{m}{2}+1, & \text{ if $m$ is even and the multiplicity of $m$ is odd }; \\ \frac{m}{2} \text{ or } \frac{m}{2}+1, & \text{ if $m$ is even and the multiplicity of $m$ is even}. \end{cases}$$
-
-% In almost all the cases, the unipotent conjugacy classes are determined by the two invariants $p(g)$ and $\chi(g)$, except for the type $D$ case, $p$ is a very even partition and $\chi(m)=\frac{m}{2}$ for all parts of $p$. In the latter case, there are two unipotent conjugacy classes corresponds to the two invariants $p$ and $\chi$.
-
-  \remind{Closure relation: \cite[p. 133]{Spa}. Jeff: would you please add the details here? It is in French and I am afraid to introduce mistakes if I do it myself}
-
-  \end{comment}
-
+\begin{corollary}
+\label{c:reduction} It is enough to prove Theorem \ref{t:second} in characteristic $0$.
+\end{corollary}
 
 
 
