@@ -863,6 +863,7 @@ $$
 
 Note that $\epsilon(i)$ is determined by $\alpha$ except for even rows of even multiplicity.
 
+
 \begin{proposition}
   If $p=2$ the unipotent conjugacy classes in $Sp(2n)$ or $O(2n)$ are
   in bijection with $\wtcpminus(2n)$.
@@ -1001,7 +1002,6 @@ only if $(\alpha,\epsilon)\le (\beta,\delta)$.
 	
 	\item Type ${}^2 D_n$ with $p=2$: unipotent conjugacy classes are determined by the two invariants: a partition in $\CP_1(2n)$ with odd number of parts and a function $\chi$ as in the Type $B/D$ case above.
 \end{itemize}
-
 \end{comment}
 
 \section{Reduction to characteristic 2}
@@ -1023,7 +1023,7 @@ Consider the sets $\Gu$ (respectively $\Gou$) of unipotent conjugacy classes of 
 \end{corollary}
 
 We now suppose $G$ is a classical group and address the question of
-reducing Theorem \ref{t:second} to characteristic $0$.  The sets $\Gu$
+reducing Theorem \ref{t:second} to characteristic $2$.  The sets $\Gu$
 and $\Gou$ were described explicitly in Section \ref{s:classical}. The
 map $\pi$ is given explicitly in these terms in \cite{Spa}*{Section
   III.6--8}. In each case there is a description of the image of
@@ -1051,8 +1051,8 @@ Here are the sets parametrizing the objects in types $B,C,D$.
 
 \bigskip
 
-In the case $G=Sp(2n)$ the map $\pi$ is: $\pi(\alpha)=(\alpha,\epsilon)$ where $\epsilon(i)=1$;
-here and elsewhere $\epsilon(i)=1$ is shorthand for: $\epsilon(i)=1$ for all $i$ with $c_\alpha(i)>0$.
+If $G=Sp(2n)$ then $\pi:(\alpha)\mapsto(\alpha,\epsilon)$ where 
+$\epsilon(i)=1$ for all $i$ with $c_\alpha(i)>0$.
 
 When $G=O(2n)$ we have $\pi(\alpha)=(\alpha',\epsilon)$ where $\alpha'=\inf_{\CP_{-1}(2n)}(\alpha)$
 as in \cite{Spa}*{Lemma III.3.6}, or the ``C-collapse'' of $\alpha$
@@ -1090,7 +1090,8 @@ Suppose $\alpha$ is a partition of $n$, and all entries $\alpha_i$ of  $\alpha$ 
 $$
 \alpha+\psi_\alpha=(\alpha_1+\psi_\alpha(1),\dots, \alpha_\ell+\psi_\alpha(\ell))
 $$
-This is a partition of of $n+\kappa_\ell$. Note that if we write $\alpha+\psi_\alpha=(\alpha_1',\dots,\alpha_\ell')$, and 
+This is a partition of of $n+\kappa_\ell$. Explicitly, 
+if we write $\alpha+\psi_\alpha=(\alpha_1',\dots,\alpha_\ell')$, and 
 if $2i+1\le\ell$ then
 $$
 (\alpha'_{2i},\alpha'_{2i+1})=
@@ -1101,7 +1102,7 @@ $$
 $$
 Also $\alpha'_1=\alpha_1+1$ and, if $\ell$ is even, $\alpha'_\ell=\alpha_\ell-1$.
 
-We give an interpretation of the map $\psi_\alpha$ in Proposition \ref{p:psi}.
+We give an interpretation of the map $\alpha\mapsto(\alpha,\psi_\alpha)$ in Proposition \ref{p:psi}.
 
 \section{Lusztig's map for classical groups}
 \label{s:Lclassical}
@@ -1118,7 +1119,8 @@ If $G=GL(n)$ this  maps to the principal unipotent class.
 The same holds for $G=\GLdagger(n)$ if $p\ne 2$.
 
 The twisted conjugacy classes in $W$ are parametrized by partitions of $n$ with only odd parts,
-and $\Phi:\CC_\alpha\mapsto \CU_\alpha$.
+and this corresponds to the $\GL(n)$ conjugacy classes in $\GLdagger(n)\backslash \GL(n)$. 
+The map is $\Phi:\CC_\alpha\mapsto \CU_{\alpha,\epsilon}$ where $\epsilon(i)=1$ for all $i$ with $c_\alpha(i)\ne 0$.
 
 \item Type $B_n$. The elliptic conjugacy classes of $W$ are parametrized by $\CP(n)$.
 
@@ -1195,7 +1197,7 @@ and these are isomorphisms of partially ordered sets.
 
 
 \begin{corollary}
-\label{c:reduction} It is enough to prove Theorem \ref{t:second} in characteristic $0$.
+\label{c:reduction} It is enough to prove Theorem \ref{t:second} in characteristic $2$.
 \end{corollary}
 
 
