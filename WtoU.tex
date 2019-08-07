@@ -308,7 +308,6 @@
 \newcommand{\GO}{\mathrm{GO}}
 \newcommand{\GSpin}{\mathrm{GSpin}}
 \newcommand{\GU}{\mathrm{GU}}
-
 \newcommand{\hg}{{\mathrm{hg}}}
 \DeclareMathOperator{\Hom}{Hom}
 
@@ -429,6 +428,7 @@
 \def\epsilonmax{\epsilon_{\text{max}}}
 \def\leW{\preceq_W}
 \def\leu{\preceq_u}
+\def\Ftwo{\overline{\BF_2}}
 % Theorem environments.
 %
 \newtheorem{theorem}{Theorem}
@@ -925,7 +925,7 @@ Finally we consider
 unipotent $\SO(2n)$-conjugacy classes. 
 If $(\alpha,\epsilon)\in \tPminus(2n)_0$ then 
  $\CU_{\alpha,\epsilon}\subset \SO(2n)$ is the union of two $\SO(2n)$-conjugacy classes if 
- for all $i$, $\alpha_i$ and $c_\alpha(i)$ are even and $\epsilon(i)\ne 1$. Otherwise 
+ for all $i$, $\alpha_i$ and $c_\alpha(i)$ are even and $\epsilon(i)=0$. Otherwise 
  $\CU_{\alpha,\epsilon}\subset\SO(2n)$ is a single $\SO(2n)$-conjugacy class.
  Again we will not need to specify one of these two orbits more precisely.
 
@@ -1469,6 +1469,130 @@ Now we prove the following result.
 	
 	By Proposition \ref{A-i-j}, $$\sharp w \d[\lceil \frac{m}{2}\rceil, n-\lfloor \frac{m}{2} \rfloor+1]+\sharp w \d[n-\lfloor \frac{m}{2} \rfloor, \lceil \frac{m}{2}\rceil+1]\ge n-k.$$ By Proposition \ref{A-ineq}, $k \ge \min\{k'; \alpha_1+\cdots+\alpha_{k'} \ge m\}$. In other words, $\alpha_1+\cdots+\alpha_k \ge m=\beta_1+\cdots+\beta_k$. Therefore $\alpha \ge \beta$.
 \end{proof}
+
+\section{Examples}
+
+\subsection{$\Sp(4)$}
+
+\bigskip\hfil
+
+
+\begin{tabular}{lll}
+  $[W]$ & $Sp(4,\BC)$ & $\Sp(4,\overline\BF_2)$\\
+  $[2]$ & $[4]$& $([4],*)$ \\
+  $[1,1]$ & $[2,2]$& $([2,2],\epsilon(2)=1)$ \\
+  \hline
+  $(A^s_1,*)$ & $[2,2]$ &$([2,2], \epsilon(2)=0)$ \\
+  $(A^l_1,*)$ & $[2,1,1]$& $([2,1,1], *)$\\
+  $(T,*)$ & $[1,1,1,1]$ & $([1,1,1,1],*)$
+\end{tabular}
+\begin{comment}
+  
+\bigskip
+
+$\O(4)$
+
+The unipotent orbits in $\O(4,\overline \BF_2)$ are parametrized
+by $\tPminus(4)$.
+
+The Weyl group of $\O(4)$ is of type $C_2$ which has five conjugacy
+classes, two of which are elliptic. We borrow the parametrization of
+these conjugacy classes from $W(C_2)$.
+
+\begin{tabular}{llll}
+  $[W]$ & $O(4,\BC)$ & $\O(4,\overline\BF_2)$& $\SO/\O$\\
+    \hline\hline
+  $[2]$ & $[3,1]$& $([4], *)$ & $\O$\\
+  $[1,1]$ & $[2,2]$& $([2,2], \epsilon(2)=1)$ &$\SO$\\
+  \hline
+   $(A^s_1,*)$ & $[2,2]$ &$([2,2], \epsilon(2)=0)$&$\SO$\\
+  $(A^l_1,*)$ & $[2,1,1]$& $([2,1,1],*)$&$\O$\\
+  $(T,*)$ & $[1,1,1,1]$ & $([1,1,1,1],*)$ & $\SO$
+\end{tabular}
+
+\bigskip
+\end{comment}
+
+\subsection{$\SO(4)$}
+
+\hfil
+
+The unipotent orbits in $\SO(4,\overline \BF_2)$ are parametrized
+by $\tPminus(4)_0$ (odd rows have even multiplicity, the first column has even length).
+Also a strongly even partitions count twice provided $\epsilon(i)=0$ for all $i$;
+these are denote with a subscript $I$ or $II$.
+
+There is one elliptic class in $W$, $4$ total. Also  $\SO(4,\BC)$  and $\SO(4,\Ftwo)$ each have $4$ unipotent orbits.
+
+\begin{tabular}{lll}
+  $[W]$ & $SO(4,\BC)$ & $\SO(4,\overline\BF_2)$\\
+  \hline\hline
+  $[1,1]$ & $[3,1]$& $([2,2], \epsilon(2)=1)$ \\
+    \hline
+  $(A_1,*)$ & $[2,2]_I$ &$([2,2], \epsilon(2)=0)_I$ \\
+
+  $(A'_1,*)$ & $[2,2]_{II}$& $([2,2], \epsilon(2)=0)_{II}$ \\ 
+  $(T,*)$ & $[1,1,1,1]$ & $([1,1,1,1],*)$
+\end{tabular}
+
+\newpage
+
+\subsection{$\SO(6)$}
+
+\hfil
+
+The Weyl group of $\SO(6)$ is of type $D_3$ which has $5$ conjugacy
+classes, $1$ of which is elliptic.
+
+\begin{tabular}{lll}
+  $[W]$ & $SO(6,\BC)$ & $\SO(6,\overline\BF_2)$\\
+    \hline\hline
+  $[2,1]$ & $[5,1]$& $([4,2], *)$\\
+  \hline
+  $(A_2,*)$ & $[3,3]$ & $([3,3],*)$\\
+  $(D_2,*)$ & $[3,1,1,1]$& $([2,2,1,1],\epsilon(2)=1)$\\
+  $(A_1,*)$ &  $[2,2,1,1]$& $([2,2,1,1],\epsilon(2)=0)$\\
+  $(T,*)$ &  $ [1,1,1,1,1,1]$& $([1,1,1,1,1,1],*)$\\
+\end{tabular}
+
+\bigskip
+
+\subsection{$\SO(8)$}
+
+\hfil
+
+The Weyl group of $\SO(8)$ is of type $D_3$, which has $13$ conjugacy
+classes, $3$ of which are elliptic.
+Both $\SO(8,\BC)$ and $\SO(8,\Ftwo)$ have $12$ unipotent classes.
+Note that the orbits $[3,2,2,1]$ and $([2,2,2,2],\epsilon(2)=1)$ both occur twice in the image.
+
+
+Note that $SO(8)$ has two non-conjugate $GL(4)=A_3$ Levi factors
+in addition to $GL(1)\times SO(6)$ of type $D_3$.
+Also it has 
+two non-conjugate $\GL(2)\times \GL(2)$ factors.
+
+Also a unipotent orbit for $\O(8,\Ftwo)$ splits into two
+for $\SO(8,\Ftwo)$ if and only if all parts are even, with even multiplicity, and all $\epsilon(i)=0$. 
+
+
+\begin{tabular}{llll}
+$\#$ & $[W]$ & $SO(8,\BC)$ & $\SO(8,\overline\BF_2)$\\
+1&  $[3,1]$ & $[7,1]$& $([6,2], *)$\\
+2&  $[2,2]$ & $[5,3]$& $([4,4], \epsilon(4)=1)$\\
+  3&  $[1,1,1,1]$ & $[3,2,2,1]$& $([2,2,2,2], \epsilon(2)=1)$\\
+  \hline
+4&  $D_3=SO(6)\times GL(1)$ & $[5,1,1,1]$& $[4,2,1,1]$\\
+5&  $A_3=GL(4)$ & $[4,4]_I$ & $([4,4],\epsilon(4)=0)_I$\\
+6&  $A'_3=GL(4)'$ & $[4,4]_{II}$ &$([4,4],\epsilon(4)=0)_{II}$\\
+7&  $A_1\times D_2=GL(2)\times SO(4)$ & $[3,2,2,1]$ & $([2,2,2,2],\epsilon(2)=1)$\\
+8&  $D_2=\GL(1)\times \SO(4)$ & $[3,1,1,1,1,1]$ & $([2,2,1,1,1,1],\epsilon(2)=1)$\\
+9&  $A_2=\GL(3)\times \GL(1)$&$[3,3,1,1]$ & $([3,3,1,1],*)$\\
+10&  $2A_1=\GL(2)\times \GL(2)$&$[2,2,2,2]_I$ & $([2,2,2,2],\epsilon(2)=0)_I$\\
+11&    $2A_1=\GL(2)\times \GL(2)'$&$[2,2,2,2]_{II}$& $([2,2,2,2],\epsilon(2)=0)_{II}$\\
+12&  $A_1=\GL(2)\times\GL(1)\times\GL(1)$&$[2,2,1,1,1,1]$ & $([2,2,1,1,1,1,1,1],\epsilon(2)=0)$\\
+13&$T$ & $[1^8]$ & $([1^8],*)$
+\end{tabular}
 
 \begin{thebibliography}{AAAA99}
 
