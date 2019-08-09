@@ -174,6 +174,7 @@
 \newcommand{\BA}{\ensuremath{\mathbb {A}}\xspace}
 \newcommand{\BB}{\ensuremath{\mathbb {B}}\xspace}
 \newcommand{\BC}{\ensuremath{\mathbb {C}}\xspace}
+\newcommand{\C}{\BC} % use this a lot
 \newcommand{\BD}{\ensuremath{\mathbb {D}}\xspace}
 \newcommand{\BE}{\ensuremath{\mathbb {E}}\xspace}
 \newcommand{\BF}{\ensuremath{\mathbb {F}}\xspace}
@@ -630,14 +631,13 @@ This holds also in the twisted setting.
 
 \bigskip
 
-{\bf THE REST OF THIS SECTION IS WRONG}
 We now consider the question of finding a simpler description of
 Lusztig's map $\Phi$ for classical groups. Note that $\Phi$
 takes $\Wc$ to $\Gu$, and although $\Wc$ is independent of the field
 $\Gu$ is not. For classical groups the most interesting case is when $\BF$
 has characteristic $2$.
 Let $G$ be a classical group  group over a field of characteristic $2$,
-and let $G_0$ be the group over $\BC$ with the same root datum as $G$.
+and let $G_0$ be the group over $\C$ with the same root datum as $G$.
 There is a natural
 injective map $\pi:[G_{0,u}]\hookrightarrow \Gu$ which is an
 isomorphism of partially ordered sets from $[G_{0,u}]$ to its image.
@@ -687,8 +687,6 @@ $$
 \end{theorem}
 
 A twisted version of this holds as well.
-
-{\bf As noted above the preceding Theorem is NOT correct}
 
 \subsection{A similiar phenomenon for affine Weyl groups}
 
@@ -1043,7 +1041,7 @@ and $G_0$, respectively.
 
 \begin{proposition}{\cite{Spa}*{Theorem III.5.2}}
 \label{p:p=2}
-  There is an injective map $\pi:\Gou\rightarrow \Gu$, such that $\pi$ is a isomorphism of partially ordered
+  There is an injective, dimension preserving map $\pi:\Gou\rightarrow \Gu$, such that $\pi$ is a isomorphism of partially ordered
   sets from $\Gou$ to its image.
 \end{proposition}
 
@@ -1073,7 +1071,7 @@ Here are the sets parametrizing the objects in types $B,C,D$.
 \bigskip
 
 \begin{tabular}{lll}
-  $G$ & $\BC$ & $\BF_2$\\\hline
+  $G$ & $\C$ & $\BF_2$\\\hline
   $Sp(2n)$ & $\CP_{-1}(2n)$ & $\tPminus(2n)$ \\
   $O(2n+1)$ & $\CP_{1}(2n+1)$ & $\tPminus(2n)$\\
   $O(2n)$ & $\CP_{1}(2n)$ & $\tPminus(2n)$\\
@@ -1131,8 +1129,25 @@ $$
 $$
 Also $\alpha'_1=\alpha_1+1$ and, if $\ell$ is even, $\alpha'_\ell=\alpha_\ell-1$.
 
-We give an interpretation of the map function $\psi_\alpha$ in Proposition \ref{p:psi}.
+I think everything comes down to the following Conjecture, which is purely combinatorial.
 
+\begin{conjecture}
+Suppose $\beta$ is a partition of $n$ with an even number of parts.
+Set $\alpha=2\beta+\psi(\alpha)\in \CP(2n)$.
+Then
+\begin{enumerate}
+\item $\alpha\in\CP_{1}(2n)$
+\item The $\CP_{-1}$-collapse of $\alpha$ is $2\beta$.
+\item $\pi(\CC_\alpha)=(2\beta,\epsilon)$ where $\epsilon(i)=1$ for all $i$.
+\end{enumerate}
+\end{conjecture}
+
+\begin{remark}
+  Assuming the conjecture Lusztig's map from $[G(\C)_u]$ to $[G(\Ftwo)_u]$ agrees with
+  the one defined by Spaltenstein \cite{Spa}*{Section III.7}, as asserted by Lusztig (at least
+the conjugacy classes coming from $\Wec$). 
+
+\end{remark}
 \section{Lusztig's map for classical groups}
 \label{s:Lclassical}
 
@@ -1227,7 +1242,6 @@ and these are isomorphisms of partially ordered sets.
 
 \bigskip
 
-{\bf The next corollary is not correct. Or maybe its true but the Theorem is false in characteristic 2}
 \begin{corollary}
 \label{c:reduction} It is enough to prove Theorem \ref{t:second} in characteristic $2$.
 \end{corollary}
@@ -1478,7 +1492,7 @@ Now we prove the following result.
 
 
 \begin{tabular}{lll}
-  $[W]$ & $Sp(4,\BC)$ & $\Sp(4,\overline\BF_2)$\\
+  $[W]$ & $Sp(4,\C)$ & $\Sp(4,\overline\BF_2)$\\
   $[2]$ & $[4]$& $([4],*)$ \\
   $[1,1]$ & $[2,2]$& $([2,2],\epsilon(2)=1)$ \\
   \hline
@@ -1500,7 +1514,7 @@ classes, two of which are elliptic. We borrow the parametrization of
 these conjugacy classes from $W(C_2)$.
 
 \begin{tabular}{llll}
-  $[W]$ & $O(4,\BC)$ & $\O(4,\overline\BF_2)$& $\SO/\O$\\
+  $[W]$ & $O(4,\C)$ & $\O(4,\overline\BF_2)$& $\SO/\O$\\
     \hline\hline
   $[2]$ & $[3,1]$& $([4], *)$ & $\O$\\
   $[1,1]$ & $[2,2]$& $([2,2], \epsilon(2)=1)$ &$\SO$\\
@@ -1522,10 +1536,10 @@ by $\tPminus(4)_0$ (odd rows have even multiplicity, the first column has even l
 Also a strongly even partitions count twice provided $\epsilon(i)=0$ for all $i$;
 these are denote with a subscript $I$ or $II$.
 
-There is one elliptic class in $W$, $4$ total. Also  $\SO(4,\BC)$  and $\SO(4,\Ftwo)$ each have $4$ unipotent orbits.
+There is one elliptic class in $W$, $4$ total. Also  $\SO(4,\C)$  and $\SO(4,\Ftwo)$ each have $4$ unipotent orbits.
 
 \begin{tabular}{lll}
-  $[W]$ & $SO(4,\BC)$ & $\SO(4,\overline\BF_2)$\\
+  $[W]$ & $SO(4,\C)$ & $\SO(4,\overline\BF_2)$\\
   \hline\hline
   $[1,1]$ & $[3,1]$& $([2,2], \epsilon(2)=1)$ \\
     \hline
@@ -1545,7 +1559,7 @@ The Weyl group of $\SO(6)$ is of type $D_3$ which has $5$ conjugacy
 classes, $1$ of which is elliptic.
 
 \begin{tabular}{lll}
-  $[W]$ & $SO(6,\BC)$ & $\SO(6,\overline\BF_2)$\\
+  $[W]$ & $SO(6,\C)$ & $\SO(6,\overline\BF_2)$\\
     \hline\hline
   $[2,1]$ & $[5,1]$& $([4,2], *)$\\
   \hline
@@ -1563,7 +1577,7 @@ classes, $1$ of which is elliptic.
 
 The Weyl group of $\SO(8)$ is of type $D_3$, which has $13$ conjugacy
 classes, $3$ of which are elliptic.
-Both $\SO(8,\BC)$ and $\SO(8,\Ftwo)$ have $12$ unipotent classes.
+Both $\SO(8,\C)$ and $\SO(8,\Ftwo)$ have $12$ unipotent classes.
 Note that the orbits $[3,2,2,1]$ and $([2,2,2,2],\epsilon(2)=1)$ both occur twice in the image.
 
 
@@ -1577,7 +1591,7 @@ for $\SO(8,\Ftwo)$ if and only if all parts are even, with even multiplicity, an
 
 
 \begin{tabular}{llll}
-$\#$ & $[W]$ & $SO(8,\BC)$ & $\SO(8,\overline\BF_2)$\\
+$\#$ & $[W]$ & $SO(8,\C)$ & $\SO(8,\overline\BF_2)$\\
 1&  $[3,1]$ & $[7,1]$& $([6,2], *)$\\
 2&  $[2,2]$ & $[5,3]$& $([4,4], \epsilon(4)=1)$\\
   3&  $[1,1,1,1]$ & $[3,2,2,1]$& $([2,2,2,2], \epsilon(2)=1)$\\
@@ -1603,17 +1617,14 @@ $\#$ & $[W]$ & $SO(8,\BC)$ & $\SO(8,\overline\BF_2)$\\
 Let's just look at the elliptic classes.
 
 \begin{tabular}{llll}
-  $\#$ & $[W]$ & $SO(12,\BC)$ & $\SO(12,\overline\BF_2)$\\
+  $\#$ & $[W]$ & $SO(12,\C)$ & $\SO(12,\overline\BF_2)$\\
   1& $[5,1]$ & $[11,1]$ & $([10,2],*)$\\
   2& $[4,2]$ & $[9,3]$ & $([8,4],*)$\\
   3& $[3,3]$ & $[7,5]$ & $([6,6],\epsilon(6)=1))$\\
-  4& $[2,2,1,1]$ & $[5,5,1,1]$ & $([5,5,1,1],*)$\\
+  4& $[2,2,1,1]$ & $[5,3,3,1]$ & $([4,4,2,2],\epsilon(4)=\epsilon(2)=1)$\\
     5& $[1,1,1,1,1,1]$ & $[3,2,2,2,2,1]$ & $([2,2,2,2,2,2],\epsilon(2)=1)$\\
 \end{tabular}
 
-\medskip
-
-Note that in $\#4$ the map on partitions from $\Wec$ to $\Gu$ in characteristic $2$ is {\it not} multiplication by $2$.
 \begin{thebibliography}{AAAA99}
 
 \bibitem[BB05]{bb}

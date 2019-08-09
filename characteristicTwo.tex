@@ -1,0 +1,819 @@
+\documentclass[a4paper, reqno, 12pt]{amsart}
+% alternative choice:
+%\documentclass[a4paper, reqno, 12pt]{article}
+%\usepackage{authblk}    %comment this out when using amsart
+
+
+\usepackage{amsthm,amsfonts,amssymb,amsmath,amsxtra,amsrefs,array,dynkin-diagrams}
+\usepackage{xr-hyper}
+\usepackage[matrix,tips,frame,color,line,poly]{xy}
+%\usepackage[colorlinks=
+%   citecolor=Black,
+%   linkcolor=Red,
+%   urlcolor=Blue]{hyperref}
+\usepackage{verbatim}
+\usepackage{tikz}
+\usepackage[margin=1.25in]{geometry}
+\usepackage{mathrsfs}
+%\usepackage{showkeys}
+\setlength\extrarowheight{6pt}  %extra height in tables, using array package
+\newcommand{\remind}[1]{{\bf ** #1 **}}
+
+\RequirePackage{xspace}
+% load etoolbox package, for programming features
+\RequirePackage{etoolbox}
+% load varwidth package, for text environments which are automatically the natural width of the text they contain
+\RequirePackage{varwidth}
+% load enumitem package, for easy margin adjustment in enumerate and itemize environments
+\RequirePackage{enumitem}
+% load tensor package, for good placement of super/subscripts to the left of symbols
+\RequirePackage{tensor}
+% load mathtools package, for various extensions of amsmath
+\RequirePackage{mathtools}
+% load longtable package, which allows tables to (if needed) split over multiple pages
+\RequirePackage{longtable}
+% load multirow package, which allows cells spanning multiple rows in tables
+\RequirePackage{multirow}
+
+
+
+% put sections only (as opposed to subsections) in the table of contents
+\setcounter{tocdepth}{1}
+
+
+\def\ge{\geqslant}
+\def\le{\leqslant}
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\G{\Gamma}
+\def\d{\delta}
+\def\D{\Delta}
+\def\L{\Lambda}
+\def\e{\epsilon}
+\def\et{\eta}
+\def\io{\iota}
+\def\o{\omega}
+\def\p{\pi}
+\def\ph{\phi}
+\def\ps{\psi}
+%\def\r{\rho}
+\def\s{\sigma}
+\def\t{\tau}
+\def\th{\theta}
+\def\k{\kappa}
+\def\l{\lambda}
+\def\z{\zeta}
+\def\v{\vartheta}
+\def\x{\xi}
+\def\i{^{-1}}
+
+\def\<{\langle}
+\def\>{\rangle}
+
+\newcommand{\sA}{\ensuremath{\mathscr{A}}\xspace}
+\newcommand{\sB}{\ensuremath{\mathscr{B}}\xspace}
+\newcommand{\sC}{\ensuremath{\mathscr{C}}\xspace}
+\newcommand{\sD}{\ensuremath{\mathscr{D}}\xspace}
+\newcommand{\sE}{\ensuremath{\mathscr{E}}\xspace}
+\newcommand{\sF}{\ensuremath{\mathscr{F}}\xspace}
+\newcommand{\sG}{\ensuremath{\mathscr{G}}\xspace}
+\newcommand{\sH}{\ensuremath{\mathscr{H}}\xspace}
+\newcommand{\sI}{\ensuremath{\mathscr{I}}\xspace}
+\newcommand{\sJ}{\ensuremath{\mathscr{J}}\xspace}
+\newcommand{\sK}{\ensuremath{\mathscr{K}}\xspace}
+\newcommand{\sL}{\ensuremath{\mathscr{L}}\xspace}
+\newcommand{\sM}{\ensuremath{\mathscr{M}}\xspace}
+\newcommand{\sN}{\ensuremath{\mathscr{N}}\xspace}
+\newcommand{\sO}{\ensuremath{\mathscr{O}}\xspace}
+\newcommand{\sP}{\ensuremath{\mathscr{P}}\xspace}
+\newcommand{\sQ}{\ensuremath{\mathscr{Q}}\xspace}
+\newcommand{\sR}{\ensuremath{\mathscr{R}}\xspace}
+\newcommand{\sS}{\ensuremath{\mathscr{S}}\xspace}
+\newcommand{\sT}{\ensuremath{\mathscr{T}}\xspace}
+\newcommand{\sU}{\ensuremath{\mathscr{U}}\xspace}
+\newcommand{\sV}{\ensuremath{\mathscr{V}}\xspace}
+\newcommand{\sW}{\ensuremath{\mathscr{W}}\xspace}
+\newcommand{\sX}{\ensuremath{\mathscr{X}}\xspace}
+\newcommand{\sY}{\ensuremath{\mathscr{Y}}\xspace}
+\newcommand{\sZ}{\ensuremath{\mathscr{Z}}\xspace}
+
+
+\newcommand{\fka}{\ensuremath{\mathfrak{a}}\xspace}
+\newcommand{\fkb}{\ensuremath{\mathfrak{b}}\xspace}
+\newcommand{\fkc}{\ensuremath{\mathfrak{c}}\xspace}
+\newcommand{\fkd}{\ensuremath{\mathfrak{d}}\xspace}
+\newcommand{\fke}{\ensuremath{\mathfrak{e}}\xspace}
+\newcommand{\fkf}{\ensuremath{\mathfrak{f}}\xspace}
+\newcommand{\fkg}{\ensuremath{\mathfrak{g}}\xspace}
+\newcommand{\fkh}{\ensuremath{\mathfrak{h}}\xspace}
+\newcommand{\fki}{\ensuremath{\mathfrak{i}}\xspace}
+\newcommand{\fkj}{\ensuremath{\mathfrak{j}}\xspace}
+\newcommand{\fkk}{\ensuremath{\mathfrak{k}}\xspace}
+\newcommand{\fkl}{\ensuremath{\mathfrak{l}}\xspace}
+\newcommand{\fkm}{\ensuremath{\mathfrak{m}}\xspace}
+\newcommand{\fkn}{\ensuremath{\mathfrak{n}}\xspace}
+\newcommand{\fko}{\ensuremath{\mathfrak{o}}\xspace}
+\newcommand{\fkp}{\ensuremath{\mathfrak{p}}\xspace}
+\newcommand{\fkq}{\ensuremath{\mathfrak{q}}\xspace}
+\newcommand{\fkr}{\ensuremath{\mathfrak{r}}\xspace}
+\newcommand{\fks}{\ensuremath{\mathfrak{s}}\xspace}
+\newcommand{\fkt}{\ensuremath{\mathfrak{t}}\xspace}
+\newcommand{\fku}{\ensuremath{\mathfrak{u}}\xspace}
+\newcommand{\fkv}{\ensuremath{\mathfrak{v}}\xspace}
+\newcommand{\fkw}{\ensuremath{\mathfrak{w}}\xspace}
+\newcommand{\fkx}{\ensuremath{\mathfrak{x}}\xspace}
+\newcommand{\fky}{\ensuremath{\mathfrak{y}}\xspace}
+\newcommand{\fkz}{\ensuremath{\mathfrak{z}}\xspace}
+
+
+\newcommand{\fkA}{\ensuremath{\mathfrak{A}}\xspace}
+\newcommand{\fkB}{\ensuremath{\mathfrak{B}}\xspace}
+\newcommand{\fkC}{\ensuremath{\mathfrak{C}}\xspace}
+\newcommand{\fkD}{\ensuremath{\mathfrak{D}}\xspace}
+\newcommand{\fkE}{\ensuremath{\mathfrak{E}}\xspace}
+\newcommand{\fkF}{\ensuremath{\mathfrak{F}}\xspace}
+\newcommand{\fkG}{\ensuremath{\mathfrak{G}}\xspace}
+\newcommand{\fkH}{\ensuremath{\mathfrak{H}}\xspace}
+\newcommand{\fkI}{\ensuremath{\mathfrak{I}}\xspace}
+\newcommand{\fkJ}{\ensuremath{\mathfrak{J}}\xspace}
+\newcommand{\fkK}{\ensuremath{\mathfrak{K}}\xspace}
+\newcommand{\fkL}{\ensuremath{\mathfrak{L}}\xspace}
+\newcommand{\fkM}{\ensuremath{\mathfrak{M}}\xspace}
+\newcommand{\fkN}{\ensuremath{\mathfrak{N}}\xspace}
+\newcommand{\fkO}{\ensuremath{\mathfrak{O}}\xspace}
+\newcommand{\fkP}{\ensuremath{\mathfrak{P}}\xspace}
+\newcommand{\fkQ}{\ensuremath{\mathfrak{Q}}\xspace}
+\newcommand{\fkR}{\ensuremath{\mathfrak{R}}\xspace}
+\newcommand{\fkS}{\ensuremath{\mathfrak{S}}\xspace}
+\newcommand{\fkT}{\ensuremath{\mathfrak{T}}\xspace}
+\newcommand{\fkU}{\ensuremath{\mathfrak{U}}\xspace}
+\newcommand{\fkV}{\ensuremath{\mathfrak{V}}\xspace}
+\newcommand{\fkW}{\ensuremath{\mathfrak{W}}\xspace}
+\newcommand{\fkX}{\ensuremath{\mathfrak{X}}\xspace}
+\newcommand{\fkY}{\ensuremath{\mathfrak{Y}}\xspace}
+\newcommand{\fkZ}{\ensuremath{\mathfrak{Z}}\xspace}
+
+
+
+
+\newcommand{\heart}{{\heartsuit}}
+\newcommand{\club}{{\clubsuit}}
+\newcommand{\diam}{{\Diamond}}
+\newcommand{\spade}{{\spadesuit}}
+
+\newcommand{\bA}{\mathbf A}
+\newcommand{\bE}{\mathbf E}
+\newcommand{\bG}{\mathbf G}
+\newcommand{\bK}{\mathbf K}
+\newcommand{\bM}{\mathbf M}
+\newcommand{\bQ}{\mathbf Q}
+
+
+
+\newcommand{\BA}{\ensuremath{\mathbb {A}}\xspace}
+\newcommand{\BB}{\ensuremath{\mathbb {B}}\xspace}
+\newcommand{\BC}{\ensuremath{\mathbb {C}}\xspace}
+\newcommand{\C}{\BC} % use this a lot
+\newcommand{\BD}{\ensuremath{\mathbb {D}}\xspace}
+\newcommand{\BE}{\ensuremath{\mathbb {E}}\xspace}
+\newcommand{\BF}{\ensuremath{\mathbb {F}}\xspace}
+\newcommand{{\BG}}{\ensuremath{\mathbb {G}}\xspace}
+\newcommand{\BH}{\ensuremath{\mathbb {H}}\xspace}
+\newcommand{\BI}{\ensuremath{\mathbb {I}}\xspace}
+\newcommand{\BJ}{\ensuremath{\mathbb {J}}\xspace}
+\newcommand{{\BK}}{\ensuremath{\mathbb {K}}\xspace}
+\newcommand{\BL}{\ensuremath{\mathbb {L}}\xspace}
+\newcommand{\BM}{\ensuremath{\mathbb {M}}\xspace}
+\newcommand{\BN}{\ensuremath{\mathbb {N}}\xspace}
+\newcommand{\BO}{\ensuremath{\mathbb {O}}\xspace}
+\newcommand{\BP}{\ensuremath{\mathbb {P}}\xspace}
+\newcommand{\BQ}{\ensuremath{\mathbb {Q}}\xspace}
+\newcommand{\BR}{\ensuremath{\mathbb {R}}\xspace}
+\newcommand{\BS}{\ensuremath{\mathbb {S}}\xspace}
+\newcommand{\BT}{\ensuremath{\mathbb {T}}\xspace}
+\newcommand{\BU}{\ensuremath{\mathbb {U}}\xspace}
+\newcommand{\BV}{\ensuremath{\mathbb {V}}\xspace}
+\newcommand{\BW}{\ensuremath{\mathbb {W}}\xspace}
+\newcommand{\BX}{\ensuremath{\mathbb {X}}\xspace}
+\newcommand{\BY}{\ensuremath{\mathbb {Y}}\xspace}
+\newcommand{\BZ}{\ensuremath{\mathbb {Z}}\xspace}
+
+
+
+\newcommand{\CA}{\ensuremath{\mathcal {A}}\xspace}
+\newcommand{\CB}{\ensuremath{\mathcal {B}}\xspace}
+\newcommand{\CC}{\ensuremath{\mathcal {C}}\xspace}
+\newcommand{\CD}{\ensuremath{\mathcal {D}}\xspace}
+\newcommand{\CE}{\ensuremath{\mathcal {E}}\xspace}
+\newcommand{\CF}{\ensuremath{\mathcal {F}}\xspace}
+\newcommand{\CG}{\ensuremath{\mathcal {G}}\xspace}
+\newcommand{\CH}{\ensuremath{\mathcal {H}}\xspace}
+\newcommand{\CI}{\ensuremath{\mathcal {I}}\xspace}
+\newcommand{\CJ}{\ensuremath{\mathcal {J}}\xspace}
+\newcommand{\CK}{\ensuremath{\mathcal {K}}\xspace}
+\newcommand{\CL}{\ensuremath{\mathcal {L}}\xspace}
+\newcommand{\CM}{\ensuremath{\mathcal {M}}\xspace}
+\newcommand{\CN}{\ensuremath{\mathcal {N}}\xspace}
+\newcommand{\CO}{\ensuremath{\mathcal {O}}\xspace}
+\newcommand{\CP}{\ensuremath{\mathcal {P}}\xspace}
+\newcommand{\CQ}{\ensuremath{\mathcal {Q}}\xspace}
+\newcommand{\CR}{\ensuremath{\mathcal {R}}\xspace}
+\newcommand{\CS}{\ensuremath{\mathcal {S}}\xspace}
+\newcommand{\CT}{\ensuremath{\mathcal {T}}\xspace}
+\newcommand{\CU}{\ensuremath{\mathcal {U}}\xspace}
+\newcommand{\CV}{\ensuremath{\mathcal {V}}\xspace}
+\newcommand{\CW}{\ensuremath{\mathcal {W}}\xspace}
+\newcommand{\CX}{\ensuremath{\mathcal {X}}\xspace}
+\newcommand{\CY}{\ensuremath{\mathcal {Y}}\xspace}
+\newcommand{\CZ}{\ensuremath{\mathcal {Z}}\xspace}
+
+
+\newcommand{\RA}{\ensuremath{\mathrm {A}}\xspace}
+\newcommand{\RB}{\ensuremath{\mathrm {B}}\xspace}
+\newcommand{\RC}{\ensuremath{\mathrm {C}}\xspace}
+\newcommand{\RD}{\ensuremath{\mathrm {D}}\xspace}
+\newcommand{\RE}{\ensuremath{\mathrm {E}}\xspace}
+\newcommand{\RF}{\ensuremath{\mathrm {F}}\xspace}
+\newcommand{\RG}{\ensuremath{\mathrm {G}}\xspace}
+\newcommand{\RH}{\ensuremath{\mathrm {H}}\xspace}
+\newcommand{\RI}{\ensuremath{\mathrm {I}}\xspace}
+\newcommand{\RJ}{\ensuremath{\mathrm {J}}\xspace}
+\newcommand{\RK}{\ensuremath{\mathrm {K}}\xspace}
+\newcommand{\RL}{\ensuremath{\mathrm {L}}\xspace}
+\newcommand{\RM}{\ensuremath{\mathrm {M}}\xspace}
+\newcommand{\RN}{\ensuremath{\mathrm {N}}\xspace}
+\newcommand{\RO}{\ensuremath{\mathrm {O}}\xspace}
+\newcommand{\RP}{\ensuremath{\mathrm {P}}\xspace}
+\newcommand{\RQ}{\ensuremath{\mathrm {Q}}\xspace}
+\newcommand{\RR}{\ensuremath{\mathrm {R}}\xspace}
+\newcommand{\RS}{\ensuremath{\mathrm {S}}\xspace}
+\newcommand{\RT}{\ensuremath{\mathrm {T}}\xspace}
+\newcommand{\RU}{\ensuremath{\mathrm {U}}\xspace}
+\newcommand{\RV}{\ensuremath{\mathrm {V}}\xspace}
+\newcommand{\RW}{\ensuremath{\mathrm {W}}\xspace}
+\newcommand{\RX}{\ensuremath{\mathrm {X}}\xspace}
+\newcommand{\RY}{\ensuremath{\mathrm {Y}}\xspace}
+\newcommand{\RZ}{\ensuremath{\mathrm {Z}}\xspace}
+
+
+
+\newcommand{\ab}{{\mathrm{ab}}}
+\newcommand{\Ad}{{\mathrm{Ad}}}
+\newcommand{\ad}{{\mathrm{ad}}}
+\newcommand{\alb}{{\mathrm{alb}}}
+\DeclareMathOperator{\Aut}{Aut}
+
+\newcommand{\Br}{{\mathrm{Br}}}
+
+\newcommand{\cay}{\ensuremath{\operatorname{\fkc_\xi}}\xspace}
+\newcommand{\Ch}{{\mathrm{Ch}}}
+\DeclareMathOperator{\charac}{char}
+\DeclareMathOperator{\Coker}{Coker}
+\newcommand{\cod}{{\mathrm{cod}}}
+\newcommand{\cont}{{\mathrm{cont}}}
+\newcommand{\cl}{{\mathrm{cl}}}
+\newcommand{\Cl}{{\mathrm{Cl}}}
+\newcommand{\cm}{{\mathrm {cm}}}
+\newcommand{\corr}{\mathrm{corr}}
+
+\newcommand{\del}{\operatorname{\partial Orb}}
+\DeclareMathOperator{\diag}{diag}
+\newcommand{\disc}{{\mathrm{disc}}}
+\DeclareMathOperator{\dist}{dist}
+\newcommand{\Div}{{\mathrm{Div}}}
+\renewcommand{\div}{{\mathrm{div}}}
+\newcommand{\DR}{\mathrm{DR}}
+
+\DeclareMathOperator{\End}{End}
+
+\newcommand{\Fil}{\ensuremath{\mathrm{Fil}}\xspace}
+\DeclareMathOperator{\Frob}{Frob}
+
+\DeclareMathOperator{\Adm}{Adm}
+\DeclareMathOperator{\EO}{EO}
+\DeclareMathOperator{\EOfin}{EO_{\rm fin}}
+
+
+
+
+
+
+\DeclareMathOperator{\Gal}{Gal}
+\newcommand{\Ztwo}{\BZ/2\BZ}
+\newcommand{\Zg}{\BZ_{\ge 0}}
+
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\GLdagger}{\mathrm{GL}^\dagger}
+\newcommand{\gl}{\frak{gl}}
+\newcommand{\GO}{\mathrm{GO}}
+\newcommand{\GSpin}{\mathrm{GSpin}}
+\newcommand{\GU}{\mathrm{GU}}
+\newcommand{\hg}{{\mathrm{hg}}}
+\DeclareMathOperator{\Hom}{Hom}
+
+\newcommand{\id}{\ensuremath{\mathrm{id}}\xspace}
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+\newcommand{\Ind}{{\mathrm{Ind}}}
+\newcommand{\inj}{\hookrightarrow}
+\newcommand{\Int}{\ensuremath{\mathrm{Int}}\xspace}
+\newcommand{\inv}{^{-1}}
+\DeclareMathOperator{\Isom}{Isom}
+
+\DeclareMathOperator{\Jac}{Jac}
+
+\DeclareMathOperator{\Ker}{Ker}
+
+\DeclareMathOperator{\Lie}{Lie}
+\newcommand{\loc}{\ensuremath{\mathrm{loc}}\xspace}
+
+\newcommand{\M}{\mathrm{M}}
+\newcommand{\Mp}{{\mathrm{Mp}}}
+
+\newcommand{\naive}{\ensuremath{\mathrm{naive}}\xspace}
+\newcommand{\new}{{\mathrm{new}}}
+\DeclareMathOperator{\Nm}{Nm}
+\DeclareMathOperator{\NS}{NS}
+
+\newcommand{\OGr}{\mathrm{OGr}}
+\DeclareMathOperator{\Orb}{Orb}
+\DeclareMathOperator{\ord}{ord}
+
+\DeclareMathOperator{\proj}{proj}
+
+\DeclareMathOperator{\rank}{rank}
+
+\newcommand{\PGL}{{\mathrm{PGL}}}
+\DeclareMathOperator{\Pic}{Pic}
+
+\newcommand{\rc}{\ensuremath{\mathrm{rc}}\xspace}
+\renewcommand{\Re}{{\mathrm{Re}}}
+\newcommand{\red}{\ensuremath{\mathrm{red}}\xspace}
+\newcommand{\reg}{{\mathrm{reg}}}
+\DeclareMathOperator{\Res}{Res}
+\newcommand{\rs}{\ensuremath{\mathrm{rs}}\xspace}
+
+\DeclareMathOperator{\uAut}{\underline{Aut}}
+\newcommand{\Sel}{{\mathrm{Sel}}}
+%\newcommand{\Sha}{{\underline{\mathrm{|||}}}}
+%\newcommand{\Sha}{{\hbox{\cyr Sh}}
+\newcommand{\Sim}{{\mathrm{Sim}}}
+\newcommand{\SL}{{\mathrm{SL}}}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Spf}{Spf}
+\newcommand{\SO}{{\mathrm{SO}}}
+\renewcommand{\O}{{\mathrm{O}}}
+\newcommand{\Sp}{{\mathrm{Sp}}}
+\newcommand{\SU}{{\mathrm{SU}}}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\sgn}{sgn}
+
+\DeclareMathOperator{\tr}{tr}
+
+\newcommand{\U}{\mathrm{U}}
+\newcommand{\ur}{{\mathrm{ur}}}
+
+\DeclareMathOperator{\vol}{vol}
+
+
+
+\newcommand{\CCO}{O}
+
+
+
+\newcommand{\wt}{\widetilde}
+\newcommand{\wh}{\widehat}
+\newcommand{\pp}{\frac{\partial\ov\partial}{\pi i}}
+\newcommand{\pair}[1]{\langle {#1} \rangle}
+\newcommand{\wpair}[1]{\left\{{#1}\right\}}
+\newcommand{\intn}[1]{\left( {#1} \right)}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\sfrac}[2]{\left( \frac {#1}{#2}\right)}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ov}{\overline}
+\newcommand{\incl}{\hookrightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\imp}{\Longrightarrow}
+\newcommand{\lto}{\longmapsto}
+\newcommand{\bs}{\backslash}
+
+
+\newcommand{\uF}{\underline{F}}
+\newcommand{\ep}{\varepsilon}
+
+%%% some additional macros
+
+
+\newcommand{\nass}{\noalign{\smallskip}}
+\newcommand{\htt}{h}
+\newcommand{\cutter}{\medskip\medskip \hrule \medskip\medskip}
+
+
+\def\tw{\tilde w}
+\def\tW{\tilde W}
+\def\tS{\tilde \BS}
+\def\kk{\mathbf k}
+\DeclareMathOperator{\supp}{supp}
+% Equation  \AMSname
+% Theorem   \theoremname
+
+\def\Gu{[G_u]}  %unipotent classes in G
+\def\Gue{[G_u]_e}  %unipotent classes in G, in the image W_e
+\def\Gou{[G_{0,u}]}  %unipotent classes in G_0  (can't use 0 nicely in command name, use o instead)
+\def\Goue{[G_{0,u}]_e}  %unipotent classes in G_0, in the image of W_e
+\def\Wc{[W]}    %conjugacy classes in W
+\def\Wec{[W_e]} %elliptic conjugacy classes in W
+\def\tPminus{\wt{\CP_{-1}}}
+\def\tPplus{\wt{\CP_{1}}}
+\def\epsilonmax{\epsilon_{\text{max}}}
+\def\leW{\preceq_W}
+\def\leu{\preceq_u}
+\def\Ftwo{\overline{\BF_2}}
+\DeclareMathOperator{\codim}{codim}
+% Theorem environments.
+%
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem {conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{axiom}[theorem]{Axiom}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{situation}[theorem]{Situation}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{remarks}[theorem]{Remarks}
+\newtheorem{question}[theorem]{Question}
+
+
+
+
+\numberwithin{equation}{section}
+\numberwithin{theorem}{section}
+
+
+
+
+
+
+%%%% macros added by Brian
+%%%% many of these require the etoolbox package, which should be loaded above
+
+\newcommand{\aform}{\ensuremath{\langle\text{~,~}\rangle}\xspace}
+\newcommand{\sform}{\ensuremath{(\text{~,~})}\xspace}
+
+\newcounter{filler}
+
+% gets rid of indentation in itemize and enumerate enivronments, and adds
+% a small space between list items:
+\setitemize[0]{leftmargin=*,itemsep=\the\smallskipamount}
+\setenumerate[0]{leftmargin=*,itemsep=\the\smallskipamount}
+
+% basic right arrow, short in inlines and long in displays
+\renewcommand{\to}{%
+   \ifbool{@display}{\longrightarrow}{\rightarrow}%
+   }
+% redefine \mapsto to be short in inlines and long in displays
+\let\shortmapsto\mapsto
+\renewcommand{\mapsto}{%
+   \ifbool{@display}{\longmapsto}{\shortmapsto}%
+   }
+% stretchable labeled right (2nd is xy-style) & left arrows, well-behaved inline or displayed
+\newlength{\olen}
+\newlength{\ulen}
+\newlength{\xlen}
+\newcommand{\xra}[2][]{%
+   \ifbool{@display}%
+      {\settowidth{\olen}{$\overset{#2}{\longrightarrow}$}%
+       \settowidth{\ulen}{$\underset{#1}{\longrightarrow}$}%
+       \settowidth{\xlen}{$\xrightarrow[#1]{#2}$}%
+       \ifdimgreater{\olen}{\xlen}%
+          {\underset{#1}{\overset{#2}{\longrightarrow}}}%
+          {\ifdimgreater{\ulen}{\xlen}%
+             {\underset{#1}{\overset{#2}{\longrightarrow}}}
+             {\xrightarrow[#1]{#2}}}}%
+      {\xrightarrow[#1]{#2}}
+   }
+\makeatother
+\newcommand{\xyra}[2][]{%
+   \settowidth{\xlen}{$\xrightarrow[#1]{#2}$}%
+   \ifbool{@display}%
+      {\settowidth{\olen}{$\overset{#2}{\longrightarrow}$}%
+       \settowidth{\ulen}{$\underset{#1}{\longrightarrow}$}%
+       \ifdimgreater{\olen}{\xlen}%
+          {\mathrel{\xymatrix@M=.12ex@C=3.2ex{\ar[r]^-{#2}_-{#1} &}}}%
+          {\ifdimgreater{\ulen}{\xlen}%
+             {\mathrel{\xymatrix@M=.12ex@C=3.2ex{\ar[r]^-{#2}_-{#1} &}}}
+             {\mathrel{\xymatrix@M=.12ex@C=\the\xlen{\ar[r]^-{#2}_-{#1} &}}}}}%
+      {\mathrel{\xymatrix@M=.12ex@C=\the\xlen{\ar[r]^-{#2}_-{#1} &}}}%
+   }
+\makeatletter
+\newcommand{\xla}[2][]{%
+   \ifbool{@display}%
+      {\settowidth{\olen}{$\overset{#2}{\longleftarrow}$}%
+       \settowidth{\ulen}{$\underset{#1}{\longleftarrow}$}%
+       \settowidth{\xlen}{$\xleftarrow[#1]{#2}$}%
+       \ifdimgreater{\olen}{\xlen}%
+          {\underset{#1}{\overset{#2}{\longleftarrow}}}%
+          {\ifdimgreater{\ulen}{\xlen}%
+             {\underset{#1}{\overset{#2}{\longleftarrow}}}
+             {\xleftarrow[#1]{#2}}}}%
+      {\xleftarrow[#1]{#2}}
+   }
+% isomorphism arrow, short in inlines and long in displays
+\newcommand{\isoarrow}{%
+   \ifbool{@display}{\overset{\sim}{\longrightarrow}}{\xrightarrow\sim}%
+   }
+
+
+
+
+\begin{document}
+\thispagestyle{plain}
+
+\author{Jeffrey Adams}
+
+
+\date{}                     %% if you don't need date to appear
+
+
+\title{Map from $[\SO(2n,\C)_u]$ to $[\SO(2n,\Ftwo)_u]$}
+
+%\thanks{}
+
+%\keywords{}
+%\subjclass[2010]{}
+
+\date{\today}
+
+\maketitle
+
+\newcommand{\SOC}{[\SO(2n,\C)_u]}
+\newcommand{\SOtwo}{[\SO(2n,\Ftwo)_u]}
+
+\section*{Introduction}
+
+In \cite{L1}*{Section 4.1} Lusztig defines an injective map from
+$G(\C)$ to $G(\BF_p)$ in terms of the Springer correspondence. He says
+that it is dimension preserving. He also says it agrees with the map
+defined by Spaltenstein \cite{Spa}*{III.5.2}.
+We're interested in the case $G=SO(2n)$.
+
+\bigskip
+
+\subsection{Dimensions of orbits in complex classical groups}
+
+Suppose $\alpha=(\alpha_1,\dots, \alpha_\ell)$ is a partition. Recall
+$$
+m_\alpha(i)=|\{j\mid \alpha_j=i\}|
+$$
+is the multipicity function.
+Define
+$$
+\begin{aligned}
+  s_\alpha(i)&=\sum_{j\ge i}m_\alpha(j)\\
+  &=|\{k\mid \alpha_k\ge i\}|
+\end{aligned}
+$$
+We drop $\alpha$ from the notation when it is clear.
+
+We write $\CC_\alpha$ for the unipotent orbit of a classical group corresponding to $\alpha$.
+
+\begin{lemma}[\cite{collingwood_mcgovern}*{Theorem 6.1.3}]
+  \label{l:dim_C}
+
+  \hfil
+  \begin{enumerate}
+  \item If $G=\Sp(2n,\C)$ then $\dim(\CC_\alpha)=\sum_i s_i^2 +\sum_{\{j\mid r_j\text{ odd}\}}r_j$
+    \item If $G=\SO(2n,\C)$ then $\dim(\CC_\alpha)=\sum_i s_i^2 -\sum_{\{j\mid r_j\text{ odd}\}}r_j$
+  \end{enumerate}
+\end{lemma}
+
+
+  According to \cite{Spa}*{Section .2.8} the unipotent orbits of
+  $\Sp(2n,\Ftwo)$ are parametrized by pairs $(\alpha,\epsilon)$ where
+  $\alpha\in\CP_{-1}(2n)$ and $\epsilon$ is a certain function.
+  In particular $\epsilon(i)=1$ if $\alpha_i$ is odd, and $\epsilon(i)=0,1$ if $\alpha_i$ is even.
+
+  The unipotent orbits of $\SO(2n,\Ftwo)$ are parametrized by the subset of those for $\Sp(2n,\Ftwo)$ satisfying: $\alpha_1^*$ is even 
+($\alpha_1^*$ is even ($\alpha^*$ is the
+  transpose partition).
+
+\begin{lemma}[\cite{Spa}*{Section I.2.8}]
+  Suppose $(\alpha,\epsilon)$ is the parameter for a unipotent orbit $\CC_{\alpha,\epsilon}$ in $\Sp(2n,\Ftwo)$.
+  Let $\CC_\alpha$ be the orbit in $\Sp(2n,\C)$ given by $\alpha$.
+
+  Then 
+  $$
+  \codim_{\Sp(2n,\Ftwo)}(\CC_{\alpha,\epsilon})=\codim_{\Sp(2n,\C)}(\CC_\alpha)+\sum_{\substack{{i>0\text{ even}}\\{\epsilon(i)=0}}}m_\alpha(i)
+  $$
+
+  Suppose $(\alpha,\epsilon)$ is the parameter for a unipotent orbit $\CC_{\alpha,\epsilon}$ in $\SO(2n,\Ftwo)$.
+Then
+  $$
+  \codim_{\SO(2n,\Ftwo)}(\CC_{\alpha,\epsilon})=\codim_{\Sp(2n,\C)}(\CC_\alpha)+\sum_{\substack{{i>0\text{ even}}\\{\epsilon(i)=0}}}m_\alpha(i)-\alpha_1^*
+  $$
+\end{lemma}
+
+\begin{lemma}
+  \label{l:diff_Sp}
+  Suppose $(\alpha,\epsilon)$ is the parameter for an orbit $\CC_{\alpha,\epsilon}$ of $\SO(2n,\Ftwo)$.
+  Let $\CC_\alpha$ be the orbit for $\Sp(2n,\C)$ given by $\alpha$. Then
+  $$
+  \dim_{\SO(2n,\Ftwo)}(\CC_{\alpha,\epsilon})=\dim_{\Sp(2n,\C)}(\CC_\alpha)-2n+\alpha_1^*-\sum_{\substack{{i>0\text{ even}}\\{\epsilon(i)=0}}}m_\alpha(i)
+  $$
+\end{lemma}
+
+This is an elementary reformulation of the previous Lemma.
+
+\begin{lemma}
+  \label{l:dim_diff}
+  Suppose $\alpha\in\CP(2n)$, and all rows have even multiplicity, so $\alpha\in \CP_{1}(2n)\cap \CP_{-1}(2n)$.
+  Suppose $(\alpha,\epsilon)$ is the parameter for an orbit $\CC_{\alpha,\epsilon}$ of $\SO(2n,\Ftwo)$,
+  and let $\CC_\alpha$ be the orbit for $\SO(2n,\C)$ corresponding to $\alpha$. Then
+  $$
+  \dim_{\SO(2n,\Ftwo)}(\CC_{\alpha,\epsilon})=\dim_{\SO(2n,\C)}(\CC_\alpha) +\alpha_1^* -\sum_{i\text{ odd}}m_\alpha(i)
+ -\sum_{\substack{i>0\text{ even}\\\epsilon(i)=0}}m_\alpha(i)
+  $$
+
+  In particular
+  $$
+   \dim_{\SO(2n,\Ftwo)}(\CC_{\alpha,\epsilon})=\dim_{\SO(2n,\C)}(\CC_\alpha)\Leftrightarrow \epsilon(i)=0\text{ for all $i$ even}
+  $$
+\end{lemma}
+
+\begin{proof}
+  The first part is elementary from the preceding Lemma and Lemma \ref{l:dim_C}.
+  For the second note that $\sum_i m_\alpha(i)=\alpha_1^*$.
+\end{proof}
+\begin{lemma}
+\label{l:cone}
+If $G=\SO(2n,\C)$  or $\SO(2n,\Ftwo)$ the unipotent cone has dimension $2n^2-2n$.
+\end{lemma}
+
+Maybe this is obvious from the algebraic groups point of view? In any event here's a proof.
+
+\begin{proof}
+  This is well known for $\SO(2n,\C)$.
+
+  The principal unipotent orbit $\CC_{princ}$ for $\SO(2n,\Ftwo)$ is $([2n-2,2],*)$.
+  By Lemma \ref{l:dim_C} the orbit $([2n-2,2])$ for $\Sp(2n,\C)$  has dimension $2n-2$.
+  By the Lemma \ref{l:diff_Sp} this gives
+  $$
+  \dim_{\SO(2n,\Ftwo)}(\CC_{princ})=(2n^2-2)+2-2n-0=2n^2-2n
+  $$
+\end{proof}
+
+
+
+\subsection{Spaltenstein's map}
+
+We'll only discuss the case of $\SO(2n)$.
+
+Suppose $\alpha\in \CP_{1}(2n)$ so $\CC_\alpha\in \SOC$.
+Then $\pi_S(\CC_\alpha)=\CC_{\alpha',\epsilon}$
+as defined in \cite{Spa}*{III.7}.
+Here $\alpha'\in\CP_{-1}(2n)$ is the collapse of $\alpha$ onto $\CP_{-1}(2n)$,
+and
+$\epsilon(i)=0$ if and only if $i$ is even, $\alpha_i^*,\alpha_{i+1}^*$ are even, and $\alpha_i^*\ne \alpha_{i+1}^*$.
+
+Let $\CU(X)$ denote the unipotent elements of $X$. 
+
+\begin{lemma}[\cite{Spa}*{Theorem 5.2}]
+Suppose $\pi_S(\CC)=\CC'$. Then  
+$$
+\codim_{\CU(\SO(2n,\CC))}(\CC)=
+\codim_{\CU(\SO(2n,\Ftwo))}(\CC')=
+$$
+\end{lemma}
+
+Note that the codimension is in the unipotent cone. By Lemma \ref{l:cone} these cones have the same dimension.
+Therefore
+
+\begin{lemma}
+  Let $\CC$ be a unipotent orbit for $\SO(2n,\C)$. Then
+$$
+\dim(\pi_S(\CC))=\dim(\CC)
+$$
+\end{lemma}
+
+This is clear if there is no collapsing.
+
+\begin{example}
+  \label{e:even}
+  Suppose $\alpha\in\CP_{-1}(2n)\cap \CP_1(2n)$, i.e. all parts have even multiplicity.
+  Let $\CC=\CC_{\alpha}$ for $\SO(2n,\C)$. Then $\pi_S(\CC)=\CC_{\alpha,\epsilon}$,
+  with the same $\alpha$ and some $\epsilon$. 
+
+  By Lemma the second part of \ref{l:dim_diff} the assertion holds if
+  and only if $\epsilon(i)=0$ for all $i$ even. This holds by the description
+  of $\epsilon$ in \cite{Spa}*{Section III.7.2}.
+\end{example}
+
+\subsection{An example}
+
+Consider the group $SO(12)$, and the elliptic class given by the partition $[2,2,1,1]$ of $6$.
+According to Lusztig this maps to $\CC_\alpha$ for $\SO(12,\C)$ where $\alpha=[5,3,3,1]$.
+This is using Lusztig's $\psi$: if $\alpha=[2,2,1,1]$ then $\psi[1,-1,1,-1]$.
+This orbit has dimension $50$.
+
+According to Lusztig this class goes to
+$([4,4,2,2],\epsilon(4)=\epsilon(2)=1)$ for $\SO(12,\Ftwo)$, and this  orbit has dimension $50$.
+Note that if we change $\epsilon$ the
+dimension goes down: we can  get dimension $50,48,48,46$ for various choices of $\epsilon$.
+
+According to Spaltenstein $[5,3,3,1]$ goes to
+$([4,4,2,2],\epsilon(4)=\epsilon(2)=1)$ for $\SO(12,\Ftwo)$, exactly
+the same as in Lusztig's assertion. A key point is that while
+Spaltenstein's map sometimes produces $\epsilon$ with $\epsilon(i)=0$,
+that is not the case here. And apparently this never happens for orbits in $\SO(2n,\C)$
+coming from $\Wec$.
+
+Side note: Spaltenstein's map takes $[4,4,2,2]$ to
+$([4,4,2,2],\epsilon(4)=0,\epsilon(2)=0)$, and this has dimension
+$46$, again as stated by Spaltenstein, Example \ref{e:even}, and
+calculated directly. But this doesn't arise from $\Wec$.
+
+\subsection{Relation between the Lusztig and Spaltenstein maps}
+
+I think everything comes down to the following Conjecture, which is purely combinatorial.
+
+\begin{conjecture}
+Suppose $\beta$ is a partition of $n$ with an even number of parts.
+Set $\alpha=2\beta+\psi(\alpha)\in \CP(2n)$.
+Then
+\begin{enumerate}
+\item $\alpha\in\CP_{1}(2n)$
+\item The $\CP_{-1}$-collapse of $\alpha$ is $2\beta$.
+\item $\pi_S(\CC_\alpha)=(2\beta,\epsilon)$ where $\epsilon(i)=1$ for all $i$.
+\end{enumerate}
+\end{conjecture}
+
+Assuming this is true then the Lusztig map does indeed agree with the Spaltenstein
+map, at least on the image of $\Wec$.
+
+\begin{thebibliography}{AAAA99}
+
+\bibitem[BB05]{bb}
+  F. Brenti and A. Bj\"{o}rner, \emph{Combinatorics of Coxeter groups},
+  Graduate Texts in Mathematics, vol. 231, Springer, New York (2005)
+
+\bibitem[CM93]{collingwood_mcgovern}
+  D. Collingwood and M. McGovern, \emph{Nilpotent orbits in semisimple Lie algebras},
+  Van Nostrand Reinhold Mathematics Series, Van Nostrand Reinhold Co., New York (1993)
+
+\bibitem[DHM13]{DHM}
+O. Dudas, X. He and J. Michel, \emph{Private communication}, 2013.
+
+\bibitem[DL76]{DL}
+P. Deligne and G. Lusztig, \emph{Representations of reductive groups over finite fields}, Ann. of Math. (2) 103 (1976), no. 1, 103--161.
+
+\bibitem[DM15]{DM}
+O. Dudas and G. Malle, \emph{Decomposition matrices for low-rank unitary groups}, Proc. Lond. Math. Soc. (3) 110 (2015), no. 6, 1517--1557.
+
+\bibitem[JO00]{JO}
+A. J. de Jong and F. Oort, \emph{Purity of the stratification by Newton polygons}, J. Amer. Math. Soc. 13 (2000), 209--241.
+
+\bibitem[Lu11]{L1}
+G. Lusztig, \emph{From conjugacy classes in the Weyl group to unipotent classes}, Represent. Theory 15 (2011), 494--530.
+
+\bibitem[Lu12]{L3}
+G. Lusztig, \emph{From conjugacy classes in the Weyl group to unipotent classes, III}, Represent. Theory 16 (2012), 450--488.
+
+\bibitem[Ha15]{Ha}
+P. Hamacher, \emph{The geometry of Newton strata in the reduction modulo p of Shimura varieties of PEL type}, Duke Math. J. 164 (2015), no. 15, 2809--2895.
+
+\bibitem[HV11]{HV}
+U. Hartl and E. Viehmann, \emph{The Newton stratification on deformations of local G-shtukas}, J. Reine Angew. Math. 656 (2011), 87--129.
+
+\bibitem[He07]{He07}
+X. He, {\em Minimal length elements in some double cosets of Coxeter groups},  Adv. Math. 215 (2007), 469--503.
+
+\bibitem[He14]{He-Ann}
+X. He, \emph{Geometric and homological properties of affine Deligne-Lusztig varieties}, Ann. of Math. (2) 179 (2014), 367--404.
+
+\bibitem[He16a]{He-CDM}
+X. He, \emph{Hecke algebras and $p$-adic groups}, Current developments in mathematics 2015, 73--135, Int. Press, Somerville, MA, 2016.
+
+\bibitem[He16b]{He-KR}
+X. He, \emph{Kottwitz-Rapoport conjecture on unions of affine Deligne-Lusztig varieties},  Ann. Sci. \`Ecole Norm. Sup. 49 (2016), 1125--1141.
+
+\bibitem[HN14]{HN2}
+X. He and S. Nie, \emph{Minimal length elements of extended affine Weyl group}, Compos. Math. 150 (2014), 1903--1927.
+
+\bibitem[Sp82]{Spa}
+N. Spaltenstein, \emph{Classes unipotents et sous-groupes de Borel}, Lecture Notes in Math. 946, Springer, 1982.
+
+\bibitem[Vi13]{Vi}
+E. Viehmann, \emph{Newton strata in the loop group of a reductive group}, Amer. J. Math. 135 (2013), no. 2, 499--518.
+
+\bibitem[Wa63]{Wall}
+G. E. Wall, \emph{On the conjugacy classes in the unitary, symplectic and orthogonal groups},  J. Austral. Math. Soc., 3 (1963), 1--63.
+
+\end{thebibliography}
+
+
+\end{document}
