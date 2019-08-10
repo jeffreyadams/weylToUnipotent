@@ -808,6 +808,7 @@ For $\k=\pm 1$ let
 $$
 \CP_\k(n)=\{\alpha \in \CP(n)\mid c_\alpha(i)\text{ is even if }  (-1)^i=\kappa\}
 $$
+Let $\CP(n)_0$ be the partitions of $n$ with an even number of parts.
 
 We define a partial order on unipotent classes by the closure relations as usual:
 $\CC\le \CC'$ if $\CC\subset \overline{\CC'}$.
@@ -1132,7 +1133,8 @@ Also $\alpha'_1=\alpha_1+1$ and, if $\ell$ is even, $\alpha'_\ell=\alpha_\ell-1$
 I think everything comes down to the following Conjecture, which is purely combinatorial.
 
 \begin{conjecture}
-Suppose $\beta$ is a partition of $n$ with an even number of parts.
+  \label{c:psi}
+Suppose $\beta\in\CP(n)_0$.
 Set $\alpha=2\beta+\psi(\alpha)\in \CP(2n)$.
 Then
 \begin{enumerate}
@@ -1141,6 +1143,8 @@ Then
 \item $\pi(\CC_\alpha)=(2\beta,\epsilon)$ where $\epsilon(i)=1$ for all $i$.
 \end{enumerate}
 \end{conjecture}
+
+Actually (1) in in \cite{L1}.
 
 \begin{remark}
   Assuming the conjecture Lusztig's map from $[G(\C)_u]$ to $[G(\Ftwo)_u]$ agrees with
@@ -1172,8 +1176,8 @@ The map is $\Phi:\CC_\alpha\mapsto \CU_{\alpha,\epsilonmax^\alpha}$.
 \item[(i)] $p \neq 2$: $\Phi:\CO_{\alpha} \mapsto \CU_{\alpha'}$, where
   $$
   \alpha'=\begin{cases}
-2\alpha+\psi_{2\alpha},    & \text{ if $\alpha$ has an odd number of parts };
-\\ (2\alpha+\psi_{2 \alpha}, 1), & \text{ if $\alpha$ has an even number of parts}.
+2\alpha+\psi_{\alpha},    & \text{ if $\alpha$ has an odd number of parts };
+\\ (2\alpha+\psi_{\alpha}, 1), & \text{ if $\alpha$ has an even number of parts}.
 \end{cases}
 $$
 \item[(ii)] $p=2$: $\Phi:\CO_{\alpha}=\CU_{\alpha',\epsilonmax^\alpha}$ 
@@ -1187,10 +1191,10 @@ $$
 
 \end{itemize}
 
-\item Type $D_n$: the elliptic conjugacy classes of $W$ are parametrized by partitions of $2n$ with even number of parts.
+\item Type $D_n$: the elliptic conjugacy classes of $W$ are parametrized by $\CP(n)_0$.
 The map from $\Wec$ to   unipotent $O(2n)$ conjugacy classes in $SO(2n)$ is given by:
 \begin{itemize}
-\item[(i)]$p \neq 2$: $\Phi:\CO_{\alpha} \mapsto \CU_{2 \alpha+\psi_{2 \alpha}}$.
+\item[(i)]$p \neq 2$: $\Phi:\CO_{\alpha} \mapsto \CU_{2 \alpha+\psi_{ \alpha}}$.
 \item[(ii)]  $p=2$: $\Phi:\CO_{\alpha}\mapsto\CU_{(2\alpha,\epsilonmax^\alpha)}$.
 \end{itemize}
 
@@ -1201,7 +1205,7 @@ Then $\Phi:\CO_{\alpha}\mapsto \CU_{2\alpha,\epsilonmax^{2\alpha}}$.
 \end{itemize}
 
 
-The function $\psi$ has an interpretation in terms of the map $\rho$ of the previous section.
+The function $\psi$ has an interpretation in terms of the map $\rho$ of the previous section (see Conjecture \ref{c:psi}).
 
 \begin{proposition}
 \label{p:psi}
@@ -1261,7 +1265,7 @@ We identify $W$ with the set of permutations $\s$ of
 $\{\pm 1, \pm 2, \ldots, \pm n\}$ satisfying $\s(-i)=-\s(i)$ for all
 $i$. For $-n \le i, j \le n$, we define
 $$
-w[i, j]=\{-n \le k \le i, w(k) \ge j\}.
+w[i, j]=|\{-n \le k \le i, w(k) \ge j\}|.
 $$
 
 Finally suppose $W\cong S_n\ltimes(\BZ/2\BZ)^{n-1}$ is of type $D_n$, and
@@ -1276,7 +1280,7 @@ $i$, and $|\{i<-1\mid w(i)>1\}|$ is even. Define $w[i,j]$ as in type $B/C$.
 \begin{enumerate}
 \item   If $W$ is of type $A_{n-1}$  then $x\le y\Leftrightarrow x[i,j]\le y[i,j]$ for all $1\le i,j\le n$
 \item   If $W$ is of type $B_n/C_n$  then $x\le y\Leftrightarrow x[i,j]\le y[i,j]$ for all $-n\le i,j\le n$
-\item     If $W$ is of type $B_n/C_n$  then $x\le y\Rightarrow x[i,j]\le y[i,j]$ for all $-n\le i,j\le n$
+\item     If $W$ is of type $D_n$  then $x\le y\Rightarrow x[i,j]\le y[i,j]$ for all $-n\le i,j\le n$
   \end{enumerate}
 
 \end{proposition}
@@ -1288,23 +1292,23 @@ See \cite{bb}, Theorems 2.1.5, 8.1.8 and 8.2.8.
 
 For classical groups the elliptic conjugacy classes in $W$ are
 parametrized as follows.  Recall $\CP(n)$ is the set of partitions of
-$n$, and let $\CP(n)_e$ be the subset of $\CP(n)$ consisting of
+$n$, and let $\CP(n)_0$ be the subset of $\CP(n)$ consisting of
 partitions with an even number of parts.
 
 \begin{enumerate}
 \item $A_{n-1}$: only the Coxeter element
 \item $B_n/C_n$: $\CP(n)$
-\item $D_n$: $\CP(n)_e$
+\item $D_n$: $\CP(n)_0$
 \end{enumerate}
 For $\alpha\in\CP(n)$ we write $\CC_\alpha$ for the corresponding elliptic conjugacy class in $W$.
 
 
-We prove Theorem \ref{t:main} for classical group. The main step is:
+We prove Theorem \ref{t:main} for classical groups. The main step is:
 
 \begin{proposition}
   \label{p:order_reversing}
   Suppose $W$ is of type $B_n/C_n$, respectively $D_n$, and 
-and $\alpha,\beta\in\CP(n)$ (respectively  $\CP(n)_e$).
+and $\alpha,\beta\in\CP(n)$ (respectively  $\CP(n)_0$).
   Then
 \begin{equation}
 \label{e:order_rreversing}
