@@ -424,6 +424,7 @@
 \def\Goue{[G_{0,u}]_e}  %unipotent classes in G_0, in the image of W_e
 \def\Wc{[W]}    %conjugacy classes in W
 \def\Wec{[W_e]} %elliptic conjugacy classes in W
+\def\WDec{[W^D_e]} %elliptic conjugacy classes in W
 \def\tPminus{\wt{\CP_{-1}}}
 \def\tPplus{\wt{\CP_{1}}}
 \def\epsilonmax{\epsilon_{\text{max}}}
@@ -764,27 +765,27 @@ classical groups are parametrized by some partitions.
 
 \subsection{Preliminary} Let $G$ be an affine algebraic group over an algebraically closed field of characteristic $p \ge 0$ such that the identity component $G^0$ of $G$ is reductive. Let $T$ be a maximal torus of $G^0$ and $B \supset T$ be a Borel subgroup of $G^0$. Let $W^0=N_{G^0}(T)/T$ be the Weyl group of $G^0$ and $W=N_G(T)/T$ be the (extended) Weyl group of $G$. The length function $\ell$ on $W^0$ extends in a unique way to a length function on $W$, which we still denote by $\ell$. Let $S \subset W^0$ be the set of simple reflections.
 
-Let $D$ be a connected component of $G$ and $W^D=(N_G(T) \cap D)/T$ be a left/right $W^0$-coset of $W$. As in \cite[\S 1.1]{L3}, $D$ defines a group automorphism $\e_D: W \to W$ which preserves the length. Let $[W]$ be the set of conjugacy classes of $W$ and $[W^D]$ be the set of $W^0$-conjugacy classes of $W$ that intersects $D$. An element $w \in W^D$ (or its conjugacy class $C$ in  $W$) is said to be {\it elliptic} if for any $J \subsetneqq S$ with $\e_D(J)=J$, we have $C \cap W_J=\emptyset$. Let $[W^D_e]$ the set of elliptic $W^0$-conjugacy classes of $W$ that intersects $W^D$.
+Let $D$ be a connected component of $G$ and $W^D=(N_G(T) \cap D)/T$ be a left/right $W^0$-coset of $W$. As in \cite[\S 1.1]{L3}, $D$ defines a group automorphism $\e_D: W \to W$ which preserves the length. Let $[W]$ be the set of conjugacy classes of $W$ and $[W^D]$ be the set of $W^0$-conjugacy classes of $W$ that intersects $D$. An element $w \in W^D$ (or its conjugacy class $C$ in  $W$) is said to be {\it elliptic} if for any $J \subsetneqq S$ with $\e_D(J)=J$, we have $C \cap W_J=\emptyset$. Let $\WDec$ the set of elliptic $W^0$-conjugacy classes of $W$ that intersects $W^D$.
 
 From now on, we assume that $D$ contains an unipotent element of $G$. Let $[D_u]$ be the set of $G^0$-conjugacy classes of $D$ which are unipotent. In \cite{L1} and \cite{L3}, Lusztig introduced a ``miraculous'' map $\Phi: [W^D] \to [D_u]$. It is proved in loc. cit. that 
 
 \begin{itemize}
 \item The map $\Phi: [W^D] \to [D_u]$ is surjective. 
 
-\item The restriction to elliptic conjugacy classes $\Phi_e: [W^D_e] \to [D_u]$ is injective. 
+\item The restriction to elliptic conjugacy classes $\Phi_e: \WDec \to [D_u]$ is injective. 
 \end{itemize}
 
 \subsection{Partial orders} We define a partial order on unipotent classes by the closure relations as usual:
 $\CC\leu \CC'$ if $\CC\subset \overline{\CC'}$.
 
-Now we recall the partial order on $[W^D_e]$ introduced in \cite[\S 4.7]{He07}. Let $\CC, \CC' \in [W^D_e]$. We denote by $\CC_{\min}$ (respectively $\CC'_{\min}$) the set of minimal length elements in $\CC$ (respectively $\CC'$). Then the following conditions are equivalent:
+Now we recall the partial order on $\WDec$ introduced in \cite[\S 4.7]{He07}. Let $\CC, \CC' \in \WDec$. We denote by $\CC_{\min}$ (respectively $\CC'_{\min}$) the set of minimal length elements in $\CC$ (respectively $\CC'$). Then the following conditions are equivalent:
 
 \begin{enumerate}
   \item For some $w \in \CC_{\min}$, there exists $w' \in \CC'_{\min}$ such that $w' \le w$;
   \item For any $w \in \CC_{\min}$, there exists $w' \in \CC'_{\min}$ such that $w' \le w$.
 \end{enumerate}
 
-If these conditions are satisfied, then we write $\CC' \leW \CC$. By the equivalence of the conditions (1) and (2) above, the relation $\leW$ is transitive. This gives a natural partial order on the set $[W^D_e]$.
+If these conditions are satisfied, then we write $\CC' \leW \CC$. By the equivalence of the conditions (1) and (2) above, the relation $\leW$ is transitive. This gives a natural partial order on the set $\WDec$.
 
 By \cite[Corollary 4.5]{He07}, $\CC_{\min}$ is the set of minimal elements in $\CC'$ with respect to the Bruhat order of $W$. Thus the conditions (1) and (2) above are also equivalent to the following conditions: 
 
@@ -794,21 +795,21 @@ By \cite[Corollary 4.5]{He07}, $\CC_{\min}$ is the set of minimal elements in $\
   \item For any $w \in \CC_{\min}$, there exists $w' \in \CC'$ such that $w' \le w$.
 \end{enumerate}
 
-The condition (3) will be used to study the partial order on $[W^D_e]$ for exceptional groups. 
+The condition (3) will be used to study the partial order on $\WDec$ for exceptional groups. 
 
 Now we state the main theorem of the paper. 
 
 \begin{theorem}\label{main}
-The map $\Phi_e: [W^D_e] \to [D_u]^{op}$ gives a bijection from the poset $[W^D_e]$ to its image. Here $[D_u]^{op}$ is the same as $[D_u]$ as sets, but with reversed partial order. 
+The map $\Phi_e: \WDec \to [D_u]^{op}$ gives a bijection from the poset $\WDec$ to its image. Here $[D_u]^{op}$ is the same as $[D_u]$ as sets, but with reversed partial order. 
 
-In other words, let $\CC, \CC' \in [W^D_e]$. Then $\CC' \leW \CC$ if and only if $\Phi(\CC) \leu \Phi(\CC')$.
+In other words, let $\CC, \CC' \in \WDec$. Then $\CC' \leW \CC$ if and only if $\Phi(\CC) \leu \Phi(\CC')$.
 \end{theorem}
 
 \subsection{Reduction to almost simple groups} In this subsection, we show that to prove Theorem \ref{main}, it suffices to consider the case where $G^0$ is simple. The reduction procedure is the similar to \cite[\S 1.5--1.11]{L3}.
 
 First, we may replace $G$ by the subgroup generated by $D$. Let $G'=G/Z(G^0)$ and $\pi: G \to G'$ be projection map. As the Weyl groups of $G$ and $G'$ are naturally identical, Theorem \ref{main} holds for $(G, D)$ if and only if it holds for $(G', D')$, where $D'=\pi(D)$. 
 
-Now we may assume that $G^0$ is semisimple and simply connected. We write $G^0$ as $G^0=G_1 \times \ldots \times G_k$, where each $G_i \neq \{1\}$ is a minimal closed connected normal subgroup of $G$. For any $i$, let $G'_i=G/(G_1 \times \ldots \times \hat G_i \times \ldots \times G_k)$ and $D_i$ be the image of $D$ in $G'_i$. Let $G'=G'_1 \times \ldots \times G'_k$. We may then identify $G$ with a closed subgroup of $G'$ with the same identity component. Under this identification, $D$ becomes $D_1 \times \ldots \times D_k$. Let $W'$ be the extended Weyl group of $G'$ and $W'_i$ be the extended Weyl group of $G'_i$. Then $W'=W'_1 \times \ldots \times W'_k$ and we may identify $W^D$ with $(W'_1)^{D_1} \times \ldots \times (W'_k)^{D_k}$. Under this identification, $$[W^D_e]=[(W'_1)^{D_1}_e] \times \ldots \times [(W'_k)^{D_k}_e]$$ and $\leW$ on $[W^D_e]$ coincides with $\preceq_{W, 1} \times \ldots \times \preceq_{W, k}$ on $[(W'_1)^{D_1}_e] \times \ldots \times [(W'_k)^{D_k}_e]$. By \cite[\S 1.8]{L3}, $\Phi_e$ on $[W^D_e]$ coincides with $\Phi_{e, 1} \times \ldots \times \Phi_{e, k}$ on $[(W'_1)^{D_1}_e] \times \ldots \times [(W'_k)^{D_k}_e]$. Thus if Theorem \ref{main} holds for each $(G'_i, D_i)$, then it holds for $(G, D)$. 
+Now we may assume that $G^0$ is semisimple and simply connected. We write $G^0$ as $G^0=G_1 \times \ldots \times G_k$, where each $G_i \neq \{1\}$ is a minimal closed connected normal subgroup of $G$. For any $i$, let $G'_i=G/(G_1 \times \ldots \times \hat G_i \times \ldots \times G_k)$ and $D_i$ be the image of $D$ in $G'_i$. Let $G'=G'_1 \times \ldots \times G'_k$. We may then identify $G$ with a closed subgroup of $G'$ with the same identity component. Under this identification, $D$ becomes $D_1 \times \ldots \times D_k$. Let $W'$ be the extended Weyl group of $G'$ and $W'_i$ be the extended Weyl group of $G'_i$. Then $W'=W'_1 \times \ldots \times W'_k$ and we may identify $W^D$ with $(W'_1)^{D_1} \times \ldots \times (W'_k)^{D_k}$. Under this identification, $$\WDec=[(W'_1)^{D_1}_e] \times \ldots \times [(W'_k)^{D_k}_e]$$ and $\leW$ on $\WDec$ coincides with $\preceq_{W, 1} \times \ldots \times \preceq_{W, k}$ on $[(W'_1)^{D_1}_e] \times \ldots \times [(W'_k)^{D_k}_e]$. By \cite[\S 1.8]{L3}, $\Phi_e$ on $\WDec$ coincides with $\Phi_{e, 1} \times \ldots \times \Phi_{e, k}$ on $[(W'_1)^{D_1}_e] \times \ldots \times [(W'_k)^{D_k}_e]$. Thus if Theorem \ref{main} holds for each $(G'_i, D_i)$, then it holds for $(G, D)$. 
 
 Now we may assume that $G^0$ is semisimple, simply connected and that $G$ has no nontrivial closed connected normal subgroups. By \cite[\S 1.9]{L3}, $G^0=H_1 \times \ldots \times H_{m}$, where $H_i$ are connected, simply connected, almost simple, closed subgroups of $G^0$ and there exists a $c \in D$ such that $H_i=c^i H_1 c^{-i}$ for $0 \le i \le m-1$ and $c^m H_1 c^{-m}=H_1$. Let $G'$ be the subgroup of $G$ generated by $H_1$ and $c^m$ and $D'=c^m H_0$ be a connected component of $G'$. By \cite[\S 1.9]{L3}, we may identify $[D_u]$ with $[D'_u]$ and $[W^D]$ with $[(W')^{D'}]$ and under this identification, we have the following commutative diagram
 \[
@@ -870,7 +871,8 @@ For $\k=\pm 1$ let
 $$
 \CP_\k(n)=\{\alpha \in \CP(n)\mid c_\alpha(i)\text{ is even if }  (-1)^i=\kappa\}
 $$
-Let $\CP(n)_0$ be the partitions of $n$ with an even number of parts.
+Let $\CP(n)_0$ be the partitions of $n$ with an even number of parts,
+and let $\CP(n)^{\text{odd}}$  be the partitions consisting only of odd parts.
 
 \subsection{Unipotent classes in good characteristic}
 \label{s:good}
@@ -1075,17 +1077,15 @@ has a unique maximal element.
 
 
 \begin{proof}
-  In each case the choices of $\epsilon$ are given by certain choices of $0,1$; in each
-  case choose $1$. Explicitly, given $\alpha$ define $\epsilonmax$ by:
-  $$
-  \epsilonmax^\alpha(i)=
-  \begin{cases}
-    1 \quad i>0\text{ odd},\, c_\alpha(i)>0\text{ even}& \alpha\in\tPplus(n)\\
-    1 \quad i>0\text{ even},\, c_\alpha(i)>0\text{ even}& \alpha\in\tPminus(2n)\\
-  \end{cases}
-  $$
-\remind{I think that the formula above is a bit confusing}  
-  
+The choices of $\epsilon$ are given by certain choices of $0,1$; 
+in each  case choose $1$.
+
+
+Explicitly, suppose $\alpha\in\tPplus(n)$. Then $\epsilon(i)$ is determined unless
+if $i$ is odd and $c_\alpha(i)>0$ is even, in which case it can be $0,1$; 
+define $\epsilonmax^\alpha(i)=1$ for all such $i$.
+
+Similary if $\alpha\in\tPminus(2n)$ define $\epsilonmax^\alpha(i)=1$ for all $i>0$ even such that $c_\alpha(i)>0$ is even. 
 This determines $\epsilonmax^\alpha$ completely, and the result is immediate from Proposition \ref{p:order}.
 \end{proof}
 
@@ -1255,32 +1255,39 @@ $$
 $$
 Also $\alpha'_1=\alpha_1+1$ and, if $\ell$ is even, $\alpha'_\ell=\alpha_\ell-1$.
 
-\subsection{Parametrization of elliptic conjugacy classes} For classical groups the elliptic conjugacy classes in $W$ are parametrized as follows.  Recall $\CP(n)$ is the set of partitions of
-$n$, and $\CP(n)_0$ is the subset of $\CP(n)$ consisting of partitions with an even number of parts. Let $\CP^{odd}(n)$ be the set of partitions of $n$ consisting of only odd parts. 
+\subsection{Parametrization of elliptic conjugacy classes}
+\label{s:ellipticparam}
+For classical groups the elliptic conjugacy classes in $W$ are
+parametrized as follows.  Recall $\CP(n)$ is the set of partitions of
+$n$,  $\CP(n)_0$ is the subset of $\CP(n)$ consisting of partitions
+with an even number of parts, and $\CP(n)^{\text{odd}}$ is the set of
+partitions of $n$ consisting of only odd parts.
 
 \begin{enumerate}
 	\item $G=\GLdagger(n)$. Then $G$ has two connected components: $G^0=GL(n)$ and $D=G\backslash G^0$. We have 
 	\begin{itemize}
 		\item $[W^{G^0}_e]$ is a singleton, and the only element is the conjugacy class of Coxeter elements;
-		\item $[W^D_e]$ is parametrized by $\CP^{odd}(n)$. 
+		\item $\WDec$ is parametrized by $\CP^{odd}(n)$. 
 	\end{itemize}
 	\item $G=SO(2n+1)$ or $Sp(2n)$: $[W_e]$ is parametrized by $\CP(n)$. 
-	\item $G=O(2n)$. Then $G$ has two connected components: $G^0=SO(2n)$ and $D=G\backslash G^0$. We have that $[W_e]$ is parametrized by $\CP(n)$. Moreover, 
-	\begin{itemize}
+	\item $G=O(2n)$. Then $G$ has two connected components: $G^0=SO(2n)$ and $D=G\backslash G^0$.
+          
+          \begin{itemize}
+\item            $[W_e]$ is parametrized by $\CP(n)$;
 		\item $[W^{G^0}_e]$ is parametrized by $\CP(n)_0$; 
-		\item $[W^D_e]$ is parametrized by $\CP(n) \backslash \CP(n)_0$. 
+		\item $\WDec$ is parametrized by $\CP(n) \backslash \CP(n)_0$. 
 	\end{itemize}
 \end{enumerate}
 For $\alpha\in\CP(n)$ we write $\CC_\alpha$ for the corresponding elliptic conjugacy class in $W$.
 
 \subsection{Explicit description of $\Phi$ for classical groups}\label{explicit}
-Suppose $G$ is a classical group. Lusztig's map $\Phi_e: [W^D_e] \to [D_u]$ is described explicitly in
+Suppose $G$ is a classical group. Lusztig's map $\Phi_e: \WDec \to [D_u]$ is described explicitly in
 \cite[\S 4.2]{L1} and \cite[\S 3.7 \& \S 5.5]{L3}.
 
 \begin{enumerate}
 \item $G=\GLdagger(n)$. In this case, $\Phi_e$ sends the conjugacy class of Coxeter elements to the principal unipotent class. Note that both the conjugacy class of Coxeter elements and the principal unipotent class correspond to the partition $(n)$ of $n$. 
 
-If $p=2$, then $D$ contains unipotent elements. In this case, the map $\Phi_e: [W^D_e] \to [D_u]$ is given by $\CC_\alpha\mapsto \CU_{\alpha,\epsilonmax^\alpha}$ for $\a \in \CP^{odd}(n)$. 
+If $p=2$, then $D$ contains unipotent elements. In this case, the map $\Phi_e: \WDec \to [D_u]$ is given by $\CC_\alpha\mapsto \CU_{\alpha,\epsilonmax^\alpha}$ for $\a \in \CP^{odd}(n)$. 
 
 \item $G=O(2n+1)$. The elliptic conjugacy classes of $W$ are parametrized by $\CP(n)$.
 
@@ -1299,7 +1306,7 @@ $$
 \item $G=Sp(2n)$. The elliptic conjugacy classes of $W$ are parametrized by $\CP(n)$.
 \begin{itemize}
 \item[(i)]  $p \neq 2$: the map $\Phi_e$ is given by $\CO_{\alpha} \mapsto \CU_{2 \alpha}$.
-\item[(ii)]  $p=2$: the map $\Phi_e$ is given by $\CO_{\alpha} \mapsto \CU_{(2 \alpha,2 \epsilonmax^\alpha)}$.
+\item[(ii)]  $p=2$: the map $\Phi_e$ is given by $\CO_{\alpha} \mapsto \CU_{(2 \alpha,\epsilonmax^{2\alpha})}$.
 \end{itemize}
 
 \item $G=O(2n)$. 
@@ -1308,19 +1315,19 @@ If $p \neq 2$, then all the unipotent elements of $G$ are contained in $G^0=SO(2
 
 If $p=2$, then $[W_e]$ is parametrized by $\CP(n)$ and the map $\Phi_e: [W_e] \to [G_u]$ is given by $\CO_{\alpha}\mapsto \CU_{2\alpha,\epsilonmax^{2\alpha}}$. 
 
-Note that the unipotent classes $\CU_{2\alpha,\epsilonmax^{2\alpha}}$ are single $G^0$-conjugacy classes.
+Note that each unipotent class $\CU_{2\alpha,\epsilonmax^{2\alpha}}$ is a  single $G^0$-conjugacy classes.
 \end{enumerate}
 
 \subsection{Spaltenstein's map from characteristic $0$ to characteristic $2$}
 In this subsection, let $G_p$ be a connected reductive group, defined over an
 algebraically closed field $\BF$ of characteristic $p>0$. Let $G_0$
 be the complex group with the same root datum as $G$.  Consider the
-sets $[G_{p, u}]$ (respectively $[G_{0, u}]$) of unipotent conjugacy classes of $G_p$
+sets $[G_{p, u}]$ and  $[G_{0, u}]$) of unipotent conjugacy classes of $G_p$
 and $G_0$, respectively.
 
 \begin{proposition}{\cite{Spa}*{Theorem III.5.2}}
 \label{p:p=2}
-  There is an injective, dimension preserving map $\pi_p:G_{0, u}\rightarrow [G_{p, u}]$, such that $\pi_p$ is a isomorphism of partially ordered
+  There is an injective, dimension preserving map $\pi_p:[G_{0, u}]\rightarrow [G_{p, u}]$, such that $\pi_p$ is a isomorphism of partially ordered
   sets from $[G_{0, u}]$ to its image.
 \end{proposition}
 
@@ -1340,20 +1347,56 @@ We now suppose $G$ is a classical group. It is known that $\pi_p$ is a bijection
 \xymatrix{& [W] \ar[ld]_{\Phi_0} \ar[rd]^{\Phi_2} & \\ [G_{0, u}] \ar@{^{(}->}[rr]^{\pi_2} & & [G_{2, u}].}
 \]
 
-Thus to prove Theorem \ref{main} for $Sp(2n)$ or $SO(n)$, it suffices to consider these groups over characteristic $2$. Note that the explicit description of $\Phi_2 \mid_{[W_e]}$ is rather simple. We have that
+Thus to prove Theorem \ref{main} for $Sp(2n)$ or $SO(n)$, it suffices
+to consider these groups over characteristic $2$. Note that the
+explicit description of $\Phi_2$ restricted to $[W_e]$ is rather simple. We
+have that
 
 \begin{proposition}
-Let $G$ be a classical group defined over an algebraically closed field of characteristic $p \ge 0$. Let $\CO_\a, \CO_\b$ be elliptic conjugacy classes of $W$. Then $\Phi(\CO_\a) \leu \Phi(\CO_\b)$ if and only if $\a \le \b$.
+  \label{p:Phi_elliptic}
+  Let $G$ be a connected classical group defined over an algebraically
+  closed field of characteristic $p \ge 0$.  Let
+  $\CC_\a, \CC_\b\in\Wec$, parametrized by certain partitions as in
+  Section \ref{s:ellipticparam}.  Then
+  $\Phi(\CC_\a) \leu \Phi(\CC_\b)$ if and only if $\a \le \b$.
 \end{proposition}
 
 \begin{proof}
-	If $p \neq 2$, then $[G_{p, u}]$ and $[G_{0, u}]$ are the same as posets. Moreover, the map $\pi_2: [G_{0, u}] \to [G_{2,u}]$ is an isomorphism of the posets from $[G_{0, u}]$ to its image. In other words, $\Phi_p(\CO_\a) \leu \Phi_p(\CO_\b)$ if and only if $\Phi_2(\CO_\a) \leu \Phi_2(\CO_\b)$. Here $\Phi_p$ is the Lusztig's map for $G$ in characteristic $p$. 
-	
-	Now by \S \ref{explicit}, for $G=Sp(2n)$ or $O(n)$, the map $\Phi_2$ is given by $\CO_{\alpha} \mapsto \CU_{\alpha', \epsilonmax^{\alpha'}}$
-	where $\alpha'=2 \a$ or $(2\alpha,1)$. By \S \ref{s:closure}, $\CU_{\alpha', \epsilonmax^{\alpha'}} \le \CU_{\b', \epsilonmax^{\b'}}$ if and only if $\a' \le \b'$, which is equivalent to $\a \le \b$. 
-	
-	Similar argument holds for $G=\GLdagger(n)$. 
+If $p \neq 2$, then $[G_{p, u}]$ and $[G_{0, u}]$ are the same as partially ordered sets.
+Moreover, the map $\pi_2: [G_{0, u}] \to [G_{2,u}]$ is an
+isomorphism from the poset $[G_{0, u}]$ to its image. In other
+words, $\Phi_p(\CC_\a) \leu \Phi_p(\CC_\b)$ if and only if
+$\Phi_2(\CC_\a) \leu \Phi_2(\CC_\b)$. Here $\Phi_p$ is the Lusztig's
+map for $G$ in characteristic $p$.
+
+	Now by \S \ref{explicit}, for $G=Sp(2n)$ or $O(n)$, the map $\Phi_2$ is given by $\CC_{\alpha} \mapsto \CU_{\alpha', \epsilonmax^{\alpha'}}$
+	where $\alpha'=2 \a$ or $(2\alpha,1)$. By \S \ref{s:closure}, $\CU_{\alpha', \epsilonmax^{\alpha'}} \le \CU_{\b', \epsilonmax^{\b'}}$ if and only if $\a' \le \b'$, which is equivalent to $\a \le \b$.
+
+A similar argument holds for $\GLdagger(n)$.
 \end{proof}
+
+
+An immediate consequence is that for classical groups Theorem \ref{main} is  equivalent to the following
+combinatorial statement about the Weyl group, which is independent of characteristic.
+
+\begin{proposition}
+  \label{p:order_reversing}
+  Suppose $W$ is a classical Weyl group.
+  Suppose $\CC_\alpha,\CC_\beta\in \WDec$, for partitions $\alpha,\beta$ as in Section \ref{s:ellipticparam}. 
+  Then
+\begin{equation}
+\label{e:order_rreversing}
+\CC_\alpha\leW\CC_\beta\Leftrightarrow \beta\le\alpha.
+\end{equation}
+\end{proposition}
+
+That is by Propositions \ref{p:Phi_elliptic} and \ref{p:order_reversing}
+  $$
+  \Phi(\CC_\alpha)\leW\Phi(\CC_\beta)\Leftrightarrow \alpha\le\beta\Leftrightarrow \CC_\beta\leW\CC_\alpha
+  $$
+  which proves Theorem \ref{main} for classical groups.
+  
+
 
 \begin{comment}
 The function $\psi$ has an interpretation in terms of the map $\rho$ of the previous section (see Conjecture \ref{c:psi}).
@@ -1403,9 +1446,7 @@ and these are isomorphisms of partially ordered sets.
 \end{comment}
 
 
-\section{Partial order $\leW$ for classical groups}
-
-\subsection{Bruhat order for classical groups}
+\section{Bruhat order $\leW$ for classical groups}
 
 We give a  version of the Bruhat order for classical groups which is convenient for
 our purposes.
@@ -1442,18 +1483,9 @@ $i$, and $|\{i<-1\mid w(i)>1\}|$ is even. Define $w[i,j]$ as in type $B/C$.
 
 See \cite[Theorems 2.1.5, 8.1.8 and 8.2.8]{bb}.
 
-We prove Theorem \ref{t:main} for classical groups. The main step is:
+The remainder of this section is concerned with the proof of Proposition \ref{p:order_reversing}. 
 
-\begin{proposition}
-  \label{p:order_reversing}
-  Suppose $W$ is of type $B_n/C_n$, respectively $D_n$, and
-and $\alpha,\beta\in\CP(n)$ (respectively  $\CP(n)_0$).
-  Then
-\begin{equation}
-\label{e:order_rreversing}
-\CC_\alpha\leW\CC_\beta\Leftrightarrow \beta\le\alpha.
-\end{equation}
-\end{proposition}
+
 
 \subsection{Case 1: Type $B_n/C_n$}.
 
