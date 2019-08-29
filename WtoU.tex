@@ -637,70 +637,20 @@ $\Phi(\CC') \leu\Phi(\CC)$.
 
 This holds also in the twisted setting.
 
-
-\bigskip
-
-\subsection{Lusztig's map for classical groups}
-We now consider the question of finding a simpler description of
-Lusztig's map $\Phi$ for classical groups. Note that $\Phi$
-takes $\Wc$ to $\Gu$, and although $\Wc$ is independent of the field
-$\Gu$ is not. For classical groups the most interesting case is when $\BF$
-has characteristic $2$.
-Let $G_p$ be a classical group over a field of characteristic $p$,
-and let $G_0$ be the group over $\C$ with the same root datum as $G$.
-There is a natural
-injective map $\pi:[G_{0,u}]\hookrightarrow [G_{p, u}]$ which is an
-isomorphism of partially ordered sets from $[G_{0,u}]$ to its image. This map is bijective if $p \neq 2$.
-Hence the case of characteristic $2$ has the most information, and it
-turns out to be the simplest case as well.
-So we now restrict to the case $p=2$.
-
-For this introduction we consider
-$\GL(n), \SO(n), \O(n), \Sp(2n)$, see Section ? for the case of
-twisted type $A$.  Each group comes with its tautological embedding
-$\iota:G\rightarrow G^*$ where $G^*=GL(m)$ ($m=n$ or $2n$).
-This induces
-a homomorphism $\iota:W\rightarrow W^*$ where $W^*$ is the Weyl group
-of $G^*$.
-
-Consider the following diagram:
-
+In the case of classical groups this comes down to a simple property
+of Lusztig's map in characteristic $2$. The elliptic conjugacy classes
+$\Wec$ are parametrized by partitions, which have a natural partial
+order.  It turns out the partial orders on partitions and on $\Wec$
+are opposite to each other. Also it is easy to see that in
+characteristic $2$ Lusztig's map $\Phi$ is order preserving from
+partitions to $[G_u]$. Thus we have 
 $$
-\xymatrix{
-[W^*]\ar[r]^{\Phi^*}&[G^*_u]\ar[d]^\Gamma\\
-\Wec\ar[r]^{\Phi}\ar[u]^{\iota}&\Gu\\
-}
+\Phi(\CC_\alpha)\leu\Phi(\CC_\beta)\Leftrightarrow \alpha\le\beta\Leftrightarrow \CC_\beta\leW\CC_\alpha.
 $$
-
-\medskip
-The left vertical arrow is induced by  the homomorphism $\iota:W\rightarrow W^*$.
-The top row is Lusztig's map for $G^*=GL(m)$, which is elementary:
-both $\Wc$ and $\Gu$ are parametrized by partitions of $m$, and $\Phi^*$ corresponds to the identity map on partitions.
-The bottom row is Lusztig's map for $G$.
-
-Suppose $\CU\in[G^*_u]$.
-Then (see Section ?)  $\overline{\CU}\cap G$
-is the closure of a single unipotent orbit for $G$. Hence
-there is a well defined map $\Gamma:[G^*_u]\rightarrow\Gu$ satisfying:
-$$
-\overline{\CU}\cap G=\overline{\Gamma(\CU)}\quad (\CU\in[G^*_u]).
-$$
-
-\begin{theorem}
-\label{t:second}
-Suppose $G=GL(n), SO(n),O(n)$ or $Sp(2n)$ and $p=2$.
-Then the preceding diagram commutes:
-
-$$
-\Phi(\CC)=\Gamma(\Phi^*(\iota(\CC))).
-$$
-\end{theorem}
-
-A twisted version of this holds as well.
-
-
-
-
+See Proposition \ref{p:order_reversing}. The result in characteristic
+$0$ follows from this and Spaltenstein's order preserving map from
+unipotent orbits in characteristic $0$ to those in characteristic $p$
+(Proposition \ref{p:p}).
 
 \subsection{A similar phenomenon for affine Weyl groups}
 
@@ -911,8 +861,11 @@ bijection, and the same holds in for $\SO(2n)$ if $n$ is odd.  If $n$
 is even the unipotent $\SO(2n)$-conjugacy classes in $\SO(2n)$ are parametrized
 by $\CP_1(2n)$, except that every partition with only even parts
 corresponds to two classess; there are $p(n/2)$ of these classes where
-$p$ is the partition function. We will not need to distinguish between
-these two conjugacy classes. \remind{?}
+$p$ is the partition function.
+The $\O(2n)$ orbits which split into two $\SO(2n)$ orbits do not arise
+in the image of Lusztig's map applied to elliptic elements, so we do not need
+to distinguish these two classes.
+
 
 We write $\CU_{\alpha}$ for the unipotent class parametrized by a partition $\alpha$.
 Then the partial order on unipotent conjugacy classes is given by the partial order on partitions:
@@ -998,7 +951,9 @@ If $(\alpha,\epsilon)\in \tPminus(2n)_0$ then
  $\CU_{\alpha,\epsilon}\subset \SO(2n)$ is the union of two $\SO(2n)$-conjugacy classes if
  for all $i$, $\alpha_i$ and $m_\alpha(i)$ are even and $\epsilon(i)=0$. Otherwise
  $\CU_{\alpha,\epsilon}\subset\SO(2n)$ is a single $\SO(2n)$-conjugacy class.
- Again we will not need to specify one of these two orbits more precisely. \remind{?}
+Again the $\O(2n)$ orbits which split into two $\SO(2n)$ orbits do not arise
+ in the image of Lusztig's map applied to elliptic elements, so we do not need
+ to distinguish these two classes.
 
 Recall every characteristic for $\GL(n)$ is good, and the unipotent
 classes for $\GL(n)$ are parametrized by partitions of $n$. Now we
@@ -1092,9 +1047,9 @@ has a unique maximal element.
 \begin{proof}
 Recall $\epsilon(i)\in\{\omega,0,1\}$, and is determined by $\alpha$
 except in some cases when it can be $0$ or $1$; for $\epsilonmax$
-always choose $1$ whenever possible.
+always choose $1$ whenever there is a choice.
 
-Explicitly define:
+Explicitly, define:
 
   $$
   \epsilonmax^\alpha(i)=
@@ -1106,128 +1061,6 @@ Explicitly define:
 This determines $\epsilonmax^\alpha$ completely, and the result is immediate from Proposition \ref{p:order}.
 \end{proof}
 
-\begin{comment}
-\section{Reduction to characteristic 2}
-\label{s:p=2}
-
-In this section $G$ is a connected reductive group, defined over an
-algebraically closed field $\BF$ of characteristic $p>0$.  Let $G_0$
-be the complex group with the same root datum as $G$.  Consider the
-sets $\Gu$ (respectively $\Gou$) of unipotent conjugacy classes of $G$
-and $G_0$, respectively.
-
-\begin{proposition}{\cite{Spa}*{Theorem III.5.2}}
-\label{p:p=2}
-  There is an injective, dimension preserving map $\pi:\Gou\rightarrow \Gu$, such that $\pi$ is a isomorphism of partially ordered
-  sets from $\Gou$ to its image.
-\end{proposition}
-
-\begin{corollary}
-  \label{c:reductionmain}
-  It is enough to prove Theorem \ref{t:main} in characteristic $0$.
-\end{corollary}
-
-We now suppose $G$ is a classical group and address the question of
-reducing Theorem \ref{t:second} to characteristic $2$.  The sets $\Gu$
-and $\Gou$ were described explicitly in Section \ref{s:classical}. The
-map $\pi$ is given explicitly in these terms in \cite{Spa}*{Section
-  III.6--8}. In each case there is a description of the image of
-$\pi$, and an explicit inverse $\rho$ defined on this image.
-
-\begin{equation}
-\label{e:bijection}
-\xymatrix{
-\Gou \ar@/^/[rr]|\pi&&\text{Im}(\pi)\ar@/^/[ll]|\rho\ar@{^{(}->}[r]&\Gu
-}
-\end{equation}
-
-
-Here are the sets parametrizing the objects in types $B,C,D$.
-\[
-\begin{tabular}{lll}
-  $G$ & $\C$ & $\BF_2$\\\hline
-  $Sp(2n)$ & $\CP_{-1}(2n)$ & $\tPminus(2n)$ \\
-  $O(2n+1)$ & $\CP_{1}(2n+1)$ & $\tPminus(2n)$\\
-  $O(2n)$ & $\CP_{1}(2n)$ & $\tPminus(2n)$\\
-\end{tabular}
-\]
-
-
-
-If $G=Sp(2n)$ then $\pi:\alpha\mapsto(\alpha,\epsilon)$ where $\epsilon(i)=1$ for all $i$ with $m_\alpha(i)>0$.
-
-When $G=O(2n)$ we have $\pi(\alpha)=(\alpha',\epsilon)$ where $\alpha'=\inf_{\CP_{-1}(2n)}(\alpha)$
-as in \cite{Spa}*{Lemma III.3.6}, or the ``C-collapse'' of $\alpha$
-in the terminology of \cite{collingwood_mcgovern}.
-For a description of $\epsilon$, and the case of $O(2n+1)$ see \cite{Spa}*{III.7-8}.
-
-We will apply this in Section \ref{s:Lclassical}.
-
-
-\section{Some combinatorics}
-
-We recall a function defined in  \cite[\S 1.6]{L1}.
-
-Suppose $\alpha=(\alpha_1,\dots,\alpha_\ell)$ is a partition. Define a function
-$\psi_\alpha:\{i\mid 1\le i\le \ell\}\rightarrow\{-1,0,1\}$  as follows.
-Set $\alpha_0=\alpha_{\ell+1}=0$.
-
-\begin{enumerate}
-
-\item If $i$ is  odd and $\alpha_{i-1}<\alpha_{i}$ then $\psi(i)=1$;
-\item If $i$ is even and $\alpha_i>\alpha_{i+1}$ then $\psi(i)=-1$;
-\item In all other cases $\psi(i)=0$.
-\end{enumerate}
-
-This satisfies some obvious properties. For $\ell\in\BZ$ define $\kappa_\ell\in\{0,1\}$ by: $(-1)^\ell=(-1)^{\kappa_\ell}$.
-
-\begin{enumerate}
-\item $\psi_\alpha(1)=1$; $\psi_\alpha(\ell)=-1$ if $\ell$ is even
-\item If $k\le\ell$ is odd then $\sum_{i=1}^k\psi_\alpha(i)=1$
-\item If $k\le\ell$ is even then $\sum_{i=1}^k\psi_\alpha(i)=1+\psi_\alpha(k)$.
-\item $\sum_{i=1}^\ell\psi_\alpha(i)=\kappa_\ell$.
-\end{enumerate}
-
-
-Suppose $\alpha$ is a partition of $n$, and all entries $\alpha_i$ of  $\alpha$ are even. Then let
-$$
-\alpha+\psi_\alpha=(\alpha_1+\psi_\alpha(1),\dots, \alpha_\ell+\psi_\alpha(\ell))
-$$
-This is a partition of of $n+\kappa_\ell$. Explicitly,
-if we write $\alpha+\psi_\alpha=(\alpha_1',\dots,\alpha_\ell')$, and
-if $2i+1\le\ell$ then
-$$
-(\alpha'_{2i},\alpha'_{2i+1})=
-\begin{cases}
-(\alpha_{2i},\alpha_{2i+1})& \alpha_{2i}=\alpha_{2i+1}\\
-(\alpha_{2i}-1,\alpha_{2i+1}+1)&\alpha_{2i}>\alpha_{2i+1}
-\end{cases}
-$$
-Also $\alpha'_1=\alpha_1+1$ and, if $\ell$ is even, $\alpha'_\ell=\alpha_\ell-1$.
-
-I think everything comes down to the following Conjecture, which is purely combinatorial.
-
-\begin{conjecture}
-  \label{c:psi}
-Suppose $\beta\in\CP(n)_0$.
-Set $\alpha=2\beta+\psi(\alpha)\in \CP(2n)$.
-Then
-\begin{enumerate}
-\item $\alpha\in\CP_{1}(2n)$
-\item The $\CP_{-1}$-collapse of $\alpha$ is $2\beta$.
-\item $\pi(\CC_\alpha)=(2\beta,\epsilon)$ where $\epsilon(i)=1$ for all $i$.
-\end{enumerate}
-\end{conjecture}
-
-Actually (1) in in \cite{L1}.
-
-\begin{remark}
-  Assuming the conjecture Lusztig's map from $[G(\C)_u]$ to $[G(\Fbartwo)_u]$ agrees with
-  the one defined by Spaltenstein \cite{Spa}*{Section III.7}, as asserted by Lusztig (at least
-the conjugacy classes coming from $\Wec$).
-
-\end{remark}
-\end{comment}
 \section{Lusztig's map for classical groups}
 \label{s:Lclassical}
 \subsection{The function $\psi$}
@@ -1351,8 +1184,8 @@ sets $[G_{p, u}]$ and  $[G_{0, u}]$) of unipotent conjugacy classes of $G_p$
 and $G_0$, respectively.
 
 \begin{proposition}{\cite{Spa}*{Theorem III.5.2}}
-\label{p:p=2}
-  There is an injective, dimension preserving map $\pi_p:[G_{0, u}]\rightarrow [G_{p, u}]$, such that $\pi_p$ is a isomorphism of partially ordered
+\label{p:p}
+  There is an injective, dimension preserving map $\pi_p:[G_{0, u}]\rightarrow [G_{p, u}]$, such that $\pi_p$ is an isomorphism of partially ordered
   sets from $[G_{0, u}]$ to its image.
 \end{proposition}
 
@@ -1416,8 +1249,9 @@ $$
 Set $\gamma=\alpha+\psi_\alpha$, so we  have to show $\delta=\gamma$.
 
 According to  \cite{Spa}*{Lemma 7.3}, and using
-the definition of $\epsilonmax^\alpha$, $\epsilonmax^\alpha(i)=1$ if and only if
-there is a row of length $i$, i.e. $\alpha_j=i$ for some $j$. Given this we see
+the definition of $\epsilonmax^\alpha$, we see $\epsilonmax^\alpha(i)=1$ if and only if
+there is a row of length $i$, i.e. $m_\alpha(i)>0$.
+Given this we see
 \begin{subequations}
 \renewcommand{\theequation}{\theparentequation)(\alph{equation}}
 \begin{align}
@@ -1445,13 +1279,25 @@ Similarly there is a bijection
 $$
 \{i\text{ even}\mid \alpha_i^*\text{ is even},\, m_\alpha(i)> 0\}\leftrightarrow\{j\text{ even}\mid \alpha_{j}>\alpha_{j+1}\},
 $$
-taking $i\mapsto j=?$ and $j\mapsto ?$,
-under which decreasing $\alpha_i$ by $1$ corresponding to decreasing $\alpha_j^*$ by $1$.
+taking $i\mapsto j=\alpha_i^*$ and $j\mapsto i=\alpha_j$,
+under which decreasing $\alpha_i$ by $1$ corresponds to decreasing $\alpha_j^*$ by $1$.
 This completes the proof for $\SO(2n)$. We leave the very similar case of $\SO(2n+1)$ to the reader.
 \end{proof}
 
 
-Returning to Proposition \ref{p:p=2}, this gives a reduction of Theorem \ref{main} in the classical case
+\begin{example}
+  Suppose $G=\SO(2n)$ and $\alpha=[6,6,4,2]$.
+  Then $\alpha^*=[4,4,3,3,2,2]$. Thus $\delta_1^*=\alpha_1^*=4, \delta_2^*=\alpha_2^*-1=3,\delta_3^*=\alpha_3^*=3,
+\delta_4^*=\alpha_4^*=3, \delta_5^*=\alpha_5^*+1=3,\delta_6^*=\alpha_6^*-1=1,
+\delta_7^*=\alpha_7^*+1=1$. This gives the partition $\delta^*=[4,3,3,3,3,1,1]$, or $\delta=[7,5,5,1]$.
+
+On the other hand
+$\gamma_1=\alpha_1+1=7,\gamma_2=\alpha_2-1=5,\gamma_3=\alpha_3+1=5,\gamma_4=\alpha_4-1=1$,
+so $\gamma=[7,5,5,1]=\delta$.
+
+\end{example}
+
+Returning to Proposition \ref{p:p}, this gives a reduction of Theorem \ref{main} in the classical case
 to characteristic $2$, in which case the
 explicit description of $\Phi_2$ restricted to $[W_e]$ is quite simple.
 We have the following result.
