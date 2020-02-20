@@ -554,9 +554,8 @@
 
 % %\documentclass[a4paper, reqno, 12pt]{amsart}
 \address{Department of Mathematics, University of Maryland, jda@math.umd.edu}
-\address{Department of Mathematics, University of Maryland, xuhuahe@math.umd.edu}
-\address{Institute of Mathematics, Academy of Mathematics and Systems Science, Chinese Academy of Sciences, 100190, Beijing, China
-  , niesian@amss.ac.cn}
+\address{The Institute of Mathematical Sciences and Department of Mathematics, The Chinese University of Hong Kong, Shatin, N.T., Hong Kong, xuhuahe@math.cuhk.edu.hk}
+\address{Institute of Mathematics, Academy of Mathematics and Systems Science, Chinese Academy of Sciences, 100190, Beijing, China, niesian@amss.ac.cn}
 
 
 %\date{}                     %% if you don't need date to appear
@@ -564,12 +563,14 @@
 
 \title[Partial orders]{Partial orders on conjugacy classes in the Weyl group and on unipotent conjugacy classes}
 
-%\thanks{}
-
-%\keywords{}
-%\subjclass[2010]{}
-
 \date{\today}
+
+\begin{abstract}
+Let $G$ be a reductive group over an algebraically closed field and $W$ be its Weyl group. In a series of papers, Lusztig introduced a map from the set $[W]$ of conjugacy classes of $W$ to the set $[G_u]$ of unipotent classes of $G$. This map, when restricted to the set of elliptic conjugacy classes $[W_e]$ of $W$, is injective. In this paper, we show that Lusztig's map $[W_e] \to [G_u]$ is order-reversing, with respect to the natural partial orders on $[W_e]$ arising from combinatorics and the natural partial order on $[G_u]$ arising from geometry. 
+\end{abstract}
+
+\keywords{Reductive groups, Weyl groups, conjugacy classes, partial orders}
+\subjclass[2010]{Primary: 20G07, Secondary: 06A07, 20F55, 20E45}
 
 \maketitle
 
@@ -577,38 +578,31 @@
 
 \section*{Introduction}
 
-
-This is the missing introduction.
-
 \subsection{Lusztig's map}
 Let $G$ be a connected reductive group over an algebraically closed
 field $\BF$ and let $W$ be the Weyl group of $G$. Let $\Gu$ be the set of
 unipotent conjugacy classes in $G$ and $\Wc$ be the set of conjugacy
-classes of $W$. Lusztig has defined a surjective map
+classes of $W$. Lusztig defined a surjective map
 $\Phi: \Wc \to \Gu$ (\cite[Theorem 0.4]{L1}).
-This construction is generalized to twisted conjugacy classes in \cite{L3}.
+This construction was generalized to twisted conjugacy classes in \cite{L3}.
 
-Roughly speaking, the map $\Phi$ is constructed as follows. For the introduction
- we assume $\BF$ has characteristic $0$.
-Let
-$\CC \in \Wc$ and $w \in \CC_{\min}$ be a minimal length element of
+Roughly speaking, the map $\Phi$ is constructed as follows. 
+Let $\CC \in \Wc$ and $w \in \CC_{\min}$ be a minimal length element of
 $\CC$. We look at the intersection of Bruhat double coset $B w B$ with
 unipotent conjugacy classes and we select the minimal
 unipotent class which gives a nonempty intersection. It is pointed out
 in \cite[\S 0.1]{L1} that ``the fact that the procedure actually works
-is miraculous''.  We are interested in understanding the map $\Phi$ is
-a more conceptual way.
+is miraculous''.  
 
-In this paper we are concerned with the elliptic conjugacy classes
-$\Wec$ of $W$.  The restriction of $\Phi$ to $\Wec$ is  injective,
+In this paper we are concerned with the set of elliptic conjugacy classes
+$\Wec \subset \Wc$.  The restriction of $\Phi$ to $\Wec$ is  injective,
 and the image contains all distinguished unipotent
 conjugacy classes (\cite[Proposition 0.6]{L1}).
-
 
 The set $\Gu$ has the natural partial ordering by closure
 relations, denote $\leu$. On the other hand the
 second-named author \cite{He07} (see also \cite[\S
-1.10.3]{He-CDM}) has introduced a partial order on $\Wec$,
+1.10.3]{He-CDM}) introduced a partial order on $\Wec$,
 induced from the Bruhat order on  minimal length elements of the
 elliptic conjugacy classes of $W$, which we denote $\leW$.
 
@@ -616,7 +610,7 @@ It is a natural question to consider how Lusztig's map
 behaves with respect to these partial orders.
 Dudas, Michel and the second-named author
 \cite{DHM} conjectured that $\Phi$ gives an order-reversing bijection
-from $\Wec$ to $\Phi(\Wec) \subset \Gu$.
+from $\Wec$ to $\Phi(\Wec) \subset \Gu$. Michel also \cite{DHM} verified the exceptional groups by computer. 
 
 In \cite[Conjecture 3.7]{DM}, Dudas and Malle conjectured that a
 similar result holds for twisted type $A$. In \cite[Proposition 3.11
@@ -627,7 +621,7 @@ $n \le 10$. The compatibility of the partial orders is used in
 \cite[\S 5]{DM} to study the decomposition numbers of the unipotent
 $l$-blocks of finite unitary groups.
 
-Our first main result is  that $\Phi$ is order reversing in a strong sense.
+Our first main result is  that $\Phi$ is order reversing in a following sense.
 
 \begin{theorem}
 \label{t:main}
@@ -636,21 +630,6 @@ $\Phi(\CC') \leu\Phi(\CC)$.
 \end{theorem}
 
 This holds also in the twisted setting.
-
-In the case of classical groups this comes down to a simple property
-of Lusztig's map in characteristic $2$. The elliptic conjugacy classes
-$\Wec$ are parametrized by partitions, which have a natural partial
-order.  It turns out the partial orders on partitions and on $\Wec$
-are opposite to each other. Also it is easy to see that in
-characteristic $2$ Lusztig's map $\Phi$ is order preserving from
-partitions to $[G_u]$. Thus we have 
-$$
-\Phi(\CC_\alpha)\leu\Phi(\CC_\beta)\Leftrightarrow \alpha\le\beta\Leftrightarrow \CC_\beta\leW\CC_\alpha.
-$$
-See Proposition \ref{p:order_reversing}. The result in characteristic
-$0$ follows from this and Spaltenstein's order preserving map from
-unipotent orbits in characteristic $0$ to those in characteristic $p$
-(Proposition \ref{p:p}).
 
 \subsection{A similar phenomenon for affine Weyl groups}
 
@@ -686,7 +665,7 @@ purity theorem for the Newton stratification associated with
 $F$-crystal obtained by de Jong-Oort \cite{JO}, Hartl-Viehmann
 \cite{HV}, Viehmann \cite{Vi} and Hamacher \cite{Ha}.
 
-\subsection{Difference between the  finite and affine cases}
+\subsection{Difference between the finite and affine cases}
 
 Although in both finite and affine cases, we compare the partial
 orders arising from combinatorics and from geometry, there are some
@@ -709,25 +688,29 @@ this paper, the map reverses the partial orders.
 
 Now we discuss the strategy towards the proof of Theorem
 \ref{t:main}. For exceptional groups, we verify the statement by
-computer in \S?. For classical groups, the elliptic conjugacy classes
-and the unipotent classes are parametrized by certain partitions of
-different integers. For example, in type $B_n$, the elliptic conjugacy
-classes correspond to partitions of $n$ while the unipotent conjugacy
-classes correspond to certain partitions of $2n+1$. We first show that
-the partial orders on the two sets of partitions are compatible. The
-main difficulty is to verify that the partial order on the elliptic
-conjugacy classes coincide with the partial order on the corresponding
-partitions. We use the explicit description of the Bruhat order for
-the Weyl groups of classical type to relate the partial order
-$\leW$ on $\Wec$ to the natural partial order on the
-partitions. It is known that the unipotent conjugacy classes for
-classical groups are parametrized by some partitions.
+computer in Section \ref{6-exc}. For classical groups, the elliptic conjugacy classes are parametrized by certain partitions. For such  partition $\alpha$, we denote by $\CC_\alpha$ the corresponding elliptic conjugacy class. We show that 
+$$
+\Phi(\CC_\alpha)\leu\Phi(\CC_\beta)\Leftrightarrow \alpha\le\beta\Leftrightarrow \CC_\beta\leW\CC_\alpha.
+$$
+
+Note that the unipotent classes in the classical groups are associated to certain partitions. However, the partitions associated to elliptic conjugacy classes and the unipotent classes of the same classical group, are usually the partition of different integers. For example, in type $B_n$, the elliptic conjugacy classes correspond to partitions of $n$ while the unipotent conjugacy classes correspond to certain partitions of $2n+1$. The map from partitions of $n$ to the partitions of $2n+1$ induced from Lusztig's map in characteristic $0$ (and any characteristic $\neq 2$) are rather complicated; however, in characteristic $2$, is rather simple and is essentially the map $\alpha \mapsto (2 \alpha, 1)$. We then use the Lusztig-Spaltenstein map from the set of unipotent classes in characteristic $0$ to the set of unipotent classes in characteristic $2$ to deduce the statement  \[\tag{*}\Phi(\CC_\alpha)\leu\Phi(\CC_\beta)\Leftrightarrow \alpha\le\beta\] in characteristic $0$ (and any characteristic $\neq 2$) to the statement (*) in characteristic $2$, which is obvious since the map $\alpha \mapsto (2 \alpha, 1)$. For other classical groups, the statement $\Phi(\CC_\alpha)\leu\Phi(\CC_\beta)\Leftrightarrow \alpha\le\beta$ is verified in the same way. This is done in section \ref{3-cl}.
+
+We then verify the statement 
+\[\tag{**} \alpha\le\beta\Leftrightarrow \CC_\beta\leW\CC_\alpha\] for classical groups. 
+
+By definition, $\CC_{\beta} \leW \CC_{\alpha}$ if and only if there exist minimal length elements $w_\beta \in \CC_{\beta}$ and $w_\a \in \CC_{\a}$ such that $w_{\beta} \le w_\a$. In \cite{He07}, the second-named author constructed explicit minimal length representatives for any elliptic conjugacy class of Weyl groups of classical type. If $\alpha \le \beta$, then we have the desired relation between those minimal length representatives with respect to the Bruhat order. This proves the $\Rightarrow$ direction of the statement (**) for classical groups. 
+
+The $\Leftarrow$ direction of the statement (**) is more involved. The difficulty is that there are many minimal length elements in a given elliptic conjugacy class and the number is unbounded as the rank of the group becomes larger. To overcome the difficulty, we use the explicit description of the Bruhat order for the Weyl groups of classical type (see \cite{bb}).  For example, for any elements $w$ in the Weyl group of type $B_n$ and $-n \le i, j \le n$, we may associate a nonnegative integer $w[i, j]$. And $w \le w'$ if and only if $w[i, j] \le w'[i, j]$ for all $-n \le i, j \le n$. So there are $4 n^2$ inequalities to check. Fortunately, to study $\CC_{\beta} \leW \CC_{\alpha}$, one only need to investigate $l$ inequalities among all the $4 n^2$ inequalities, where $l$ is the number of parts in the partition $\beta$. And these $l$ inequalities imply that $\alpha \le \beta$. This is done in section \ref{s:classical_proof}.
+
+\smallskip
+
+\noindent {\bf Acknowledgements:} The idea that the partial orders on the conjugacy classes of Weyl groups and the unipotent classes of algebraic groups might be related was initiated in the private conversation of the second-named author with Olivier Dudas and Jean Michel. The explicit description of the Bruhat order for classical groups was pointed out to us by Thomas Lam. We also thank George Lusztig and Zhiwei Yun for helpful discussions. 
 
 \section{Main result}
 
-\subsection{Preliminary} Let $G$ be an affine algebraic group over an algebraically closed field of characteristic $p \ge 0$ such that the identity component $G^0$ of $G$ is reductive. Let $T$ be a maximal torus of $G^0$ and $B \supset T$ be a Borel subgroup of $G^0$. Let $W^0=N_{G^0}(T)/T$ be the Weyl group of $G^0$ and $W=N_G(T)/T$ be the (extended) Weyl group of $G$. The length function $\ell$ on $W^0$ extends in a unique way to a length function on $W$, which we still denote by $\ell$. Let $S \subset W^0$ be the set of simple reflections.
+\subsection{Preliminary} Let $G$ be an affine algebraic group over an algebraically closed field $\BF$ of characteristic $p \ge 0$ such that the identity component $G^0$ of $G$ is reductive. Let $T$ be a maximal torus of $G^0$ and $B \supset T$ be a Borel subgroup of $G^0$. Let $W^0=N_{G^0}(T)/T$ be the Weyl group of $G^0$ and $W=N_G(T)/T$ be the (extended) Weyl group of $G$. The length function $\ell$ on $W^0$ extends in a unique way to a length function on $W$, which we still denote by $\ell$. Let $S \subset W^0$ be the set of simple reflections.
 
-Let $D$ be a connected component of $G$ and $W^D=(N_G(T) \cap D)/T$ be a left/right $W^0$-coset of $W$. As in \cite[\S 1.1]{L3}, $D$ defines a group automorphism $\e_D: W \to W$ which preserves the length. Let $[W]$ be the set of conjugacy classes of $W$ and $[W^D]$ be the set of $W^0$-conjugacy classes of $W$ that intersects $D$. An element $w \in W^D$ (or its conjugacy class $C$ in  $W$) is said to be {\it elliptic} if for any $J \subsetneqq S$ with $\e_D(J)=J$, we have $C \cap W_J=\emptyset$. Let $\WDec$ the set of elliptic $W^0$-conjugacy classes of $W$ that intersects $W^D$.
+Let $D$ be a connected component of $G$ and $W^D=(N_G(T) \cap D)/T$ be a left/right $W^0$-coset of $W$. By \cite[Section 1.4]{L03}, $W^D$ contains a unique element $\e_D$ of length $0$. The conjugation action of $\e_D$ on $W$ is a length-preserving automorphism. Let $[W]$ be the set of $W^0$-conjugacy classes of $W$ and $[W^D]$ be the set of $W^0$-conjugacy classes of $W$ that intersects $D$. An element $w \in W^D$ (or its $W^0$-conjugacy class $C$ in  $W$) is said to be {\it elliptic} if for any $J \subsetneqq S$ with $\Ad(\e_D)(J)=J$, we have $C \cap W_J \e_D=\emptyset$. Let $\WDec$ the set of elliptic $W^0$-conjugacy classes of $W$ that intersects $W^D$.
 
 From now on, we assume that $D$ contains an unipotent element of $G$. Let $[D_u]$ be the set of $G^0$-conjugacy classes of $D$ which are unipotent. In \cite{L1} and \cite{L3}, Lusztig introduced a ``miraculous'' map $\Phi: [W^D] \to [D_u]$. It is proved in loc. cit. that
 
@@ -770,7 +753,7 @@ In other words, let $\CC, \CC' \in \WDec$. Then $\CC' \leW \CC$ if and only if $
 
 \subsection{Reduction to almost simple groups} In this subsection, we show that to prove Theorem \ref{main}, it suffices to consider the case where $G^0$ is simple. The reduction procedure is the similar to \cite[\S 1.5--1.11]{L3}.
 
-First, we may replace $G$ by the subgroup generated by $D$. Let $G'=G/Z(G^0)$ and $\pi: G \to G'$ be projection map. As the Weyl groups of $G$ and $G'$ are naturally identical, Theorem \ref{main} holds for $(G, D)$ if and only if it holds for $(G', D')$, where $D'=\pi(D)$.
+First, we may replace $G$ by the subgroup generated by $D$. Next, let $G'=G/Z(G^0)$ and $\pi: G \to G'$ be projection map. As the Weyl groups of $G$ and $G'$ are naturally identical, Theorem \ref{main} holds for $(G, D)$ if and only if it holds for $(G', D')$, where $D'=\pi(D)$.
 
 Now we may assume that $G^0$ is semisimple and simply connected. We write $G^0$ as $G^0=G_1 \times \ldots \times G_k$, where each $G_i \neq \{1\}$ is a minimal closed connected normal subgroup of $G$. For any $i$, let $G'_i=G/(G_1 \times \ldots \times \hat G_i \times \ldots \times G_k)$ and $D_i$ be the image of $D$ in $G'_i$. Let $G'=G'_1 \times \ldots \times G'_k$. We may then identify $G$ with a closed subgroup of $G'$ with the same identity component. Under this identification, $D$ becomes $D_1 \times \ldots \times D_k$. Let $W'$ be the extended Weyl group of $G'$ and $W'_i$ be the extended Weyl group of $G'_i$. Then $W'=W'_1 \times \ldots \times W'_k$ and we may identify $W^D$ with $(W'_1)^{D_1} \times \ldots \times (W'_k)^{D_k}$. Under this identification, $$\WDec=[(W'_1)^{D_1}_e] \times \ldots \times [(W'_k)^{D_k}_e]$$ and $\leW$ on $\WDec$ coincides with $\preceq_{W, 1} \times \ldots \times \preceq_{W, k}$ on $[(W'_1)^{D_1}_e] \times \ldots \times [(W'_k)^{D_k}_e]$. By \cite[\S 1.8]{L3}, $\Phi_e$ on $\WDec$ coincides with $\Phi_{e, 1} \times \ldots \times \Phi_{e, k}$ on $[(W'_1)^{D_1}_e] \times \ldots \times [(W'_k)^{D_k}_e]$. Thus if Theorem \ref{main} holds for each $(G'_i, D_i)$, then it holds for $(G, D)$.
 
@@ -791,8 +774,6 @@ Therefore, to prove Theorem \ref{main}, it suffices to consider the cases where 
 In this section, we recollect some facts on the unipotent conjugacy
 classes of classical groups, over an
 algebraically closed field $\BF$ of any characteristic. We follow \cite{Spa}*{Section I.2}.
-
-We consider the groups $\GL(n), \Sp(2n), SO(n)$ and $\O(n)$.
 
 Suppose $V$ is a finite-dimensional vector
 space over $\BF$.
@@ -817,8 +798,8 @@ The groups $\GL(n)$ and $\Sp(2n)$ are connected.
 The identity component of $\O(n)$ is $\SO(n)$, and $\O(n)/\SO(n)$ is trivial if $p=2$, and has order $2$ otherwise.
 
 Let $\CP(n)$ be the set of partitions of $n$. We write a partition of $n$ as
-$\alpha=(\alpha_1,\dots, \alpha_\ell)$ with $\alpha_1\ge \dots\ge \alpha_\ell>0$ and $\sum\alpha_i=n$.
-On occasion we will allow $\alpha_{\ell-1}>\alpha_\ell=0$.
+$\alpha=(\alpha_1,\ldots, \alpha_\ell)$ with $\alpha_1\ge \dots\ge \alpha_\ell \ge 0$ and $\sum\alpha_i=n$.
+On occasion we do allow some $\a_i$ to be $0$, i.e., we regard $(\a_1, \ldots, \a_\ell)$ and $(\a_1, \ldots, \a_\ell, 0)$ to be the same partition. 
 We define the standard partial order on partitions of the same integer $n$: $\alpha\le\beta$ if for all $k$,
 $\sum_{i=1}^k\alpha_i=\sum_{i=1}^k\beta_k$.
 
@@ -834,12 +815,11 @@ For $\k=\pm 1$ let
 $$
 \CP_\k(n)=\{\alpha \in \CP(n)\mid m_\alpha(i)\text{ is even if }  (-1)^i=\kappa\}
 $$
-Let $\CP(n)_0$ be the partitions of $n$ with an even number of parts,
-and let $\CP(n)^{\text{odd}}$  be the partitions consisting only of odd parts.
+Let $\CP(n)_0$ be the partitions of $n$ with an even number of parts, i.e. with $\a_1^*$ even and $\CP(n)_1$ be the partitions of $n$ with an odd number of parts, i.e. with $\a_1^*$ odd.
+Let $\CP(n)^{\text{odd}}$  be the partitions consisting only of odd parts.
 
 \subsection{Unipotent classes in good characteristic}
 \label{s:good}
-
 
 If $G=\GLdagger(n), \Sp(2n)$ or $\O(n)$ then the characteristic $p=2$ is said to be {\it bad} (for $G$).
 Otherwise, including all groups in characteristic $0$, the characteristic is said to be {\it good}.
@@ -849,21 +829,21 @@ element of $G$ is contained in $G^0$, and
 the unipotent classes are parametrized as follows.
 
 \begin{enumerate}
-\item $\GL(n)$ or $\GLdagger(n)$: $\CP(n)$
-\item $\O(2n+1)$: $\CP_1(2n+1)$
-\item $\Sp(2n)$: $\CP_{-1}(2n)$
-\item $\O(2n)$: $\CP_1(2n)$
+\item $\GL(n)$ or $\GLdagger(n)$: $\CP(n)$;
+\item $\O(2n+1)$: $\CP_1(2n+1)$;
+\item $\Sp(2n)$: $\CP_{-1}(2n)$;
+\item $\O(2n)$: $\CP_1(2n)$.
 \end{enumerate}
 
 We also consider the unipotent conjugacy classes of $\SO(n)$.  If $n$
 is odd the unipotent conjugacy class of $\SO(n)$ and $O(n)$ are in
-bijection, and the same holds in for $\SO(2n)$ if $n$ is odd.  If $n$
+bijection, and the same holds for $\SO(2n)$ if $n$ is odd.  If $n$
 is even the unipotent $\SO(2n)$-conjugacy classes in $\SO(2n)$ are parametrized
 by $\CP_1(2n)$, except that every partition with only even parts
-corresponds to two classess; there are $p(n/2)$ of these classes where
+corresponds to two classes; there are $p(n/2)$ of these classes where
 $p$ is the partition function.
 The $\O(2n)$ orbits which split into two $\SO(2n)$ orbits do not arise
-in the image of Lusztig's map applied to elliptic elements, so we do not need
+in the image of Lusztig's map applied to elliptic conjugacy classes, so we do not need
 to distinguish these two classes.
 
 
@@ -875,12 +855,12 @@ $\CU_{\a} \leu \CU_{\b}$ if and only if $\a \le \b$.
 \label{s:bad}
 
 Suppose $G$ is a classical group and the characteristic $p$ of $\BF$ is
-bad, i.e. $p=2$.  There is a bijective algebraic group homomorphism
+bad, in particular $p=2$.  There is a bijective algebraic group homomorphism
 from $\Sp(2n)$ to $SO(2n+1)$ (although the inverse is not algebraic),
 which induces a bijection of unipotent classes. Also
 $SO(2n+1)=O(2n+1)$ so we do not need to consider these groups.
 
-We first treat the cases $G=Sp(2n)$  and $O(2n)$.
+\subsubsection{The cases $G=Sp(2n)$  and $O(2n)$}
 
 Consider a set $\{\omega,0,1\}$ where $\omega$ is a formal element,
 satisfying $\omega<0<1$.  For $n\ge 1$ define
@@ -898,7 +878,7 @@ $$
 \omega,& \text{ if } i\text{ odd};\\
 \omega,& \text{ if } i>0,\,m_\alpha(i)=0;\\
 1,& \text{ if } i>0\text{ even},\, m_\alpha(i)\text{ odd};\\
-0\text{ or }1,& \text{ if } i>0\text{ even},\, m_\alpha(i)>0 \text{ even}.,
+0\text{ or }1,& \text{ if } i>0\text{ even},\, m_\alpha(i)>0 \text{ even}.
 \end{cases}
 $$
 Note that $\tPminus(n)$ is empty if $n$ is odd, and $\epsilon(i)$ is determined by $\alpha$ except for even rows of even multiplicity.
@@ -955,7 +935,7 @@ Again the $\O(2n)$ orbits which split into two $\SO(2n)$ orbits do not arise
  in the image of Lusztig's map applied to elliptic elements, so we do not need
  to distinguish these two classes.
 
-Recall every characteristic for $\GL(n)$ is good, and the unipotent
+\subsubsection{The case $G=\GLdagger(n)$} Recall every characteristic for $\GL(n)$ is good, and the unipotent
 classes for $\GL(n)$ are parametrized by partitions of $n$. Now we
 consider $\GLdagger(n)$ ($n\ge 3$). Recall we write
 $\GLdagger(n)=G_0\cup G_1$ where $G_0=\GL(n)$ and $G_1$ is the set of
@@ -989,7 +969,7 @@ $$
 $$
 
 \begin{proposition}
-If $p=2$ the unipotent conjugacy classes of $\GLdagger(n)$ in $\GLdagger(n)\backslash \GL(n)$ are parametrized by $\tPplus(n)$.
+If $p=2$, the unipotent conjugacy classes of $\GLdagger(n)$ in $\GLdagger(n)\backslash \GL(n)$ are parametrized by $\tPplus(n)$.
 \end{proposition}
 
 We write $\CU_{\alpha,\epsilon}$ for the unipotent class parametrized by $(\alpha,\epsilon)$.
@@ -1004,7 +984,7 @@ $\epsilon(i)=0$ if $f(v,(g-1)^{i-1}v)=0$ for all $v\in \text{ker}(g-1)^i$, and $
 \subsection{Closure Relations}
 \label{s:closure}
 
-We now desribe the closure relations on nilpotent classes. As discussed
+We now describe the closure relations on unipotent classes. As discussed
 in Section \ref{s:good} if the characteristic is good then the closure
 relations on classes are given by the order relation on partitions.
 So assume $p=2$ and $G=\GLdagger$, $Sp(2n)$ or $O(2n)$.
@@ -1050,18 +1030,17 @@ except in some cases when it can be $0$ or $1$; for $\epsilonmax$
 always choose $1$ whenever there is a choice.
 
 Explicitly, define:
-
-  $$
+\[
   \epsilonmax^\alpha(i)=
   \begin{cases}
-    1 \quad i>0\text{ odd},\, m_\alpha(i)>0\text{ even}& \alpha\in\tPplus(n)\\
-    1 \quad i>0\text{ even},\, m_\alpha(i)>0\text{ even}& \alpha\in\tPminus(2n)\\
+    1, & \text{ if } \quad i>0\text{ odd},\, m_\alpha(i)>0\text{ even and }\alpha\in\tPplus(n);\\
+    1, & \text{ if }  \quad i>0\text{ even},\, m_\alpha(i)>0\text{ even and } \alpha\in\tPminus(2n).
   \end{cases}
-  $$
+\]
 This determines $\epsilonmax^\alpha$ completely, and the result is immediate from Proposition \ref{p:order}.
 \end{proof}
 
-\section{Lusztig's map for classical groups}
+\section{Lusztig's map for classical groups}\label{3-cl}
 \label{s:Lclassical}
 \subsection{The function $\psi$}
 We recall a function defined in  \cite[\S 1.6]{L1}.
@@ -1126,10 +1105,10 @@ partitions of $n$ consisting of only odd parts.
           \begin{itemize}
 \item            $[W_e]$ is parametrized by $\CP(n)$;
 		\item $[W^{G^0}_e]$ is parametrized by $\CP(n)_0$;
-		\item $\WDec$ is parametrized by $\CP(n) \backslash \CP(n)_0$.
+		\item $\WDec$ is parametrized by $\CP(n)_1$.
 	\end{itemize}
 \end{enumerate}
-For $\alpha\in\CP(n)$ we write $\CC_\alpha$ for the corresponding elliptic conjugacy class in $W$.
+For $\alpha\in\CP(n)$, we write $\CC_\alpha$ for the corresponding elliptic conjugacy class in $W$.
 
 \subsection{Explicit description of $\Phi$ for classical groups}\label{explicit}
 Suppose $G$ is a classical group. Lusztig's map $\Phi_e: \WDec \to [D_u]$ is described explicitly in
@@ -1198,8 +1177,7 @@ in \cite[Theorem 0.4 and \S3.9]{L2} that the following diagram is commutative:
 
 We now assume $G$ is a classical group.
 In this case 
-$\pi_p$ is a bijection for $\p\neq 2$
-Here are the sets parametrizing the objects in types $B,C,D$, over $\C$ and in characteristic $2$.
+$\pi_p$ is a bijection for $p\neq 2$. In the table below, we list the sets parametrizing the objects in types $B,C,D$, over $\C$ and in characteristic $2$.
 \[
 \begin{tabular}{lll}
   $G$ & $\C$ & $\Fbartwo$\\\hline
@@ -1208,36 +1186,35 @@ Here are the sets parametrizing the objects in types $B,C,D$, over $\C$ and in c
   $O(2n)$ & $\CP_{1}(2n)$ & $\tPminus(2n)$\\
 \end{tabular}
 \]
-Thus we have the following diagram
+
+We have the following diagram
 $$
 \xymatrix{
-  [G_{0,u}]\ar@/^/[r]^{\pi_2}& \pi_2[G_{2,u}]\ar@/^/[l]^{\theta_2}
+  [G_{0,u}]\ar@/^/[r]^{\pi_2}& \pi_2[G_{2,u}]\ar@/^/[l]^{\theta_2},
 }
 $$
 where $\theta_2\circ\pi_2=\text{id}$.
 Both $\pi_2,\theta_2$ are defined explicitly
 in \cite{Spa}*{III, \S6-8}.
 
-
-
 Implicit in the statement that Spaltenstein's and Lusztig's definitions of
 $\pi_2$ agree is the following result, which makes precise for classical groups the
 relationship between Lusztig's function $\psi_\alpha$ and
-Spaltenstein's map $\theta_2$.
+Spaltenstein's map $\theta_2$. \remind{maybe modify English}
 
 
 \begin{lemma}
 Suppose $G$ is of type $B,C$ or $D$, and $\CU\in\Phi_2\Wec$.
   Write $\CU=\CU_{(\alpha,\epsilonmax^{\alpha})}$ as in Section \ref{explicit}. Then
 $$
-\theta_2(\CU)=\CU_{\alpha+\psi_\alpha}
+\theta_2(\CU)=\CU_{\alpha+\psi_\alpha}.
 $$
 In other words the inverse map $\theta_2$ to $\pi_2$, restricted to the image of $\Wec$, has a simple formula
-in terms of $\psi_\alpha$.
+in terms of $\psi_\alpha$. \remind{the last sentence is not easy to understand}
 \end{lemma}
 
 \begin{proof}
-This is immediate in the case of $\Sp(2n)$: $\theta_2(\CU_{\alpha,\epsilonmax^\alpha})=\CU_\alpha$, and $\psi_\alpha=0$.
+This is immediate in the case of $\Sp(2n)$: $\theta_2(\CU_{\alpha,\epsilonmax^\alpha})=\CU_\alpha$, and $\psi_\alpha=0$. \remind{Is it true that $\psi=0$ in this case? Is it how $\psi$ is defined?}
 
 Suppose $G=\SO(2n)$ and $\beta\in\CP(n)$. Then $\Phi(\CC_\beta)=\CU_{(2\beta,\epsilonmax^{2\beta})}$.
 So suppose $\alpha\in\CP(2n)$ has all even parts.
@@ -1255,23 +1232,23 @@ Given this we see
 \begin{subequations}
 \renewcommand{\theequation}{\theparentequation)(\alph{equation}}
 \begin{align}
-\delta_i^*&=\alpha_i^*+1\quad\text{if $i$ is odd, $\alpha_i^*$ is even, $m_\alpha(i-1)>0$}\\
-\delta_i^*&=\alpha_i^*-1\quad\text{if $i$ is even, $\alpha_i^*$ is even, $m_\alpha(i)>0$}\\
-\delta_i^*&=\alpha_i\quad\text{otherwise}
+\delta_i^*=\alpha_i^*+1, & \quad\text{if $i$ is odd, $\alpha_i^*$ is even, $m_\alpha(i-1)>0$};\\
+\delta_i^*=\alpha_i^*-1, & \quad\text{if $i$ is even, $\alpha_i^*$ is even, $m_\alpha(i)>0$};\\
+\delta_i^*=\alpha_i, & \quad\text{otherwise}.
 \end{align}
 \end{subequations}
 On the other hand
 \begin{subequations}
 \renewcommand{\theequation}{\theparentequation)(\alph{equation}}
 \begin{align}
-\gamma_j&=\alpha_j+1\quad\text{if $j$ is odd, $\alpha_{j-1}>\alpha_j$}\\
-\gamma_j&=\alpha_j-1\quad\text{if $j$ is even, $\alpha_j>\alpha_{j+1}$}\\
-\gamma_j&=\alpha_j\quad\text{otherwise}
+\gamma_j=\alpha_j+1, & \quad\text{if $j$ is odd, $\alpha_{j-1}>\alpha_j$};\\
+\gamma_j=\alpha_j-1, & \quad\text{if $j$ is even, $\alpha_j>\alpha_{j+1}$};\\
+\gamma_j=\alpha_j, & \quad\text{otherwise}.
 \end{align}
 \end{subequations}
 There is a bijection:
 $$
-\{i\text{ odd}\mid \alpha_i^*\text{ is even},\, m_\alpha(i-1)> 0\}\leftrightarrow\{j\text{ odd}\mid \alpha_{j-1}>\alpha_j\}
+\{i\text{ odd}\mid \alpha_i^*\text{ is even},\, m_\alpha(i-1)> 0\}\leftrightarrow\{j\text{ odd}\mid \alpha_{j-1}>\alpha_j\}.
 $$
 The bijection takes $i\mapsto j=\alpha^*_i+1$, with inverse $j\mapsto i=\alpha_j+1$.
 Under this bijection incrementing $\alpha_i^*$ by $1$ corresponding to incrementing $\alpha_j$ by $1$.
@@ -1325,7 +1302,7 @@ map for $G$ in characteristic $p$.
 	where $\alpha'=2 \a$ or $(2\alpha,1)$. By \S \ref{s:closure}, $\CU_{\alpha', \epsilonmax^{\alpha'}} \le \CU_{\b', \epsilonmax^{\b'}}$ if and only if $\a' \le \b'$, which is equivalent to $\a \le \b$.
 
         In the twisted cases $\GLdagger(n)$ and $\O(2n)$ we only have to consider the case $p=2$, in which case $\Phi_2$ is given
-        by $\alpha\mapsto \alpha$ or $(2\alpha,\epsilonmax^
+        by $\alpha\mapsto (\alpha, \e^{\a}_{\max})$ or $(2\alpha,\epsilonmax^
         {2\alpha})$ respectively, and the same argument applies.
       \end{proof}
 
@@ -1345,15 +1322,14 @@ combinatorial statement purely  about the Weyl group.
 \end{proposition}
 
 \begin{proof}[Proof of Theorem \ref{t:main} for classical groups]
-Then by Propositions \ref{p:Phi_elliptic} and \ref{p:order_reversing}
+Then by Propositions \ref{p:Phi_elliptic} and \ref{p:order_reversing},
   $$
-  \Phi(\CC_\alpha)\leu\Phi(\CC_\beta)\Leftrightarrow \alpha\le\beta\Leftrightarrow \CC_\beta\leW\CC_\alpha
+  \Phi(\CC_\alpha)\leu\Phi(\CC_\beta)\Leftrightarrow \alpha\le\beta\Leftrightarrow \CC_\beta\leW\CC_\alpha,
   $$
   which implies Theorem \ref{main} for classical groups.
 \end{proof}      
 
 We prove Proposition \ref{p:order_reversing} in Section \ref{s:classical_proof}.
-
 
 \begin{comment}
 The function $\psi$ has an interpretation in terms of the map $\rho$ of the previous section (see Conjecture \ref{c:psi}).
@@ -1403,10 +1379,10 @@ and these are isomorphisms of partially ordered sets.
 \end{comment}
 \section{Examples}
 
-We explicitly describe the maps from $\Wc$ to $[G(\C)_u]$ and $[G(\overline \BF_2)_u]$ for small classical groups.
+We explicitly describe the maps from $\Wc$ to $[G(\C)_u]$ and $[G(\overline \BF_2)_u]$ for some classical groups of small rank. 
 
 The elliptic conjugacy classes in $W$ are parametrized by partitions
-as discussed above. General conjugacy classes are parametrized by a
+as discussed above. General conjugacy classes in $W$ are parametrized by a
 pair $(L,\CC_L)$ where $L$ is a Levi factor and $\CC_L$ is an elliptic
 conjugacy class in $L$ \cite{geck_pfeiffer}.  When $L$ is of type $A$
 it only has one elliptic conjugacy class so we drop it from the notation.
@@ -1420,13 +1396,14 @@ parametrized by pairs, as described in Section \ref{s:classical}.
 
 \subsection{$\Sp(4)$}
 
-Here $[W]\overset{\Phi_2}\longrightarrow[Sp(4,\Fbartwo)_u]$ is a bijection (both sets have order $5$),
-whereas $[\Sp(4,\C)_u]$ has order $4$.
+Here $[W]\overset{\Phi_2}\longrightarrow[Sp(4,\Fbartwo)_u]$ is a bijection (both sets have $5$ elements),
+whereas $[\Sp(4,\C)_u]$ has $4$ elements.
 \bigskip\hfil
 
 
 \begin{tabular}{lll}
   $[W]$ & $Sp(4,\C)$ & $\Sp(4,\overline\BF_2)$\\
+  \hline\hline
   $[2]$ & $[4]$& $([4],*)$ \\
   $[1,1]$ & $[2,2]$& $([2,2],\epsilon(2)=1)$ \\
   \hline
@@ -1520,22 +1497,22 @@ Also a unipotent orbit for $\O(8,\Fbartwo)$ splits into two
 for $\SO(8,\Fbartwo)$ if and only if all parts are even, with even multiplicity, and all $\epsilon(i)=0$.
 
 
-\begin{tabular}{llll}
-$\#$ & $[W]$ & $SO(8,\C)$ & $\SO(8,\overline\BF_2)$\\
-1&  $[3,1]$ & $[7,1]$& $([6,2], *)$\\
-2&  $[2,2]$ & $[5,3]$& $([4,4], \epsilon(4)=1)$\\
-  3&  $[1,1,1,1]$ & $[3,2,2,1]$& $([2,2,2,2], \epsilon(2)=1)$\\
+\begin{tabular}{lll}
+$[W]$ & $SO(8,\C)$ & $\SO(8,\overline\BF_2)$\\
+$[3,1]$ & $[7,1]$& $([6,2], *)$\\
+$[2,2]$ & $[5,3]$& $([4,4], \epsilon(4)=1)$\\
+$[1,1,1,1]$ & $[3,2,2,1]$& $([2,2,2,2], \epsilon(2)=1)$\\
   \hline
-4&  $D_3=SO(6)\times GL(1)$ & $[5,1,1,1]$& $[4,2,1,1]$\\
-5&  $A_3=GL(4)$ & $[4,4]_I$ & $([4,4],\epsilon(4)=0)_I$\\
-6&  $A'_3=GL(4)'$ & $[4,4]_{II}$ &$([4,4],\epsilon(4)=0)_{II}$\\
-7&  $A_1\times D_2=GL(2)\times SO(4)$ & $[3,2,2,1]$ & $([2,2,2,2],\epsilon(2)=1)$\\
-8&  $D_2=\GL(1)\times \SO(4)$ & $[3,1,1,1,1,1]$ & $([2,2,1,1,1,1],\epsilon(2)=1)$\\
-9&  $A_2=\GL(3)\times \GL(1)$&$[3,3,1,1]$ & $([3,3,1,1],*)$\\
-10&  $2A_1=\GL(2)\times \GL(2)$&$[2,2,2,2]_I$ & $([2,2,2,2],\epsilon(2)=0)_I$\\
-11&    $2A_1=\GL(2)\times \GL(2)'$&$[2,2,2,2]_{II}$& $([2,2,2,2],\epsilon(2)=0)_{II}$\\
-12&  $A_1=\GL(2)\times\GL(1)\times\GL(1)$&$[2,2,1,1,1,1]$ & $([2,2,1,1,1,1,1,1],\epsilon(2)=0)$\\
-13&$T$ & $[1^8]$ & $([1^8],*)$
+$D_3=SO(6)\times GL(1)$ & $[5,1,1,1]$& $[4,2,1,1]$\\
+$A_3=GL(4)$ & $[4,4]_I$ & $([4,4],\epsilon(4)=0)_I$\\
+$A'_3=GL(4)'$ & $[4,4]_{II}$ &$([4,4],\epsilon(4)=0)_{II}$\\
+$A_1\times D_2=GL(2)\times SO(4)$ & $[3,2,2,1]$ & $([2,2,2,2],\epsilon(2)=1)$\\
+$D_2=\GL(1)\times \SO(4)$ & $[3,1,1,1,1,1]$ & $([2,2,1,1,1,1],\epsilon(2)=1)$\\
+$A_2=\GL(3)\times \GL(1)$&$[3,3,1,1]$ & $([3,3,1,1],*)$\\
+$2A_1=\GL(2)\times \GL(2)$&$[2,2,2,2]_I$ & $([2,2,2,2],\epsilon(2)=0)_I$\\
+$2A_1=\GL(2)\times \GL(2)'$&$[2,2,2,2]_{II}$& $([2,2,2,2],\epsilon(2)=0)_{II}$\\
+$A_1=\GL(2)\times\GL(1)\times\GL(1)$&$[2,2,1,1,1,1]$ & $([2,2,1,1,1,1,1,1],\epsilon(2)=0)$\\
+$T$ & $[1^8]$ & $([1^8],*)$
 \end{tabular}
 
 \subsection{$\SO(12)$}
@@ -1545,12 +1522,12 @@ $\#$ & $[W]$ & $SO(8,\C)$ & $\SO(8,\overline\BF_2)$\\
 We only discuss the elliptic classes.
 
 \begin{tabular}{llll}
-  $\#$ & $[W]$ & $SO(12,\C)$ & $\SO(12,\overline\BF_2)$\\
-  1& $[5,1]$ & $[11,1]$ & $([10,2],*)$\\
-  2& $[4,2]$ & $[9,3]$ & $([8,4],*)$\\
-  3& $[3,3]$ & $[7,5]$ & $([6,6],\epsilon(6)=1))$\\
-  4& $[2,2,1,1]$ & $[5,3,3,1]$ & $([4,4,2,2],\epsilon(4)=\epsilon(2)=1)$\\
-    5& $[1,1,1,1,1,1]$ & $[3,2,2,2,2,1]$ & $([2,2,2,2,2,2],\epsilon(2)=1)$\\
+$[W]$ & $SO(12,\C)$ & $\SO(12,\overline\BF_2)$\\
+$[5,1]$ & $[11,1]$ & $([10,2],*)$\\
+$[4,2]$ & $[9,3]$ & $([8,4],*)$\\
+$[3,3]$ & $[7,5]$ & $([6,6],\epsilon(6)=1))$\\
+$[2,2,1,1]$ & $[5,3,3,1]$ & $([4,4,2,2],\epsilon(4)=\epsilon(2)=1)$\\
+$[1,1,1,1,1,1]$ & $[3,2,2,2,2,1]$ & $([2,2,2,2,2,2],\epsilon(2)=1)$
 \end{tabular}
 
 
@@ -1559,9 +1536,9 @@ We only discuss the elliptic classes.
 We start by giving a  version of the Bruhat order for classical groups which is convenient for
 our purposes.
 
-If $G=GL(n)$, then $W\simeq S_n$. For $w\in W$, $1\le i,j\le n$ define
+If $G=GL(n)$, then $W\simeq S_n$. For $w\in W$ and $1\le i,j\le n$, we define
 $$
-w[i,j]=|\{1\le k\le i\mid w(k)\ge j\}|
+w[i,j]=|\{1\le k\le i\mid w(k)\ge j\}|.
 $$
 
 If $G=SO(2n+1)$ or $Sp(2n)$ or $O(2n)$, then $W\cong S_n\ltimes(\BZ/2\BZ)^n$. We identify $W$ with the set of permutations $\s$ of $\{\pm 1, \pm 2, \ldots, \pm n\}$ satisfying $\s(-i)=-\s(i)$ for all
@@ -1573,9 +1550,9 @@ $$
 We use the following labeling on the Dynkin diagrams. 
 
 \begin{gather*}
-B_n/C_n: \begin{dynkinDiagram}[backwards,arrows=false,root radius=.12cm,edge length=-1.0cm,labels={1,2,3,n-1,n}]{B}{o3.oo}
+B_n/C_n: \begin{dynkinDiagram}[backwards,arrows=false,root radius=.12cm,edge length=-1.0cm,labels={n,n-1,n-2,2,1}]{B}{o3.oo}
 \end{dynkinDiagram} \\
-D_n: \begin{dynkinDiagram}[backwards,arrows=false,root radius=.12cm,edge length=-1.0cm,labels={1,2,3,,n,n-1}]{D}{o3.ooo}\end{dynkinDiagram}
+D_n: \begin{dynkinDiagram}[backwards,arrows=false,root radius=.12cm,edge length=-1.0cm,labels={n,n-1,n-2,,1,2}]{D}{o3.ooo}\end{dynkinDiagram}
 \end{gather*}
 
 \begin{comment}
@@ -1593,14 +1570,11 @@ $i$, and $|\{i\mid i\le-1, \sigma(i)\ge 1\}|$ is even. Define $w[i,j]$ as in typ
 \item   If $G=GL(n)$, then $x\le y\Leftrightarrow x[i,j]\le y[i,j]$ for all $1\le i,j\le n$;
 \item   If $G=SO(2n+1)$ or $Sp(2n)$,  then $x\le y\Leftrightarrow x[i,j]\le y[i,j]$ for all $-n\le i,j\le n$;
 \item   If $G=O(2n)$, then $x\le y\Rightarrow x[i,j]\le y[i,j]$ for all $-n\le i,j\le n$.
-  \end{enumerate}
-
+\end{enumerate}
 \end{proposition}
 
-See \cite[Theorems 2.1.5, 8.1.8 and 8.2.8]{bb}. \remind{To Nie: add some remarks on how the result in $SO(2n)$ is extended to $O(2n)$}
-
 \begin{remark}
-(1) It is worth pointing out that although the Weyl group of $O(2n)$
+It is worth pointing out that although the Weyl group of $O(2n)$
 is isomorphic to the Weyl group of $SO(2n+1)$ and $Sp(2n)$, the
 simple reflections and thus the Bruhat order are different. In
 particular, the explicit description of the Bruhat order for the
@@ -1608,22 +1582,25 @@ Weyl group of $O(2n)$ is more complicated than that of $SO(2n+1)$ or
 $Sp(2n)$ and we only use a weak version  of the Bruhat order for
 the Weyl group of $O(2n)$ here. The readers interested in the full
 explicit description may refer to \cite{bb}.
-
-(2) In \cite{Lu-uneq}, Lusztig showed that the subgroup of a Coxeter
-group which is the fixed points of  the action of a diagram automorphism is again a Coxeter
-group and the Bruhat order of these two groups are compatible. Thus the explicit description of the Bruhat order of $SO(2n+1)$
-and $Sp(2n)$ follows from that of $GL(2n)$.
 \end{remark}
+
+Here part (1) is proved in \cite[Theorem 2.1.5]{bb}. Part (2) is proved in \cite[Theorem 8.1.8]{bb}. One may also argue as follows. In \cite{Lu-uneq}, Lusztig showed that the subgroup of a Coxeter group which is the fixed points of  the action of a diagram automorphism is again a Coxeter group and the Bruhat order of these two groups are compatible. Thus part (2) may be deduced directly part (1).  As to part (3), if $x, y \in W(SO(2n))$, then the statement follows from \cite[Theorem 8.2.8]{bb}. The general case follows from part (2) and the following Lemma. 
+
+\begin{lemma}
+We identify the (extended) Weyl group of $O(2n)$ with the Weyl group of $Sp(2n)$ as the abstract group $W=S_n \ltimes (\BZ/2 \BZ)^n$ in the natural way. We denote by $\le^D$ and $\le^C$ the Bruhat order for $W(O(2n))$ and $W(Sp(2n))$ respectively. Let $x, y \in W$. If $x \le^D y$, then $x \le^B y$. 
+\end{lemma}
+
+\begin{proof}
+It suffices to consider the case where $y=x s_\a$ for some positive root $\a$ of $SO(2n)$. In this case, $x \le^D y$ is equivalent to say that $x(\a)$ is a positive root of $SO(2n)$. Under the identification of $W(O(2n))$ with $W(Sp(2n))$ as abstract groups, we may identify the set of positive roots of $SO(2n)$ as a subset of the set of positive roots of $Sp(2n))$. In particular, $x(\a)$ is also a positive root of $Sp(2n)$. Thus $x \le^B y$. 
+\end{proof}
+
+\smallskip
 
 The remainder of this section is concerned with the proof of Proposition \ref{p:order_reversing}.
 
 Following \cite{He07}\footnote{Note that the convention for the labeling of the simple reflections here is opposite to the labelling used in \cite{He07} and the formulas below are modified accordingly.}, for $1 \le a, b \le n$, we define $$s_{[a, b]}=\begin{cases} s_a s_{a+1} \cdots s_b, & \text{ if } a \le b; \\ 1, & \text{ otherwise}.\end{cases}$$
 
-\subsection{Case 1: Type $B_n/C_n/D_n$}.
-
-We use the following labeling of the Dynkin diagram.
-
-
+\subsection{Case 1: Type $B_n/C_n/D_n$}
 
 Let $\alpha=(\alpha_1, \alpha_2, \ldots, \alpha_\ell)$ be a partition of $n$. The corresponding class $\CC_\alpha\in\Wec$ consists of the permutations
 $w$ satisfying:
@@ -1711,7 +1688,7 @@ Suppose otherwise. Then $| \d x[a, b]| > | \d y[a, b]|$ for some $-n \le a, b \l
 If $d > 1$, then $| y[-1, 1]| = | \d y[-1, 1]| = |\d x[-1, 1]| - 1$, which means $c > 1$ and $x\i(-1) \le -1 < y\i(-1)$. If $d = 1$, then $c = 1$ and hence $|\d x[-1, 1]| = |x[-1, 1]| = |\d y[-1, 1]| + 1$, which also means $x\i(-1) \le -1 < y\i(-1)$. In either case, we have $|x[-1, -1]| = |x[-1, 1]| + 1 > |y[-1, 1]| = |y[-1, -1]|$, a contradiction.
 \end{proof}
 
-The elliptic conjugacy classes (resp. $\d$-twisted conjugacy classes) of $W$ are parameterized by the partitions of $n$ of even (resp. odd) lengths. Let $\alpha=(\alpha_1, \alpha_2, \ldots, \alpha_l)$ be a partition of $n$ of even length, i.e. $\alpha_1 \ge \alpha_2 \ge \cdots \ge \alpha_l>0$, $\alpha_1+\cdots+\alpha_l=n$ and $l$ is even (resp. odd). Let $\CC_{\alpha}$ (resp. ${}^2\CC_{\alpha}$) be the corresponding elliptic conjugacy class (resp. $\d$-twisted conjugacy classes) of $W$. This is the conjugacy class (resp. $\d$-twisted conjugacy classe) of $W$  consisting of permutations $w$ satisfying the following conditions:
+The elliptic conjugacy classes (resp. $\d$-twisted conjugacy classes) of $W$ are parameterized by the partitions of $n$ of even (resp. odd) lengths. Let $\alpha=(\alpha_1, \alpha_2, \ldots, \alpha_l)$ be a partition of $n$ of even length, i.e. $\alpha_1 \ge \alpha_2 \ge \cdots \ge \alpha_l>0$, $\alpha_1+\cdots+\alpha_l=n$ and $l$ is even (resp. odd). Let $\CC_{\alpha}$ (resp. ${}^2\CC_{\alpha}$) be the corresponding elliptic conjugacy class (resp. $\d$-twisted conjugacy classes) of $W$. This is the conjugacy class (resp. $\d$-twisted conjugacy classes) of $W$  consisting of permutations $w$ satisfying the following conditions:
 
 \begin{enumerate}
 	\item There exists a decomposition $\{1, 2, \ldots, n\}=I_1 \sqcup I_2 \sqcup \ldots \sqcup I_l$;
@@ -1833,7 +1810,7 @@ Now we prove the following result.
 	By Proposition \ref{p:bruhat}(1), $$|w w_0[\lceil \frac{m}{2}\rceil, n-\lfloor \frac{m}{2} \rfloor+1]|+| w w_0[n-\lfloor \frac{m}{2} \rfloor, \lceil \frac{m}{2}\rceil+1]|\ge n-k.$$ By Proposition \ref{A-ineq}, $k \ge \min\{k'; \alpha_1+\cdots+\alpha_{k'} \ge m\}$. In other words, $\alpha_1+\cdots+\alpha_k \ge m=\beta_1+\cdots+\beta_k$. Therefore $\alpha \ge \beta$.
 \end{proof}
 
-\section{Exceptional Groups}
+\section{Exceptional Groups}\label{6-exc}
 
 
 We prove Theorem \ref{main} for exceptional groups by computer
@@ -1846,10 +1823,10 @@ For example we can use the representatives of \cite{geck_pfeiffer}*{Appendix B},
 and we name the classes according to these tables.
 We explicitly compute the order relation on these classes.
 
-We labels the nilpotent orbits in characteristic $0$ as in \cite{Spa}*{Section IV.2}.
+We labels the unipotent classes in characteristic $0$ as in \cite{Spa}*{Section IV.2}.
 Using the explicit description
 of Lusztig's map $\Phi$ \cite{L1}*{Section 4.3}, and the closure relations
-for unipotent orbits of \cite{Spa}*{Section IV.2} we compute the Hasse diagram for the
+for unipotent orbits of \cite{Spa}*{Section IV.2}, we compute the Hasse diagram for the
 image of $\Phi$. We present the resulting Hasse diagrams. We explain the notation in the example of $G_2$.
 
 Here is the Hasse diagram for $G_2$.
@@ -1861,22 +1838,22 @@ Here is the Hasse diagram for $G_2$.
 \bigskip
 
 The left-hand entries $G_2,A_2$ and $A_1+\wt{A_1}$ are the elliptic
-conjugacy classes of the Weyl group, of orders $6$ (the Coxeter element of $G_2$)
+conjugacy classes of the Weyl group, of orders $6$ (the Coxeter element of $G_2$),
 $3$ (the Coxeter element of $A_2$) and $2$ (the Coxeter element of $A_1+\wt{A_1}$), respectively.
 The order relation is:
 $$
 G_2\leW A_2\leW A_1+\wt{A_1}.
 $$
-The second argument is a unipotent orbit in $G_2(\C)$, labeled as in \cite{Spa}, the image of
+The second argument \remind{?} is a unipotent class in $G_2(\C)$, labeled as in \cite{Spa}, the image of
 the corresponding elliptic conjugacy class under the Lusztig map.
 These are $G_2,G_2(a_1)$ and $\wt{A_1}$, of dimension $12$ (the regular orbit), $10$ (the subregular orbit)
 and $6$ respectively, of which the first two are distinguished. Here the order is the opposite one:
 $$
-\wt{A_1}\leu G_2(a_1)\leu G_2
+\wt{A_1}\leu G_2(a_1)\leu G_2.
 $$
 
 
-\newpage
+\newpage \remind{why new page, also why $G_2$ again?}
 $G_2$:
 
 \centerline{\includegraphics[scale=.1]{G2_elliptic.pdf}}
@@ -1910,7 +1887,7 @@ $E_8$:
 %\includepdf[page={2,3,4}]{exceptionalDiagrams.pdf}
 
 
-
+\remind{the style of references [] to the left}
 
 
 \begin{thebibliography}{XXXX99}
@@ -1965,6 +1942,9 @@ A. J. de Jong and F. Oort, \emph{Purity of the stratification by Newton polygons
 
 \bibitem[Lu03]{Lu-uneq}
 G. Lusztig, \emph{Hecke algebras with unequal parameters}, CRM Monographs Ser. 18, Amer. Math. Soc., Providence, RI, 2003; enlarged and updated version at arxiv.org/0208154.
+
+\bibitem[Lu03]{L03}
+G. Lusztig, \emph{Character sheaves on disconnected groups I}, Represent.Theory 7 (2003), 374--403.
 
 \bibitem[Lu11]{L1}
 G. Lusztig, \emph{From conjugacy classes in the Weyl group to unipotent classes}, Represent. Theory 15 (2011), 494--530.
