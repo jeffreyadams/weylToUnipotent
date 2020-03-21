@@ -541,7 +541,7 @@
 \thispagestyle{plain}
 
 \author{Jeffrey Adams}
-\author{Hus He}
+\author{Xuhua He}
 \author{Sian Nie}
 
 %use one or the other of these:
@@ -554,7 +554,7 @@
 
 % %\documentclass[a4paper, reqno, 12pt]{amsart}
 \address{Department of Mathematics, University of Maryland, jda@math.umd.edu}
-\address{The Institute of Mathematical Sciences and Department of Mathematics, The Chinese University of Hong Kong, Shatin, N.T., Hong Kong, xuhuahe@math.cuhk.edu.hk}
+\address{The Institute of Mathematical Sciences and Department of Mathematics, The Chinese University of Hong Kong, Shatin, N.T., Hong Kong, xuhuahe@gmail.com}
 \address{Institute of Mathematics, Academy of Mathematics and Systems Science, Chinese Academy of Sciences, 100190, Beijing, China, niesian@amss.ac.cn}
 
 
@@ -751,7 +751,7 @@ Now we recall the partial order on $\WDec$ introduced in \cite[\S 4.7]{He07}. Le
 
 If these conditions are satisfied, then we write $\CC' \leW \CC$. By the equivalence of the conditions (1) and (2) above, the relation $\leW$ is transitive. This gives a natural partial order on the set $\WDec$.
 
-By \cite[Corollary 4.5]{He07}, $\CC_{\min}$ is the set of minimal elements in $\CC'$ with respect to the Bruhat order of $W$. Thus the conditions (1) and (2) above are also equivalent to the following conditions:
+By \cite[Corollary 4.5]{He07}, $\CC'_{\min}$ is the set of minimal elements in $\CC'$ with respect to the Bruhat order of $W$. Thus the conditions (1) and (2) above are also equivalent to the following conditions:
 
 \begin{enumerate}
 \setcounter{enumi}{2}
@@ -764,7 +764,7 @@ The condition (3) will be used to study the partial order on $\WDec$ for excepti
 Now we state the main theorem of the paper.
 
 \begin{theorem}\label{main}
-The map $\Phi_e: \WDec \to [D_u]^{op}$ gives a bijection from the poset $\WDec$ to its image. Here $[D_u]^{op}$ is the same as $[D_u]$ as sets, but with reversed partial order.
+The map $\Phi_e: \WDec \to [D_u]^{op}$ gives a bijection from the poset $\WDec$ to its image. Here $[D_u]^{op}$ is the same as $[D_u]$ as a set, but with reversed partial order.
 
 In other words let $\CC, \CC' \in \WDec$. Then $\CC' \leW \CC$ if and only if $\Phi(\CC) \leu \Phi(\CC')$.
 \end{theorem}
@@ -1209,7 +1209,7 @@ $\pi_p$ is a bijection for $p\neq 2$. In the table below, we list the sets param
 We have the following diagram
 $$
 \xymatrix{
-  [G_{0,u}]\ar@/^/[r]^{\pi_2}& \pi_2[G_{2,u}]\ar@/^/[l]^{\theta_2},
+  [G_{0,u}]\ar@/^/[r]^{\pi_2}& [G_{2,u}]\ar@/^/[l]^{\theta_2},
 }
 $$
 where $\theta_2\circ\pi_2=\text{id}$.
@@ -1218,9 +1218,8 @@ in \cite{Spa}*{III, \S6-8}.
 
 Implicit in the statement that Spaltenstein's and Lusztig's definitions of
 $\pi_2$ agree is the following result.
-This makes the relationship between Lusztig's function 
-between Lusztig's function $\psi_\alpha$ and
-Spaltenstein's map $\theta_2$ precise in the cae of classical groups.
+This makes the relationship between Lusztig's function $\psi_\alpha$ and
+Spaltenstein's map $\theta_2$ precise in the case of classical groups.
 %\remind{maybe modify English}
 
 
@@ -1313,7 +1312,7 @@ We have the following result.
   Section \ref{s:ellipticparam}.  Then
   $\Phi(\CC_\a) \leu \Phi(\CC_\b)$ if and only if $\a \le \b$.
 
-  The same statement holds for $\GLdagger$ and $\O(n)$, with  $\CC_\alpha,\CC_\beta\in\WDec$ and $\Phi_e:\WDec\mapsto\Du$.
+  The same statement holds for $\GLdagger(n)$ and $\O(n)$, with  $\CC_\alpha,\CC_\beta\in\WDec$ and $\Phi_e:\WDec\mapsto\Du$.
 \end{proposition}
 
 \begin{proof}
@@ -1564,13 +1563,13 @@ our purposes.
 
 If $G=GL(n)$, then $W\simeq S_n$. For $w\in W$ and $1\le i,j\le n$, we define
 $$
-w[i,j]=|\{1\le k\le i\mid w(k)\ge j\}|.
+w\{i, j\}=\{1 \le k \le i\mid w(k) \ge j\}, \quad w[i,j]=|w\{i, j\}|. 
 $$
 
 If $G=SO(2n+1)$ or $Sp(2n)$ or $O(2n)$, then $W\cong S_n\ltimes(\BZ/2\BZ)^n$. We identify $W$ with the set of permutations $\s$ of $\{\pm 1, \pm 2, \ldots, \pm n\}$ satisfying $\s(-i)=-\s(i)$ for all
 $i$. For $-n \le i, j \le n$, we define
 $$
-w[i, j]=|\{-n \le k \le i, w(k) \ge j\}|.
+w\{i, j\}=\{-n \le k \le i, w(k) \ge j\}, \quad w[i,j]=|w\{i, j\}|. 
 $$
 
 We use the following labeling on the Dynkin diagrams. 
@@ -1643,7 +1642,7 @@ We have the following useful inequalities for the elements in $\CC_{\alpha}$.
 \begin{proposition}\label{B-ineq}
   Suppose $w \in \CC_{\alpha}$ and $0 \le m \le n$. Then
 $$
-|w[n-m, n-m+1]| \ge \min\{k; a_1+\cdots+a_k \ge m\}.
+w[n-m, n-m+1] \ge \min\{k; a_1+\cdots+a_k \ge m\}.
 $$
 \end{proposition}
 
@@ -1655,11 +1654,11 @@ if $r \ge n-m+1$, then there exists $s \in \BN$ such that
 $w^s(-r) \le n-m$ and $w^{s+1}(-r) \ge n-m+1$. In other
 words,
 $$
-w[n-m, n-m+1] \cap (I_j \sqcup -I_j) \neq \emptyset.
+w\{n-m, n-m+1\} \cap (I_j \sqcup -I_j) \neq \emptyset.
 $$
 Therefore
 $$
-|w[n-m, n-m+1]| \ge |\{j; \max I_j \ge n-m+1\}|.
+w[n-m, n-m+1] \ge |\{j; \max I_j \ge n-m+1\}|.
 $$
 
 Let $J=\{j; \max I_j \ge n-m+1\}$. Note that there are exactly $m$ elements in $I_1 \sqcup \ldots \sqcup I_l$ that are larger than or equal to $n-m+1$. We have $\sum_{j \in J} | I_j| \ge m$. As $|I_k|=a_k$ for all $k$ and $a_1 \ge \cdots \ge a_l$, we have $a_1+\cdots+a_{| J|} \ge \sum_{j \in J} | I_j| \ge m$. In other words, $| J| \ge \min\{k; a_1+\cdots+a_k \ge m\}$. The proposition is proved.
@@ -1678,8 +1677,8 @@ Thus \begin{gather*} s_{[2, n+1-\alpha_1]} \i s_{[1, n]} \le s_{[2, n+1-\beta_1]
 On the other hand, if $\CC_{\alpha} \leW\CC_{\beta}$, then
 there exists $w \in\CC_{\alpha}$ with $w \le w_{\beta}$. Let
 $m=\beta_1+\cdots+\beta_k$. By direct computation, we have
-$| w_{\beta}[n-m, n-m+1]|=k$. By Proposition
-\ref{p:bruhat}, $| w[n-m, n-m+1]| \le k$. By Proposition
+$w_{\beta}[n-m, n-m+1]=k$. By Proposition
+\ref{p:bruhat}, $w[n-m, n-m+1] \le k$. By Proposition
 \ref{p:bruhat}(2), $k \ge \min\{k'; \alpha_1+\cdots+\alpha_{k'} \ge m\}$. In other
 words, $\alpha_1+\cdots+\alpha_k \ge m=\beta_1+\cdots+\beta_k$. Therefore
 $\alpha \ge \beta$.
@@ -1741,10 +1740,10 @@ Let $\alpha, \beta$ be even (resp. odd) partitions of $n$. Then $\CC_{\alpha} \l
 \end{proposition}
 \end{comment}
 
-On the other hand, if $\CC_{\alpha} \leW \CC_{\beta}$, then there exists $w \in \CC_{\alpha}$ with $w \leq w'_{\beta}$. Let $m=\beta_1+\cdots+\beta_k$. By direct computation, we have $| w'_{\beta} [n-m, n-m+1]|=k$. By Proposition \ref{p:bruhat}(3) $| w[n-m, n-m+1]| \le k$. By Proposition \ref{B-ineq}, $k \ge \min\{k'; \alpha_1+\cdots+\alpha_{k'} \ge m\}$. In other words, $\alpha_1+\cdots+\alpha_k \ge m=\beta_1+\cdots+\beta_k$. Therefore $\alpha \ge \beta$.
+On the other hand, if $\CC_{\alpha} \leW \CC_{\beta}$, then there exists $w \in \CC_{\alpha}$ with $w \leq w'_{\beta}$. Let $m=\beta_1+\cdots+\beta_k$. By direct computation, we have $w'_{\beta} [n-m, n-m+1]=k$. By Proposition \ref{p:bruhat}(3) $w[n-m, n-m+1] \le k$. By Proposition \ref{B-ineq}, $k \ge \min\{k'; \alpha_1+\cdots+\alpha_{k'} \ge m\}$. In other words, $\alpha_1+\cdots+\alpha_k \ge m=\beta_1+\cdots+\beta_k$. Therefore $\alpha \ge \beta$.
 \end{proof}
 
-\subsection{Case 2: Type ${}^2 A_{n-1}$} Let $W=S_n$ be the group of permutations of $\{1, 2, \cdots, n\}$. For $1 \le i, j \le n$, we define $$w[i, j]=\{-n \le k \le n; k \le i, w(k) \ge j\}.$$
+\subsection{Case 2: Type ${}^2 A_{n-1}$} Let $W=S_n$ be the group of permutations of $\{1, 2, \cdots, n\}$. For $1 \le i, j \le n$, we define $$w\{i, j\}=\{-n \le k \le n; k \le i, w(k) \ge j\},  \quad w[i,j]=|w\{i, j\}|.$$
 
 \begin{comment}
   We have the following explicit description of the Bruhat order. \remind{reference}
@@ -1769,10 +1768,10 @@ The $\d$-twisted elliptic conjugacy classes of $W$ are parametrized by the parti
 We have the following useful inequalities for the elements in $\CC_{\alpha}$.
 
 \begin{proposition}\label{A-ineq}
-	Let $w \in\CC_{\alpha}$ and $1 \le m \le n-1$, we have $$|w\d[\lceil \frac{m}{2}\rceil, n-\lfloor \frac{m}{2} \rfloor+1]|+|w\d[n-\lfloor \frac{m}{2} \rfloor, \lceil \frac{m}{2}\rceil+1] \le n-\min\{k; \alpha_1+\cdots+\alpha_k \ge m\}.$$
+	Let $w \in\CC_{\alpha}$ and $1 \le m \le n-1$, we have $$w\d[\lceil \frac{m}{2}\rceil, n-\lfloor \frac{m}{2} \rfloor+1]+w\d[n-\lfloor \frac{m}{2} \rfloor, \lceil \frac{m}{2}\rceil+1] \le n-\min\{k; \alpha_1+\cdots+\alpha_k \ge m\}.$$
 \end{proposition}
 
-\begin{proof} Let $I=w\d[\lceil \frac{m}{2}\rceil, n-\lfloor \frac{m}{2} \rfloor+1]$ and $I'=w\d[n-\lfloor \frac{m}{2} \rfloor, \lceil \frac{m}{2}\rceil+1]$. If $k \in I$, then $k \le \lceil \frac{m}{2}\rceil<\lceil \frac{m}{2}\rceil+1$ and thus $(w \d)\i (k) \notin I'$. In other words, $$I \cap (w \d) (I')=\emptyset.$$ Similarly,  $$I \cap (w \d) \i (I')=\emptyset.$$
+\begin{proof} Let $I=w\d\{\lceil \frac{m}{2}\rceil, n-\lfloor \frac{m}{2} \rfloor+1\}$ and $I'=w\d \{n-\lfloor \frac{m}{2} \rfloor, \lceil \frac{m}{2}\rceil+1\}$. If $k \in I$, then $k \le \lceil \frac{m}{2}\rceil<\lceil \frac{m}{2}\rceil+1$ and thus $(w \d)\i (k) \notin I'$. In other words, $$I \cap (w \d) (I')=\emptyset.$$ Similarly,  $$I \cap (w \d) \i (I')=\emptyset.$$
 	
 In particular, for any $w\d$-orbit $I_j$, we have \[\tag{a}| (I_j \cap I)|+| (I_j \cap I')|=| (I_j \cap I)|+| (I_j \cap (w \d)(I'))| \le|I_j|\]
 
@@ -1829,11 +1828,11 @@ Now we prove the following result.
         w''_{\beta}$. Hence $w w_0 \ge w''_{\beta} w_0$, where $w_0=(1 n) (2, n-1) \cdots$. Let
         $m=\beta_1+\cdots+\beta_k$. By direct computation, we
         have
-        $$|w_{\beta} w_0[\lceil \frac{m}{2}\rceil, n-\lfloor
-        \frac{m}{2} \rfloor+1]|+| w_{\beta} w_0[n-\lfloor \frac{m}{2}
-        \rfloor, \lceil \frac{m}{2}\rceil+1]|=n-k.$$
+        $$w_{\beta} w_0[\lceil \frac{m}{2}\rceil, n-\lfloor
+        \frac{m}{2} \rfloor+1]+w_{\beta} w_0[n-\lfloor \frac{m}{2}
+        \rfloor, \lceil \frac{m}{2}\rceil+1]=n-k.$$
 	
-	By Proposition \ref{p:bruhat}(1), $$|w w_0[\lceil \frac{m}{2}\rceil, n-\lfloor \frac{m}{2} \rfloor+1]|+| w w_0[n-\lfloor \frac{m}{2} \rfloor, \lceil \frac{m}{2}\rceil+1]|\ge n-k.$$ By Proposition \ref{A-ineq}, $k \ge \min\{k'; \alpha_1+\cdots+\alpha_{k'} \ge m\}$. In other words, $\alpha_1+\cdots+\alpha_k \ge m=\beta_1+\cdots+\beta_k$. Therefore $\alpha \ge \beta$.
+	By Proposition \ref{p:bruhat}(1), $$w w_0[\lceil \frac{m}{2}\rceil, n-\lfloor \frac{m}{2} \rfloor+1]+w w_0[n-\lfloor \frac{m}{2} \rfloor, \lceil \frac{m}{2}\rceil+1]\ge n-k.$$ By Proposition \ref{A-ineq}, $k \ge \min\{k'; \alpha_1+\cdots+\alpha_{k'} \ge m\}$. In other words, $\alpha_1+\cdots+\alpha_k \ge m=\beta_1+\cdots+\beta_k$. Therefore $\alpha \ge \beta$.
 \end{proof}
 
 \section{Exceptional Groups}\label{6-exc}
@@ -1888,8 +1887,6 @@ $F_4$:
 
 \centerline{\includegraphics[scale=.15]{F4_elliptic.pdf}}
 
-\newpage
-
 $E_6$:
 
 \centerline{\includegraphics[scale=.1]{E6_elliptic.pdf}}
@@ -1913,10 +1910,7 @@ $E_8$:
 %\includepdf[page={2,3,4}]{exceptionalDiagrams.pdf}
 
 
-\remind{the style of references [] to the left}
-
-
-\begin{thebibliography}{XXXX99}
+\begin{thebibliography}{AAAA99}
 \bibitem[A]{atlas}
 Atlas of Lie Groups and Representations, {\tt www.liegroups.org}, 2019
 
