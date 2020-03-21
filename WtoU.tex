@@ -541,7 +541,7 @@
 \thispagestyle{plain}
 
 \author{Jeffrey Adams}
-\author{Xuhua He}
+\author{Hus He}
 \author{Sian Nie}
 
 %use one or the other of these:
@@ -566,7 +566,7 @@
 \date{\today}
 
 \begin{abstract}
-Let $G$ be a reductive group over an algebraically closed field and $W$ be its Weyl group. In a series of papers, Lusztig introduced a map from the set $[W]$ of conjugacy classes of $W$ to the set $[G_u]$ of unipotent classes of $G$. This map, when restricted to the set of elliptic conjugacy classes $[W_e]$ of $W$, is injective. In this paper, we show that Lusztig's map $[W_e] \to [G_u]$ is order-reversing, with respect to the natural partial orders on $[W_e]$ arising from combinatorics and the natural partial order on $[G_u]$ arising from geometry. 
+Let $G$ be a reductive group over an algebraically closed field and let $W$ be its Weyl group. In a series of papers, Lusztig introduced a map from the set $[W]$ of conjugacy classes of $W$ to the set $[G_u]$ of unipotent classes of $G$. This map, when restricted to the set of elliptic conjugacy classes $[W_e]$ of $W$, is injective. In this paper, we show that Lusztig's map $[W_e] \to [G_u]$ is order-reversing, with respect to the natural partial order on $[W_e]$ arising from combinatorics and the natural partial order on $[G_u]$ arising from geometry. 
 \end{abstract}
 
 \keywords{Reductive groups, Weyl groups, conjugacy classes, partial orders}
@@ -588,7 +588,7 @@ This construction was generalized to twisted conjugacy classes in \cite{L3}.
 
 Roughly speaking, the map $\Phi$ is constructed as follows. 
 Let $\CC \in \Wc$ and $w \in \CC_{\min}$ be a minimal length element of
-$\CC$. We look at the intersection of Bruhat double coset $B w B$ with
+$\CC$. We look at the intersection of  the Bruhat double coset $B w B$ with
 unipotent conjugacy classes and we select the minimal
 unipotent class which gives a nonempty intersection. It is pointed out
 in \cite[\S 0.1]{L1} that ``the fact that the procedure actually works
@@ -610,7 +610,7 @@ It is a natural question to consider how Lusztig's map
 behaves with respect to these partial orders.
 Dudas, Michel and the second-named author
 \cite{DHM} conjectured that $\Phi$ gives an order-reversing bijection
-from $\Wec$ to $\Phi(\Wec) \subset \Gu$. Michel also \cite{DHM} verified the exceptional groups by computer. 
+from $\Wec$ to $\Phi(\Wec) \subset \Gu$. Michel \cite{DHM} verified the exceptional groups by computer. 
 
 In \cite[Conjecture 3.7]{DM}, Dudas and Malle conjectured that a
 similar result holds for twisted type $A$. In \cite[Proposition 3.11
@@ -621,7 +621,7 @@ $n \le 10$. The compatibility of the partial orders is used in
 \cite[\S 5]{DM} to study the decomposition numbers of the unipotent
 $l$-blocks of finite unitary groups.
 
-Our first main result is  that $\Phi$ is order reversing in a following sense.
+Our first main result is  that $\Phi$ is order reversing in the following sense.
 
 \begin{theorem}
 \label{t:main}
@@ -635,7 +635,6 @@ This holds also in the twisted setting.
 
 Before we discuss the strategy towards Theorem \ref{t:main}, we make a
 short digression and discuss a similar phenomenon.
-
 For simplicity, we only discuss  split groups here but the result
 holds in general.
 
@@ -644,7 +643,7 @@ $\overline{\mathbb F_q}$ over $\mathbb F_q$ induces a Frobenius
 morphism $\s$ on $G(\overline{\mathbb F_q}((t)))$. Let $B(G)$ be the
 set of $\s$-twisted conjugacy classes on
 $G(\overline{\mathbb F_q}((t)))$. Let $\tW$ be the Iwahori-Weyl group
-and $\underline \tW$ be the set of conjugacy classes of $\tW$. Inside
+and let $[\tW]$ be the set of conjugacy classes of $\tW$. Inside
 $[\tW]$, there is a special subset, the set of straight
 conjugacy classes, which we denote by $[\tW_{str}]$. It is
 proved in \cite{He-Ann} that there is a natural bijection
@@ -693,14 +692,34 @@ $$
 \Phi(\CC_\alpha)\leu\Phi(\CC_\beta)\Leftrightarrow \alpha\le\beta\Leftrightarrow \CC_\beta\leW\CC_\alpha.
 $$
 
-Note that the unipotent classes in the classical groups are associated to certain partitions. However, the partitions associated to elliptic conjugacy classes and the unipotent classes of the same classical group, are usually the partition of different integers. For example, in type $B_n$, the elliptic conjugacy classes correspond to partitions of $n$ while the unipotent conjugacy classes correspond to certain partitions of $2n+1$. The map from partitions of $n$ to the partitions of $2n+1$ induced from Lusztig's map in characteristic $0$ (and any characteristic $\neq 2$) are rather complicated; however, in characteristic $2$, is rather simple and is essentially the map $\alpha \mapsto (2 \alpha, 1)$. We then use the Lusztig-Spaltenstein map from the set of unipotent classes in characteristic $0$ to the set of unipotent classes in characteristic $2$ to deduce the statement  \[\tag{*}\Phi(\CC_\alpha)\leu\Phi(\CC_\beta)\Leftrightarrow \alpha\le\beta\] in characteristic $0$ (and any characteristic $\neq 2$) to the statement (*) in characteristic $2$, which is obvious since the map $\alpha \mapsto (2 \alpha, 1)$. For other classical groups, the statement $\Phi(\CC_\alpha)\leu\Phi(\CC_\beta)\Leftrightarrow \alpha\le\beta$ is verified in the same way. This is done in section \ref{3-cl}.
+Note that the unipotent classes in the classical groups are associated
+to certain partitions. However, the partitions associated to elliptic
+conjugacy classes and the unipotent classes of the same classical
+group, are usually partitions of different integers. For example, in
+type $B_n$, the elliptic conjugacy classes correspond to partitions of
+$n$ while the unipotent conjugacy classes correspond to certain
+partitions of $2n+1$. The map from partitions of $n$ to partitions of
+$2n+1$ induced from Lusztig's map in characteristic $0$ (and any
+characteristic $\neq 2$) are rather complicated; however, in
+characteristic $2$ the map is  rather simple and is essentially the map
+$\alpha \mapsto (2 \alpha, 1)$. We then use the Lusztig-Spaltenstein
+map from the set of unipotent classes in characteristic $0$ to the set
+of unipotent classes in characteristic $2$ to reduce the
+statement
+\[\tag{*}\Phi(\CC_\alpha)\leu\Phi(\CC_\beta)\Leftrightarrow
+  \alpha\le\beta\] in characteristic $0$ (and any characteristic
+$\neq 2$) to the statement (*) in characteristic $2$, which is obvious
+since the map $\alpha \mapsto (2 \alpha, 1)$. For other classical
+groups, the statement
+$\Phi(\CC_\alpha)\leu\Phi(\CC_\beta)\Leftrightarrow \alpha\le\beta$ is
+verified in the same way. This is done in section \ref{3-cl}.
 
 We then verify the statement 
 \[\tag{**} \alpha\le\beta\Leftrightarrow \CC_\beta\leW\CC_\alpha\] for classical groups. 
 
 By definition, $\CC_{\beta} \leW \CC_{\alpha}$ if and only if there exist minimal length elements $w_\beta \in \CC_{\beta}$ and $w_\a \in \CC_{\a}$ such that $w_{\beta} \le w_\a$. In \cite{He07}, the second-named author constructed explicit minimal length representatives for any elliptic conjugacy class of Weyl groups of classical type. If $\alpha \le \beta$, then we have the desired relation between those minimal length representatives with respect to the Bruhat order. This proves the $\Rightarrow$ direction of the statement (**) for classical groups. 
 
-The $\Leftarrow$ direction of the statement (**) is more involved. The difficulty is that there are many minimal length elements in a given elliptic conjugacy class and the number is unbounded as the rank of the group becomes larger. To overcome the difficulty, we use the explicit description of the Bruhat order for the Weyl groups of classical type (see \cite{bb}).  For example, for any elements $w$ in the Weyl group of type $B_n$ and $-n \le i, j \le n$, we may associate a nonnegative integer $w[i, j]$. And $w \le w'$ if and only if $w[i, j] \le w'[i, j]$ for all $-n \le i, j \le n$. So there are $4 n^2$ inequalities to check. Fortunately, to study $\CC_{\beta} \leW \CC_{\alpha}$, one only need to investigate $l$ inequalities among all the $4 n^2$ inequalities, where $l$ is the number of parts in the partition $\beta$. And these $l$ inequalities imply that $\alpha \le \beta$. This is done in section \ref{s:classical_proof}.
+The $\Leftarrow$ direction of the statement (**) is more involved. The difficulty is that there are many minimal length elements in a given elliptic conjugacy class and the number is unbounded as the rank of the group becomes larger. To overcome the difficulty, we use the explicit description of the Bruhat order for the Weyl groups of classical type (see \cite{bb}).  For example, for any elements $w$ in the Weyl group of type $B_n$ and $-n \le i, j \le n$, we may associate a nonnegative integer $w[i, j]$. Then $w \le w'$ if and only if $w[i, j] \le w'[i, j]$ for all $-n \le i, j \le n$. So there are $4 n^2$ inequalities to check. Fortunately, to study $\CC_{\beta} \leW \CC_{\alpha}$, one only needs to investigate $l$ inequalities among all the $4 n^2$ inequalities, where $l$ is the number of parts in the partition $\beta$. And these $l$ inequalities imply that $\alpha \le \beta$. This is done in section \ref{s:classical_proof}.
 
 \smallskip
 
@@ -708,11 +727,11 @@ The $\Leftarrow$ direction of the statement (**) is more involved. The difficult
 
 \section{Main result}
 
-\subsection{Preliminary} Let $G$ be an affine algebraic group over an algebraically closed field $\BF$ of characteristic $p \ge 0$ such that the identity component $G^0$ of $G$ is reductive. Let $T$ be a maximal torus of $G^0$ and $B \supset T$ be a Borel subgroup of $G^0$. Let $W^0=N_{G^0}(T)/T$ be the Weyl group of $G^0$ and $W=N_G(T)/T$ be the (extended) Weyl group of $G$. The length function $\ell$ on $W^0$ extends in a unique way to a length function on $W$, which we still denote by $\ell$. Let $S \subset W^0$ be the set of simple reflections.
+\subsection{Preliminary} Let $G$ be an affine algebraic group over an algebraically closed field $\BF$ of characteristic $p \ge 0$ such that the identity component $G^0$ of $G$ is reductive. Let $T$ be a maximal torus of $G^0$ and $B \supset T$ be a Borel subgroup of $G^0$. Let $W^0=N_{G^0}(T)/T$ be the Weyl group of $G^0$ and let $W=N_G(T)/T$ be the (extended) Weyl group of $G$. The length function $\ell$ on $W^0$ extends in a unique way to a length function on $W$, which we still denote by $\ell$. Let $S \subset W^0$ be a set of simple reflections.
 
-Let $D$ be a connected component of $G$ and $W^D=(N_G(T) \cap D)/T$ be a left/right $W^0$-coset of $W$. By \cite[Section 1.4]{L03}, $W^D$ contains a unique element $\e_D$ of length $0$. The conjugation action of $\e_D$ on $W$ is a length-preserving automorphism. Let $[W]$ be the set of $W^0$-conjugacy classes of $W$ and $[W^D]$ be the set of $W^0$-conjugacy classes of $W$ that intersects $D$. An element $w \in W^D$ (or its $W^0$-conjugacy class $C$ in  $W$) is said to be {\it elliptic} if for any $J \subsetneqq S$ with $\Ad(\e_D)(J)=J$, we have $C \cap W_J \e_D=\emptyset$. Let $\WDec$ the set of elliptic $W^0$-conjugacy classes of $W$ that intersects $W^D$.
+Let $D$ be a connected component of $G$ and $W^D=(N_G(T) \cap D)/T$ be a left/right $W^0$-coset of $W$. By \cite[Section 1.4]{L03}, $W^D$ contains a unique element $\e_D$ of length $0$. The conjugation action of $\e_D$ on $W$ is a length-preserving automorphism. Let $[W]$ be the set of $W^0$-conjugacy classes of $W$ and $[W^D]$ be the set of $W^0$-conjugacy classes of $W$ that intersect $D$. An element $w \in W^D$ (or its $W^0$-conjugacy class $C$ in  $W$) is said to be {\it elliptic} if for any $J \subsetneqq S$ with $\Ad(\e_D)(J)=J$, we have $C \cap W_J \e_D=\emptyset$. Let $\WDec$ the set of elliptic $W^0$-conjugacy classes of $W$ that intersect $W^D$.
 
-From now on, we assume that $D$ contains an unipotent element of $G$. Let $[D_u]$ be the set of $G^0$-conjugacy classes of $D$ which are unipotent. In \cite{L1} and \cite{L3}, Lusztig introduced a ``miraculous'' map $\Phi: [W^D] \to [D_u]$. It is proved in loc. cit. that
+From now on, we assume that $D$ contains a unipotent element of $G$. Let $[D_u]$ be the set of $G^0$-conjugacy classes of $D$ which are unipotent. In \cite{L1} and \cite{L3}, Lusztig introduced a  map $\Phi: [W^D] \to [D_u]$. It is proved in loc. cit. that
 
 \begin{itemize}
 \item The map $\Phi: [W^D] \to [D_u]$ is surjective.
@@ -747,7 +766,7 @@ Now we state the main theorem of the paper.
 \begin{theorem}\label{main}
 The map $\Phi_e: \WDec \to [D_u]^{op}$ gives a bijection from the poset $\WDec$ to its image. Here $[D_u]^{op}$ is the same as $[D_u]$ as sets, but with reversed partial order.
 
-In other words, let $\CC, \CC' \in \WDec$. Then $\CC' \leW \CC$ if and only if $\Phi(\CC) \leu \Phi(\CC')$.
+In other words let $\CC, \CC' \in \WDec$. Then $\CC' \leW \CC$ if and only if $\Phi(\CC) \leu \Phi(\CC')$.
 \end{theorem}
 
 
@@ -1051,7 +1070,7 @@ Set $\alpha_0=\alpha_{\ell+1}=0$.
 
 \begin{enumerate}
 
-\item If $i$ is  odd and $\alpha_{i-1}<\alpha_{i}$ then $\psi(i)=1$;
+\item If $i$ is  odd and $\alpha_{i-1}>\alpha_{i}$ then $\psi(i)=1$;
 \item If $i$ is even and $\alpha_i>\alpha_{i+1}$ then $\psi(i)=-1$;
 \item In all other cases $\psi(i)=0$.
 \end{enumerate}
@@ -1198,28 +1217,35 @@ Both $\pi_2,\theta_2$ are defined explicitly
 in \cite{Spa}*{III, \S6-8}.
 
 Implicit in the statement that Spaltenstein's and Lusztig's definitions of
-$\pi_2$ agree is the following result, which makes precise for classical groups the
-relationship between Lusztig's function $\psi_\alpha$ and
-Spaltenstein's map $\theta_2$. \remind{maybe modify English}
+$\pi_2$ agree is the following result.
+This makes the relationship between Lusztig's function 
+between Lusztig's function $\psi_\alpha$ and
+Spaltenstein's map $\theta_2$ precise in the cae of classical groups.
+%\remind{maybe modify English}
 
 
 \begin{lemma}
 Suppose $G$ is of type $B,C$ or $D$, and $\CU\in\Phi_2\Wec$.
   Write $\CU=\CU_{(\alpha,\epsilonmax^{\alpha})}$ as in Section \ref{explicit}. Then
 $$
-\theta_2(\CU)=\CU_{\alpha+\psi_\alpha}.
+\theta_2(\CU_{(\alpha,\epsilonmax^\alpha)})=
+\begin{cases}
+\CU_{\alpha}&\text{type }C  \\  
+\CU_{\alpha+\psi_\alpha}&\text{types}\ B,D 
+\end{cases}
 $$
-In other words the inverse map $\theta_2$ to $\pi_2$, restricted to the image of $\Wec$, has a simple formula
-in terms of $\psi_\alpha$. \remind{the last sentence is not easy to understand}
+Thus the map $\theta_2$, which is inverse to $\pi_2$, has a simple description when restricted to the image of the elliptic elements.
+%\remind{the last sentence is not easy to understand}
 \end{lemma}
 
 \begin{proof}
-This is immediate in the case of $\Sp(2n)$: $\theta_2(\CU_{\alpha,\epsilonmax^\alpha})=\CU_\alpha$, and $\psi_\alpha=0$. \remind{Is it true that $\psi=0$ in this case? Is it how $\psi$ is defined?}
+This is immediate in the case of $\Sp(2n)$: by \cite{Spa}*{III, 6.1} $\theta_2(\CU_{\alpha,\epsilonmax^\alpha})=\CU_\alpha$.
+%\remind{Is it true that $\psi=0$ in this case? Is it how $\psi$ is defined?}
 
 Suppose $G=\SO(2n)$ and $\beta\in\CP(n)$. Then $\Phi(\CC_\beta)=\CU_{(2\beta,\epsilonmax^{2\beta})}$.
 So suppose $\alpha\in\CP(2n)$ has all even parts.
 
-Define $\delta$ by \cite{Spa}*{Lemma 7.3}, so that 
+Define $\delta$ by \cite{Spa}*{III, Lemma 7.3}, so that 
 $$
 \theta_2(\CU_{(\alpha,\epsilonmax^\alpha)})=\CU_{\delta(\alpha)}
 $$
@@ -1584,7 +1610,7 @@ the Weyl group of $O(2n)$ here. The readers interested in the full
 explicit description may refer to \cite{bb}.
 \end{remark}
 
-Here part (1) is proved in \cite[Theorem 2.1.5]{bb}. Part (2) is proved in \cite[Theorem 8.1.8]{bb}. One may also argue as follows. In \cite{Lu-uneq}, Lusztig showed that the subgroup of a Coxeter group which is the fixed points of  the action of a diagram automorphism is again a Coxeter group and the Bruhat order of these two groups are compatible. Thus part (2) may be deduced directly part (1).  As to part (3), if $x, y \in W(SO(2n))$, then the statement follows from \cite[Theorem 8.2.8]{bb}. The general case follows from part (2) and the following Lemma. 
+Part (1) is proved in \cite[Theorem 2.1.5]{bb}. Part (2) is proved in \cite[Theorem 8.1.8]{bb}. One may also argue as follows. In \cite{Lu-uneq}, Lusztig showed that the subgroup of a Coxeter group which is the fixed points of  the action of a diagram automorphism is again a Coxeter group and the Bruhat order of these two groups are compatible. Thus part (2) may be deduced directly part (1).  As to part (3), if $x, y \in W(SO(2n))$, then the statement follows from \cite[Theorem 8.2.8]{bb}. The general case follows from part (2) and the following Lemma. 
 
 \begin{lemma}
 We identify the (extended) Weyl group of $O(2n)$ with the Weyl group of $Sp(2n)$ as the abstract group $W=S_n \ltimes (\BZ/2 \BZ)^n$ in the natural way. We denote by $\le^D$ and $\le^C$ the Bruhat order for $W(O(2n))$ and $W(Sp(2n))$ respectively. Let $x, y \in W$. If $x \le^D y$, then $x \le^B y$. 
@@ -1598,7 +1624,7 @@ It suffices to consider the case where $y=x s_\a$ for some positive root $\a$ of
 
 The remainder of this section is concerned with the proof of Proposition \ref{p:order_reversing}.
 
-Following \cite{He07}\footnote{Note that the convention for the labeling of the simple reflections here is opposite to the labelling used in \cite{He07} and the formulas below are modified accordingly.}, for $1 \le a, b \le n$, we define $$s_{[a, b]}=\begin{cases} s_a s_{a+1} \cdots s_b, & \text{ if } a \le b; \\ 1, & \text{ otherwise}.\end{cases}$$
+Following \cite{He07}\footnote{Note that the convention for the labeling on the simple reflections here is opposite to the labeling used in \cite{He07} and the formulas below are modified accordingly.}, for $1 \le a, b \le n$, we define $$s_{[a, b]}=\begin{cases} s_a s_{a+1} \cdots s_b, & \text{ if } a \le b; \\ 1, & \text{ otherwise}.\end{cases}$$
 
 \subsection{Case 1: Type $B_n/C_n/D_n$}
 
@@ -1827,14 +1853,18 @@ We labels the unipotent classes in characteristic $0$ as in \cite{Spa}*{Section 
 Using the explicit description
 of Lusztig's map $\Phi$ \cite{L1}*{Section 4.3}, and the closure relations
 for unipotent orbits of \cite{Spa}*{Section IV.2}, we compute the Hasse diagram for the
-image of $\Phi$. We present the resulting Hasse diagrams. We explain the notation in the example of $G_2$.
+image of $\Phi$. We present the resulting Hasse diagrams.
+
+We explain the notation using the example of $G_2$.
 
 Here is the Hasse diagram for $G_2$.
 
 \bigskip
+\bigskip
 
 \centerline{\includegraphics[scale=.1]{G2_elliptic.pdf}}
 
+\bigskip
 \bigskip
 
 The left-hand entries $G_2,A_2$ and $A_1+\wt{A_1}$ are the elliptic
@@ -1844,7 +1874,8 @@ The order relation is:
 $$
 G_2\leW A_2\leW A_1+\wt{A_1}.
 $$
-The second argument \remind{?} is a unipotent class in $G_2(\C)$, labeled as in \cite{Spa}, the image of
+The entry following the colon
+is a unipotent class in $G_2(\C)$, labeled as in \cite{Spa}, the image of
 the corresponding elliptic conjugacy class under the Lusztig map.
 These are $G_2,G_2(a_1)$ and $\wt{A_1}$, of dimension $12$ (the regular orbit), $10$ (the subregular orbit)
 and $6$ respectively, of which the first two are distinguished. Here the order is the opposite one:
@@ -1852,11 +1883,6 @@ $$
 \wt{A_1}\leu G_2(a_1)\leu G_2.
 $$
 
-
-\newpage \remind{why new page, also why $G_2$ again?}
-$G_2$:
-
-\centerline{\includegraphics[scale=.1]{G2_elliptic.pdf}}
 
 $F_4$:
 
@@ -1878,7 +1904,7 @@ $E_7$:
 
 $E_8$:
 
-\centerline{\includegraphics[scale=.25]{E8_elliptic.pdf}}
+\centerline{\includegraphics[scale=.28]{E8_elliptic.pdf}}
 
 
 \newpage
