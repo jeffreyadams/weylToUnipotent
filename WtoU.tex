@@ -4,7 +4,7 @@
 %\usepackage{authblk}    %comment this out when using amsart
 
 
-\usepackage{amsthm,amsfonts,amssymb,amsmath,amsxtra,amsrefs,array,dynkin-diagrams,graphicx}
+\usepackage{amsthm,amsfonts,amssymb,amsmath,amsxtra,amsrefs,array,dynkin-diagrams,graphicx,caption}
 \usepackage{xr-hyper}
 
 \usepackage[outdir=./]{epstopdf}
@@ -1842,22 +1842,39 @@ We prove Theorem \ref{main} for exceptional groups by computer
 computation, using the Atlas of Lie Groups and Representations
 software \cite{atlas}.
 
-Suppose $G$ is a simple exceptional group.  We first list representatives of the  elliptic
-conjugacy classes in the Weyl group, and we choose these representatives to be of minimal length.
-For example we can use the representatives of \cite{geck_pfeiffer}*{Appendix B},
-and we name the classes according to these tables.
-We explicitly compute the order relation on these classes.
+Suppose $G$ is a simple, untwisted exceptional group.  We first list
+representatives of the elliptic conjugacy classes in the Weyl group,
+and we choose these representatives to be of minimal length.  We use
+the representatives of \cite{geck_pfeiffer}*{Appendix B}, and we name
+the classes according to these tables.  We explicitly compute the
+order relation on these classes.
 
-We labels the unipotent classes in characteristic $0$ as in \cite{Spa}*{Section IV.2}.
+We label the unipotent classes in characteristic $0$ as in \cite{Spa}*{Section IV.2}.
 Using the explicit description
 of Lusztig's map $\Phi$ \cite{L1}*{Section 4.3}, and the closure relations
 for unipotent orbits of \cite{Spa}*{Section IV.2}, we compute the Hasse diagram for the
-image of $\Phi$. We present the resulting Hasse diagrams.
+image of $\Phi$.
+
+In the twisted cases ${}^3\negthinspace D_4$ and
+${}^2\negthinspace E_6$ we label the conjugacy classes as in
+\cite{L3}.  This uses the label of the ordinary conjugacy class, from
+the CHEVIE software in type ${}^3D_4$, and from \cite{carter} in
+${}^2\negthinspace E_6$, and in both cases we also use ${}^!$ to
+indicate the twisted class is elliptic.  The labeling of the unipotent
+classes is from \cite{Spa}, page 148 (${}^3D_4$) and 250 (${}^2E_6$).
+Lusztig defines the map $\Phi$ using the labelling of unipotent
+classes of \cite{M1} and \cite{M2}. We give the table relating these
+labelings of unipotent classes after the diagrams.
+
+
+[M1] G.Malle, Generalized Deligne-Lusztig characters, J.Algebra 159 (1993), 64-97.
+[M2] G.Malle, Green functions for groups of type E 6 and F 4 in characteristic 2, Commun.Algebra
+21 (1993), 747-798.
+
+In each case we give the bijection between elliptic conjugacy classes
+and unipotent orbits and the corresponding Hasse diagram.
 
 We explain the notation using the example of $G_2$.
-
-Here is the Hasse diagram for $G_2$.
-
 \bigskip
 \bigskip
 
@@ -1874,42 +1891,118 @@ $$
 G_2\leW A_2\leW A_1+\wt{A_1}.
 $$
 The entry following the colon
-is a unipotent class in $G_2(\C)$, labeled as in \cite{Spa}, the image of
+is a unipotent class in $G_2(\C)$, labeled as in \cite{Spa}; the image of
 the corresponding elliptic conjugacy class under the Lusztig map.
 These are $G_2,G_2(a_1)$ and $\wt{A_1}$, of dimension $12$ (the regular orbit), $10$ (the subregular orbit)
-and $6$ respectively, of which the first two are distinguished. Here the order is the opposite one:
+and $6$ respectively, of which the first two are distinguished. Here the order is the opposite one.
 $$
 \wt{A_1}\leu G_2(a_1)\leu G_2.
 $$
 
 
-$F_4$:
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[scale=.1]{F4_elliptic.pdf} % first figure itself
+        \captionsetup{labelformat=empty}
+        \caption{$F_4$}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[scale=.1]{E6_elliptic.pdf} % first figure itself
+                \captionsetup{labelformat=empty}
+        \caption{$E_6$}
+    \end{minipage}
+  \end{figure}
 
-\centerline{\includegraphics[scale=.15]{F4_elliptic.pdf}}
-
-$E_6$:
-
-\centerline{\includegraphics[scale=.1]{E6_elliptic.pdf}}
-
-\newpage
-
-$E_7$:
-
-\centerline{\includegraphics[scale=.25]{E7_elliptic.pdf}}
-
-\newpage
-
-$E_8$:
-
-\centerline{\includegraphics[scale=.28]{E8_elliptic.pdf}}
 
 
 \newpage
+
+\begin{figure}
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[scale=.24]{E7_elliptic.pdf} % first figure itself
+        \captionsetup{labelformat=empty}
+        \caption{$E_7$}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[scale=.28]{E8_elliptic.pdf} % first figure itself
+                \captionsetup{labelformat=empty}
+        \caption{$E_8$}
+    \end{minipage}
+  \end{figure}
+
+
+\newpage
+
+
+
+\begin{figure}[t]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[scale=.1]{D4_elliptic_twisted.pdf} % first figure itself
+        \captionsetup{labelformat=empty}
+        \caption{$^2D_4$}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[scale=.19]{E6_elliptic_twisted.pdf} % first figure itself
+                \captionsetup{labelformat=empty}
+        \caption{$^2E_6$}
+    \end{minipage}
+  \end{figure}
+
+  \begin{figure}[h]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+      \centering
+                      \captionsetup{labelformat=empty}
+                      \begin{tabular}{|c|c|}
+                        \hline
+    $C_0$ & $\gamma_{2}$ \\\hline
+    $C_1$ & $\gamma_4$ \\\hline
+    $C_2$ & $\gamma_6$ \\\hline
+        $C_3$ & $\gamma_8$ \\\hline
+    \end{tabular}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+      \hskip-1.1in
+
+              \centering
+                      \begin{tabular}{|c|c|}
+                        \hline
+    $F_4$ & $\gamma_{4}$ \\\hline
+    $F_4(a_1)$ & $\gamma_6$ \\\hline
+    $F_4(a_2)$ & $\gamma_8$ \\\hline
+    $F_4(a_3)$ & $\gamma_{12}$ \\\hline
+    $C_3(a_1)$ & $\gamma_{14}$ \\\hline
+    $B_2$ & $\gamma_{16}^{14}$ \\\hline
+    $\tilde A_2+A_1$ & $\gamma_{16}^{12}$ \\\hline
+   $\tilde A_1+A_2$ & $\gamma_{18}$ \\\hline
+   $A_1$ & $\gamma_{36}$ \\\hline
+                      \end{tabular}
+
+
+
+                \captionsetup{labelformat=empty}
+    \end{minipage}
+  \end{figure}
+
+  
+
+
+
 
 
 %\includepdf[page={2,3,4}]{exceptionalDiagrams.pdf}
 
-
+\clearpage
+  
 \begin{thebibliography}{AAAA99}
 \bibitem[A]{atlas}
 Atlas of Lie Groups and Representations, {\tt www.liegroups.org}, 2019
@@ -1918,6 +2011,10 @@ Atlas of Lie Groups and Representations, {\tt www.liegroups.org}, 2019
   F. Brenti and A. Bj\"{o}rner, \emph{Combinatorics of Coxeter groups},
   Graduate Texts in Mathematics, vol. 231, Springer, New York (2005)
 
+\bibitem[Ca72]{carter}
+  R. Carter, \emph{Conjugacy Classes in the Weyl Group},
+  Compositio Math. 25 (1972), 1--59.
+   
 \bibitem[CM93]{collingwood_mcgovern}
   D. Collingwood and M. McGovern, \emph{Nilpotent orbits in semisimple Lie algebras},
   Van Nostrand Reinhold Mathematics Series, Van Nostrand Reinhold Co., New York (1993)
